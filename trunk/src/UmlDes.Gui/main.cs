@@ -92,8 +92,8 @@ namespace UMLDes {
 
 			//  project toolbar
 			p = toolBar1.AddPanel( 0, "Standard" );
-			p.AddButton( UMLDes.Controls.FlatButtonType.Simple, (int)ToolBarIcons.New, "新建项目", m );
-			p.AddButton( UMLDes.Controls.FlatButtonType.Simple, (int)ToolBarIcons.Open, "打开项目", m );
+			p.AddButton( UMLDes.Controls.FlatButtonType.Simple, (int)ToolBarIcons.New, "新建工程", m );
+			p.AddButton( UMLDes.Controls.FlatButtonType.Simple, (int)ToolBarIcons.Open, "打开工程", m );
 			p.AddButton( UMLDes.Controls.FlatButtonType.Simple, (int)ToolBarIcons.Save, "保存", m );
 			p.AddButton( UMLDes.Controls.FlatButtonType.Simple, (int)ToolBarIcons.Saveas, "另存为", m );
 			p.AddButton( UMLDes.Controls.FlatButtonType.Line, 0, null, null );
@@ -375,7 +375,7 @@ namespace UMLDes {
             this.menu_NewProject.Index = 0;
             this.menu_NewProject.OwnerDraw = true;
             this.menu_NewProject.Shortcut = System.Windows.Forms.Shortcut.CtrlN;
-            this.menu_NewProject.Text = "新建项目(&N)";
+            this.menu_NewProject.Text = "新建工程(&N)";
             this.menu_NewProject.Click += new System.EventHandler(this.menu_NewProject_Click);
             // 
             // menu_OpenProject
@@ -385,7 +385,7 @@ namespace UMLDes {
             this.menu_OpenProject.Index = 1;
             this.menu_OpenProject.OwnerDraw = true;
             this.menu_OpenProject.Shortcut = System.Windows.Forms.Shortcut.CtrlO;
-            this.menu_OpenProject.Text = "打开项目(&O)";
+            this.menu_OpenProject.Text = "打开工程(&O)";
             this.menu_OpenProject.Click += new System.EventHandler(this.LoadProject);
             // 
             // menu_SaveProject
@@ -395,7 +395,7 @@ namespace UMLDes {
             this.menu_SaveProject.Index = 2;
             this.menu_SaveProject.OwnerDraw = true;
             this.menu_SaveProject.Shortcut = System.Windows.Forms.Shortcut.CtrlS;
-            this.menu_SaveProject.Text = "保存项目(&S)";
+            this.menu_SaveProject.Text = "保存工程(&S)";
             this.menu_SaveProject.Click += new System.EventHandler(this.SaveProject);
             // 
             // menu_SaveProjAs
@@ -620,7 +620,7 @@ namespace UMLDes {
             this.menu_AddStaticView,
             this.menu_Parse});
             this.menumain_Project.OwnerDraw = true;
-            this.menumain_Project.Text = "项目(&P)";
+            this.menumain_Project.Text = "工程(&P)";
             // 
             // menu_AddFiles
             // 
@@ -799,7 +799,7 @@ namespace UMLDes {
 
 		private bool SaveChanges() {
 			if( p.modified ) {
-				DialogResult r = MessageBox.Show( "Project has been modified. Do you want to save changes?", "Warning!", MessageBoxButtons.YesNoCancel );
+				DialogResult r = MessageBox.Show( "工程已被更改,是否保存?", "警告!", MessageBoxButtons.YesNoCancel );
 				if( r == DialogResult.Cancel )
 					return false;
 				if( r == DialogResult.Yes )
@@ -844,7 +844,7 @@ namespace UMLDes {
 		}
 		
 		public void RefreshTitle() {
-			this.Text = "C# UML Designer: " + p.name + " [" + ViewCtrl1.Curr.name + "]";
+			this.Text = "TBB UML Designer: " + p.name + " [" + ViewCtrl1.Curr.name + "]";
 		}
 
 		private void TurnOnProject( UmlDesignerSolution p ) {
@@ -938,7 +938,7 @@ namespace UMLDes {
 			sfd.Filter = filter.Substring(1);
 			sfd.FilterIndex = 0;
 			sfd.AddExtension = true;
-			sfd.Title = "Save To Image...";
+			sfd.Title = "保存为图片...";
 			sfd.ValidateNames = true;
 			sfd.FileName = ViewCtrl1.Curr.name;
 
@@ -952,7 +952,7 @@ namespace UMLDes {
 				if( format != null )
 					bmp.Save( sfd.FileName, format );
 				else
-					MessageBox.Show( "Unknown extension: " + ext, "Cannot save", MessageBoxButtons.OK, MessageBoxIcon.Warning );
+					MessageBox.Show( "未知扩展名: " + ext, "无法保存", MessageBoxButtons.OK, MessageBoxIcon.Warning );
 			}
 		}
 
