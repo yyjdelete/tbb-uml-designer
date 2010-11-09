@@ -93,7 +93,7 @@ namespace UMLDes.Controls {
             this.groupBox1.Size = new System.Drawing.Size(432, 329);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Visibility";
+            this.groupBox1.Text = "可见性";
             // 
             // HideSelected
             // 
@@ -102,7 +102,7 @@ namespace UMLDes.Controls {
             this.HideSelected.Name = "HideSelected";
             this.HideSelected.Size = new System.Drawing.Size(106, 26);
             this.HideSelected.TabIndex = 2;
-            this.HideSelected.Text = "Hide";
+            this.HideSelected.Text = "隐藏";
             this.HideSelected.Click += new System.EventHandler(this.HideSelected_Click);
             // 
             // ShowSelected
@@ -112,7 +112,7 @@ namespace UMLDes.Controls {
             this.ShowSelected.Name = "ShowSelected";
             this.ShowSelected.Size = new System.Drawing.Size(106, 26);
             this.ShowSelected.TabIndex = 1;
-            this.ShowSelected.Text = "Show";
+            this.ShowSelected.Text = "显示";
             this.ShowSelected.Click += new System.EventHandler(this.ShowSelected_Click);
             // 
             // Invert
@@ -122,7 +122,7 @@ namespace UMLDes.Controls {
             this.Invert.Name = "Invert";
             this.Invert.Size = new System.Drawing.Size(106, 25);
             this.Invert.TabIndex = 5;
-            this.Invert.Text = "Invert";
+            this.Invert.Text = "反向选择";
             this.Invert.Click += new System.EventHandler(this.Invert_Click);
             // 
             // HideAll
@@ -169,7 +169,7 @@ namespace UMLDes.Controls {
             this.Cancel.Name = "Cancel";
             this.Cancel.Size = new System.Drawing.Size(134, 26);
             this.Cancel.TabIndex = 7;
-            this.Cancel.Text = "Cancel";
+            this.Cancel.Text = "取消";
             this.Cancel.Click += new System.EventHandler(this.Cancel_Click);
             // 
             // OK
@@ -179,7 +179,7 @@ namespace UMLDes.Controls {
             this.OK.Name = "OK";
             this.OK.Size = new System.Drawing.Size(134, 26);
             this.OK.TabIndex = 6;
-            this.OK.Text = "OK";
+            this.OK.Text = "确定";
             this.OK.Click += new System.EventHandler(this.OK_Click);
             // 
             // hiddencount
@@ -190,7 +190,7 @@ namespace UMLDes.Controls {
             this.hiddencount.Name = "hiddencount";
             this.hiddencount.Size = new System.Drawing.Size(91, 17);
             this.hiddencount.TabIndex = 8;
-            this.hiddencount.Text = "0 items hidden";
+            this.hiddencount.Text = "0个项目被隐藏";
             // 
             // ShowHideDialog
             // 
@@ -292,12 +292,12 @@ namespace UMLDes.Controls {
 			foreach( ListViewItem lvi in listView1.Items )
 				if( !lvi.Checked )
                     hiddencount_val++;
-            hiddencount.Text = hiddencount_val + " items hidden";
+            hiddencount.Text = hiddencount_val + "个项目被隐藏";
 		}
 
 		private void listView1_ItemCheck(object sender, System.Windows.Forms.ItemCheckEventArgs e) {
 			hiddencount_val += (e.CurrentValue == CheckState.Checked ? 1 : 0 ) - (e.NewValue == CheckState.Checked ? 1 : 0 );
-			hiddencount.Text = hiddencount_val + " items hidden";
+            hiddencount.Text = hiddencount_val + "个项目被隐藏";
 			
 		}
 
