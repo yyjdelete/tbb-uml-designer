@@ -201,7 +201,9 @@ namespace UMLDes.Model.MSIL {
 				UmlType tp = (UmlType)ent.Value;
 
 				if( tp is UmlClass )
-					if( t.BaseType != null && !t.BaseType.Equals( typeof( object ) ) ) {
+					//yyj
+					if (t.BaseType != null && t.BaseType.FullName != null && !t.BaseType.Equals(typeof(object)))
+					{
 						UmlClass cl = (UmlClass)tp;
 						Type base_type = t.BaseType;
 
