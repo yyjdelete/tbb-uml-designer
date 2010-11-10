@@ -1,9 +1,10 @@
 using System;
-using System.Drawing;
 using System.Collections;
 using System.ComponentModel;
-using System.Windows.Forms;
 using System.Data;
+using System.Drawing;
+using System.Text;
+using System.Windows.Forms;
 using UMLDes.Model;
 using UMLDes.GUI;
 using UMLDes.Controls;
@@ -199,11 +200,12 @@ namespace UMLDes {
 		}
 
 		#endregion
-		
-		#region Windows Form Designer generated code
+
+		#region Windows 窗体设计器生成的代码
+
 		/// <summary>
-		/// Required method for Designer support - do not modify
-		/// the contents of this method with the code editor.
+		/// 设计器支持所需的方法 - 不要
+		/// 使用代码编辑器修改此方法的内容。
 		/// </summary>
 		private void InitializeComponent() {
             this.components = new System.ComponentModel.Container();
@@ -257,12 +259,13 @@ namespace UMLDes {
             // 
             // menu_About
             // 
-            this.menu_About.Enabled = false;
+//            this.menu_About.Enabled = false;
             this.menu_About.ImageIndex = 14;
-            this.menu_About.Images = this.toolbarImages;
-            this.menu_About.Index = 0;
+	        this.menu_About.Images = this.toolbarImages;
+			this.menu_About.Index = 0;
             this.menu_About.OwnerDraw = true;
             this.menu_About.Text = "关于(&A)";
+			this.menu_About.Click += new System.EventHandler(this.menu_About_Click);
             // 
             // toolbarImages
             // 
@@ -329,7 +332,7 @@ namespace UMLDes {
             this.menu_show_hints.Images = null;
             this.menu_show_hints.Index = 1;
             this.menu_show_hints.OwnerDraw = true;
-            this.menu_show_hints.Text = "Show &hints";
+            this.menu_show_hints.Text = "显示提示(&H)";
             // 
             // menu_GC_Collect
             // 
@@ -901,6 +904,13 @@ namespace UMLDes {
 			SelectView( v, true );
 		}
 
+//yyj
+		private void menu_About_Click(object sender, System.EventArgs e)
+		{
+			About aboutfrm = new About();
+			aboutfrm.ShowDialog();
+		}
+
 		#region Image Formats
 
 		private struct FormatDescr {
@@ -1021,7 +1031,7 @@ namespace UMLDes {
 			MenuItem[] mi = null;
 
 			if( obj is UMLDes.GUI.View ) {
-				mi = new FlatMenuItem[] { FlatMenuItem.Create( "Rename", null, 0, false, new EventHandler(RenameNode), n ) };
+				mi = new FlatMenuItem[] { FlatMenuItem.Create( "重命名", null, 0, false, new EventHandler(RenameNode), n ) };
 			}
 
 			if( mi == null )
