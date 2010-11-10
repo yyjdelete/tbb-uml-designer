@@ -207,7 +207,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssemblyInfo.cs">
+    <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="ColorManager.cs">
@@ -222,6 +222,11 @@
     <Compile Include="InPlaceTextEdit.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="ShowHideDialog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -231,6 +236,10 @@
     <EmbeddedResource Include="FlatMenu.resx">
       <DependentUpon>FlatMenu.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ShowHideDialog.resx">
       <DependentUpon>ShowHideDialog.cs</DependentUpon>
