@@ -94,7 +94,7 @@ namespace UMLDes.GUI {
 
 		#endregion
 
-		#region Menu
+		#region 菜单
 
 		public void DisplayOptions( object o, EventArgs ev ) { 
 			ObjectState before = GetState();
@@ -140,7 +140,7 @@ namespace UMLDes.GUI {
 			evh = new EventHandler( DisplayOptions );
 			curr = new FlatMenuItem( "Display &Options...", null, 0, false );
 			parent.AddItem( curr, "Show full &qualified name", ToolBarIcons.show_qual, show_full_qual, evh );
-			parent.AddItem( curr, "&Show members", ToolBarIcons.None, show_members, evh );
+			parent.AddItem( curr, "显示成员(&S)", ToolBarIcons.None, show_members, evh );
 			m.MenuItems.Add( curr );
 
 			m.MenuItems.Add( new StereoTypeHelper( this ).GetStereoMenu() );

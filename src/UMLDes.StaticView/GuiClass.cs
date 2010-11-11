@@ -194,7 +194,7 @@ namespace UMLDes.GUI {
 
 		#endregion
 
-		#region Menu
+		#region ≤Àµ•
 
 		public void DisplayOptions( object o, EventArgs ev ) { 
 			ObjectState before = GetState();
@@ -338,7 +338,7 @@ namespace UMLDes.GUI {
 
 		#endregion
 
-		#region Rename
+		#region ÷ÿ√¸√˚
 
 		public void EditedName( string name ) { 
 			ObjectState before = GetState();

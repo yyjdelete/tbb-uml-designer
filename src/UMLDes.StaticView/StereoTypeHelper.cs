@@ -41,8 +41,8 @@ namespace UMLDes.GUI {
 			// Display Options
 			evh = new EventHandler( set_stereo );
 			curr = new FlatMenuItem( "Stereotype", null, 0, false );
-			parent.AddItem( curr, "Other", ToolBarIcons.None, false, evh );
-			parent.AddItem( curr, "Clear", ToolBarIcons.None, false, evh );
+			parent.AddItem( curr, "ÆäËü", ToolBarIcons.None, false, evh );
+			parent.AddItem( curr, "Çå³ý", ToolBarIcons.None, false, evh );
 			parent.AddItem( curr, "-", ToolBarIcons.None, false, null );
 			hashed_stereo_list = obj.StereoList;
 			foreach( string s in hashed_stereo_list )
