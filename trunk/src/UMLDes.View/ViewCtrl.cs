@@ -671,7 +671,7 @@ namespace UMLDes {
 
 		#endregion
 
-		#region Print
+		#region ´òÓ¡
 
 		#region PageToPrint structure
 		private struct PageToPrint {
@@ -752,7 +752,7 @@ namespace UMLDes {
 
 		#endregion
 
-		#region Save To Image
+		#region ±£´æÎªÍ¼Æ¬
 
 		public Bitmap PrintToImage() {
 			curr.DoOperation( GUI.View.EditOperation.SelectNone );

@@ -1,4 +1,5 @@
-﻿namespace UMLDes
+﻿//vs2010ed
+namespace UMLDes
 {
     partial class About
     {
@@ -34,6 +35,7 @@
 			this.labelProductName = new System.Windows.Forms.Label();
 			this.labelVersion = new System.Windows.Forms.Label();
 			this.labelCopyright = new System.Windows.Forms.Label();
+			this.labelCompanyName = new System.Windows.Forms.Label();
 			this.textBoxDescription = new System.Windows.Forms.TextBox();
 			this.okButton = new System.Windows.Forms.Button();
 			this.tableLayoutPanel.SuspendLayout();
@@ -49,6 +51,7 @@
 			this.tableLayoutPanel.Controls.Add(this.labelProductName, 1, 0);
 			this.tableLayoutPanel.Controls.Add(this.labelVersion, 1, 1);
 			this.tableLayoutPanel.Controls.Add(this.labelCopyright, 1, 2);
+			this.tableLayoutPanel.Controls.Add(this.labelCompanyName, 1, 3);
 			this.tableLayoutPanel.Controls.Add(this.textBoxDescription, 1, 4);
 			this.tableLayoutPanel.Controls.Add(this.okButton, 1, 5);
 			this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -84,7 +87,7 @@
 			this.labelProductName.Name = "labelProductName";
 			this.labelProductName.Size = new System.Drawing.Size(271, 16);
 			this.labelProductName.TabIndex = 19;
-			this.labelProductName.Text = "<AssemblyProduct>";
+			this.labelProductName.Text = "产品名称<AssemblyProduct>";
 			this.labelProductName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// labelVersion
@@ -96,7 +99,7 @@
 			this.labelVersion.Name = "labelVersion";
 			this.labelVersion.Size = new System.Drawing.Size(271, 16);
 			this.labelVersion.TabIndex = 0;
-			this.labelVersion.Text = "Version <AssemblyVersion>";
+			this.labelVersion.Text = "版本 <AssemblyVersion>";
 			this.labelVersion.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// labelCopyright
@@ -108,8 +111,20 @@
 			this.labelCopyright.Name = "labelCopyright";
 			this.labelCopyright.Size = new System.Drawing.Size(271, 16);
 			this.labelCopyright.TabIndex = 21;
-			this.labelCopyright.Text = "<AssemblyCopyright>";
+			this.labelCopyright.Text = "版权<AssemblyCopyright>";
 			this.labelCopyright.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// labelCompanyName
+			// 
+			this.labelCompanyName.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.labelCompanyName.Location = new System.Drawing.Point(143, 72);
+			this.labelCompanyName.Margin = new System.Windows.Forms.Padding(6, 0, 3, 0);
+			this.labelCompanyName.MaximumSize = new System.Drawing.Size(0, 16);
+			this.labelCompanyName.Name = "labelCompanyName";
+			this.labelCompanyName.Size = new System.Drawing.Size(271, 16);
+			this.labelCompanyName.TabIndex = 22;
+			this.labelCompanyName.Text = "公司名称<AssemblyCompany>";
+			this.labelCompanyName.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// textBoxDescription
 			// 
@@ -123,7 +138,7 @@
 			this.textBoxDescription.Size = new System.Drawing.Size(271, 116);
 			this.textBoxDescription.TabIndex = 23;
 			this.textBoxDescription.TabStop = false;
-			this.textBoxDescription.Text = "<说明>";
+			this.textBoxDescription.Text = "说明<AssemblyDescription>";
 			// 
 			// okButton
 			// 
@@ -134,10 +149,10 @@
 			this.okButton.Size = new System.Drawing.Size(75, 21);
 			this.okButton.TabIndex = 24;
 			this.okButton.Text = "确定(&O)";
-			this.okButton.Click += new System.EventHandler(this.okButton_Click);
 			// 
 			// About
 			// 
+			this.AcceptButton = this.okButton;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(435, 261);
@@ -167,5 +182,6 @@
         private System.Windows.Forms.Label labelProductName;
         private System.Windows.Forms.Label labelVersion;
         private System.Windows.Forms.Label labelCopyright;
+		private System.Windows.Forms.Label labelCompanyName;
     }
 }

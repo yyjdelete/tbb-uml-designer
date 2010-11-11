@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using System.Reflection;
-
+//vs2010ed
 namespace UMLDes
 {
     partial class About : Form
@@ -21,13 +21,15 @@ namespace UMLDes
             //  - AssemblyInfo.cs
             this.Text = String.Format("关于 {0}", AssemblyTitle);
             this.labelProductName.Text = AssemblyProduct;
-            this.labelVersion.Text = String.Format("Version {0}", AssemblyVersion);
-            this.labelCopyright.Text = AssemblyCopyright;
-            this.textBoxDescription.Text = "UML Editor is een eenvoudige editor om XML code om te zetten in grafische UML diagrammen.";
+			this.labelVersion.Text = String.Format("版本 {0}", AssemblyVersion);
+			this.labelCopyright.Text = AssemblyCopyright;
+			this.labelCompanyName.Text = AssemblyCompany;
+			this.textBoxDescription.Text = AssemblyDescription;
         }
 
-        #region Assembly Attribute Accessors
+        #region 程序集特性访问器
 
+		
         public string AssemblyTitle
         {
             get
@@ -113,9 +115,12 @@ namespace UMLDes
         }
         #endregion
 
-        private void okButton_Click(object sender, EventArgs e)
+/*        private void okButton_Click(object sender, EventArgs e)
         {
             this.Dispose();
         }
+ // 已无用，详见前面一处注释
+ */
+
     }
 }

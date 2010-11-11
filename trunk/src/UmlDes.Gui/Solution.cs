@@ -11,7 +11,7 @@ namespace UMLDes {
 	public class UmlDesignerSolution : GUI.IPostload, GUI.ISolution {
 
         [XmlAttribute]	
-		public string projectfile, name = "unknown";
+		public string projectfile, name = "(未保存)";
 		public UmlModel model;
 		[XmlArrayItem(typeof(GUI.StaticView))]   
 		public ArrayList diagrams = new ArrayList();
@@ -28,16 +28,16 @@ namespace UMLDes {
 		public void Save( bool saveas ) {
 			if( projectfile.Length == 0 || saveas ) {
 #if DEBUG
-                projectfile = "c:\\temp\\proj.umldes";
+				projectfile = "c:\\temp\\proj.udf";
 #else
 				SaveFileDialog f = new SaveFileDialog();
 				f.AddExtension = true;
-				f.DefaultExt = "umldes";
-				f.Filter = "Project files (*.umldes)|*.umldes|All files (*.*)|*.*";
+				f.DefaultExt = "udf";
+				f.Filter = "TBB UML设计器工程文件 (*.udf)|*.udf|All files (*.*)|*.*";
 				if( f.ShowDialog() != DialogResult.OK )
 					return;
 				projectfile = f.FileName;
-#endif			
+#endif
 				name = Path.GetFileNameWithoutExtension( projectfile );
 				container.RefreshTitle();
 			}
@@ -50,11 +50,11 @@ namespace UMLDes {
 		public static UmlDesignerSolution Load( MainWnd m ) {
 			string fname;
 #if DEBUG
-			fname = "C:\\temp\\proj.umldes";
+			fname = "C:\\temp\\proj.udf";
 #else
 			OpenFileDialog f = new OpenFileDialog();
 			f.CheckFileExists = true;
-			f.Filter = "Project files (*.umldes)|*.umldes|All files (*.*)|*.*";
+			f.Filter = "TBB UML设计器工程文件 (*.udf)|*.udf|All files (*.*)|*.*";
 			if( f.ShowDialog() != DialogResult.OK )
 				return null;
 			fname = f.FileName;
@@ -141,7 +141,7 @@ namespace UMLDes {
 				else if( name.ToLower().EndsWith( ".sln" ) ) {
 					ModelBuilder.AddProjectFromSLN( model, name );
 				} else
-					MessageBox.Show( "unknown file type:\n" + name, "Loading error", MessageBoxButtons.OK, MessageBoxIcon.Error );
+					MessageBox.Show( "未知文件类型:\n" + name, "加载失败", MessageBoxButtons.OK, MessageBoxIcon.Error );
 			}
 			container.SolutionTree.RefreshModel();
 		}
@@ -157,7 +157,7 @@ namespace UMLDes {
 				System.Text.StringBuilder sb = new System.Text.StringBuilder();
 				foreach( string s in errors )
 					sb.Append( s + "\n" );
-				MessageBox.Show( sb.ToString(), "Errors", MessageBoxButtons.OK, MessageBoxIcon.Error );
+				MessageBox.Show( sb.ToString(), "错误", MessageBoxButtons.OK, MessageBoxIcon.Error );
 			} else {
 				container.SolutionTree.RefreshModel();
 				UMLDes.GUI.View before = container.GetCurrentView();
