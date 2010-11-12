@@ -102,7 +102,7 @@ namespace UMLDes.GUI {
 		}
 		#endregion
 
-		#region Recalculate: size, location
+		#region 重新计算: 大小, 位置
 
 		internal void RecalculatePosition() {
 			int X, Y;

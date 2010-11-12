@@ -9,85 +9,83 @@ using UMLDes.Model;
 using UMLDes.GUI;
 using UMLDes.Controls;
 
-namespace UMLDes
-{
-	public partial class MainWnd : UMLDes.Controls.FlatMenuForm
-	{
-		public MainWnd() {
-			InitializeComponent();
-			PostInitialize();
+namespace UMLDes {
+	public partial class MainWnd:UMLDes.Controls.FlatMenuForm {
+		public MainWnd () {
+			InitializeComponent ();
+			PostInitialize ();
 			list = toolbarImages;
-			
-			TurnOnProject( UmlDesignerSolution.createNew() );
+
+			TurnOnProject (UmlDesignerSolution.createNew ());
 		}
 
 		#region ToolBar/Tree initialization
 
-		private void menu_ZoomOut_Click(object sender, System.EventArgs e) {
-			ViewCtrl1.ZoomOut();
+		private void menu_ZoomOut_Click (object sender,System.EventArgs e) {
+			ViewCtrl1.ZoomOut ();
 		}
 
-		private void menu_ZoomIn_Click(object sender, System.EventArgs e) {
-			ViewCtrl1.ZoomIn();
+		private void menu_ZoomIn_Click (object sender,System.EventArgs e) {
+			ViewCtrl1.ZoomIn ();
 		}
 
 		#endregion
 
 		#region 工具栏相关
 
-		void EnableButton( UMLDes.Controls.FlatToolBarButton b, bool en ) {
-			if( !b.disabled != en ) {
+		void EnableButton (UMLDes.Controls.FlatToolBarButton b,bool en) {
+			if (!b.disabled != en) {
 				b.disabled = !b.disabled;
-				b.parent.InvalidateButton( b );
+				b.parent.InvalidateButton (b);
 			}
 		}
 
-		public void UpdateToolBar() {
-			EnableButton( tool_undo, ViewCtrl1.Curr.undo.can_undo );
-			EnableButton( tool_redo, ViewCtrl1.Curr.undo.can_redo );
+		public void UpdateToolBar () {
+			EnableButton (tool_undo,ViewCtrl1.Curr.undo.can_undo);
+			EnableButton (tool_redo,ViewCtrl1.Curr.undo.can_redo);
 		}
 
-		void ToolbarAction( int index ) {
-			switch( (ToolBarIcons)index ) {
+		void ToolbarAction (int index) {
+			switch ((ToolBarIcons) index) {
 				case ToolBarIcons.New:   // 新建
-					if( !SaveChanges() )
+					if (!SaveChanges ())
 						return;
-					TurnOnProject( UmlDesignerSolution.createNew() );
+					TurnOnProject (UmlDesignerSolution.createNew ());
 					break;
 				case ToolBarIcons.Open:   // 打开
-					LoadProject( null, null );
+					LoadProject (null,null);
 					break;
 				case ToolBarIcons.Save:   // 保存
-					SaveProject( null, null );
+					SaveProject (null,null);
 					break;
 				case ToolBarIcons.Saveas:   // 另存为
-					SaveAsProject( null, null );
+					SaveAsProject (null,null);
 					break;
 				case ToolBarIcons.add_file: // Add files
-					AddFiles(null, null);
+					AddFiles (null,null);
 					break;
 				case ToolBarIcons.new_diagram: // New Static view
-					menu_AddStaticView_Click(null, null);
+					menu_AddStaticView_Click (null,null);
 					break;
 				case ToolBarIcons.refresh:  // Refresh tree
-					RefreshProject(null, null);
+					RefreshProject (null,null);
 					break;
 				case ToolBarIcons.print: // 打印
-					ViewCtrl1.Print(false);
+					ViewCtrl1.Print (false);
 					break;
 				case ToolBarIcons.print_preview: // 打印预览
-					ViewCtrl1.Print(true);
+					ViewCtrl1.Print (true);
 					break;
 				case ToolBarIcons.undo:   // 撤销
-					ViewCtrl1.Curr.undo.DoUndo();
+					ViewCtrl1.Curr.undo.DoUndo ();
 					break;
 				case ToolBarIcons.redo:   // 重做
-					ViewCtrl1.Curr.undo.DoRedo();
+					ViewCtrl1.Curr.undo.DoRedo ();
 					break;
 				case ToolBarIcons.cut:
 				case ToolBarIcons.copy:
 				case ToolBarIcons.paste:
-					MessageBox.Show( "CopyPaste" + ((ToolBarIcons)index).ToString() );
+					MessageBox.Show ("CopyPaste" + ((ToolBarIcons) index).ToString ());
 					break;
 			}
 		}
@@ -95,26 +93,26 @@ namespace UMLDes
 		#endregion
 
 		#region Main, SaveChanges, OnClosing
-		
+
 		[STAThread]
-		static void Main() {
-			Application.Run(new MainWnd());
+		static void Main () {
+			Application.Run (new MainWnd ());
 		}
 
-		private bool SaveChanges() {
-			if( p.modified ) {
-				DialogResult r = MessageBox.Show( "工程已被更改,是否保存?", "警告!", MessageBoxButtons.YesNoCancel );
-				if( r == DialogResult.Cancel )
+		private bool SaveChanges () {
+			if (p.modified) {
+				DialogResult r = MessageBox.Show ("工程已被更改,是否保存?","警告!",MessageBoxButtons.YesNoCancel);
+				if (r == DialogResult.Cancel)
 					return false;
-				if( r == DialogResult.Yes )
-					p.Save( false );
+				if (r == DialogResult.Yes)
+					p.Save (false);
 			}
 			return true;
 		}
 
-		protected override void OnClosing(CancelEventArgs e) {
+		protected override void OnClosing (CancelEventArgs e) {
 #if !DEBUG
-			if( !SaveChanges() )
+			if (!SaveChanges ())
 				e.Cancel = true;
 #endif
 			base.OnClosing (e);
@@ -124,85 +122,85 @@ namespace UMLDes
 
 		#region Menu actions
 
-		private void menu_NewProject_Click(object sender, System.EventArgs e) {
-			ToolbarAction( (int)ToolBarIcons.New );
-		}
-		
-		private void Exit(object sender, System.EventArgs e) {
-			this.Close();
+		private void menu_NewProject_Click (object sender,System.EventArgs e) {
+			ToolbarAction ((int) ToolBarIcons.New);
 		}
 
-	
-		private void SaveProject(object sender, System.EventArgs e) {
-			p.Save( false );
+		private void Exit (object sender,System.EventArgs e) {
+			this.Close ();
 		}
 
-		private void SaveAsProject(object sender, System.EventArgs e) {
-			p.Save( true );
+
+		private void SaveProject (object sender,System.EventArgs e) {
+			p.Save (false);
 		}
-		
-		private void LoadProject(object sender, System.EventArgs e) {
-			UmlDesignerSolution q = UmlDesignerSolution.Load(this);
-			if( q != null )
-				TurnOnProject( q );
+
+		private void SaveAsProject (object sender,System.EventArgs e) {
+			p.Save (true);
 		}
-		
-		public void RefreshTitle() {
+
+		private void LoadProject (object sender,System.EventArgs e) {
+			UmlDesignerSolution q = UmlDesignerSolution.Load (this);
+			if (q != null)
+				TurnOnProject (q);
+		}
+
+		public void RefreshTitle () {
 			this.Text = "TBB UML Designer: " + p.name + " [" + ViewCtrl1.Curr.name + "]";
 		}
 
-		private void TurnOnProject( UmlDesignerSolution p ) {
+		private void TurnOnProject (UmlDesignerSolution p) {
 
-			if( p.diagrams.Count == 0 )
+			if (p.diagrams.Count == 0)
 				return;
 
-			if( this.p != null )
+			if (this.p != null)
 				this.p.container = null;
 
 			this.p = p;
 			p.container = this;
-			ProjectTree.NewSolution( p );
-			SelectView( (GUI.View)p.diagrams[0], true );
-			UpdateToolBar();
+			ProjectTree.NewSolution (p);
+			SelectView ((GUI.View) p.diagrams[0],true);
+			UpdateToolBar ();
 		}
 
 		ArrayList view_toolbar_panels = null;
 
-		public GUI.View GetCurrentView() {
+		public GUI.View GetCurrentView () {
 			return ViewCtrl1.Curr;
 		}
 
-		public void SelectView( GUI.View v, bool update ) {
+		public void SelectView (GUI.View v,bool update) {
 			ViewCtrl1.Curr = v;
-			if( update ) {
-				if( view_toolbar_panels != null )
-					foreach( FlatToolBarPanel panel in view_toolbar_panels )
-						toolBar1.RemovePanel( panel );
-				view_toolbar_panels = v.LoadToolbars();
-				RefreshTitle();
-				ViewCtrl1.Invalidate();
+			if (update) {
+				if (view_toolbar_panels != null)
+					foreach (FlatToolBarPanel panel in view_toolbar_panels)
+						toolBar1.RemovePanel (panel);
+				view_toolbar_panels = v.LoadToolbars ();
+				RefreshTitle ();
+				ViewCtrl1.Invalidate ();
 			}
 		}
-		
-		private void AddFiles(object sender, System.EventArgs e) {
-			p.AddFile();
-		}
-		
-		private void RefreshProject(object sender, System.EventArgs e) {
-			p.Refresh();
+
+		private void AddFiles (object sender,System.EventArgs e) {
+			p.AddFile ();
 		}
 
-		private void menu_Print_Click(object sender, System.EventArgs e) {
-			ToolbarAction( (int)ToolBarIcons.print );
+		private void RefreshProject (object sender,System.EventArgs e) {
+			p.Refresh ();
 		}
 
-		private void menu_PrintPreview_Click(object sender, System.EventArgs e) {
-			ToolbarAction( (int)ToolBarIcons.print_preview );
+		private void menu_Print_Click (object sender,System.EventArgs e) {
+			ToolbarAction ((int) ToolBarIcons.print);
 		}
 
-		private void menu_AddStaticView_Click(object sender, System.EventArgs e) {
-			UMLDes.GUI.View v = p.newStaticView();
-			SelectView( v, true );
+		private void menu_PrintPreview_Click (object sender,System.EventArgs e) {
+			ToolbarAction ((int) ToolBarIcons.print_preview);
+		}
+
+		private void menu_AddStaticView_Click (object sender,System.EventArgs e) {
+			UMLDes.GUI.View v = p.newStaticView ();
+			SelectView (v,true);
 		}
 
 
@@ -210,9 +208,9 @@ namespace UMLDes
 
 		private struct FormatDescr {
 			public System.Drawing.Imaging.ImageFormat format;
-			public string ext, descr;
+			public string ext,descr;
 
-			public FormatDescr( System.Drawing.Imaging.ImageFormat format, string ext, string descr ) {
+			public FormatDescr (System.Drawing.Imaging.ImageFormat format,string ext,string descr) {
 				this.format = format;
 				this.ext = ext;
 				this.descr = descr;
@@ -229,18 +227,18 @@ namespace UMLDes
 
 		#endregion
 
-		private void menu_SaveToImage_Click(object sender, System.EventArgs e) {
-			Bitmap bmp = ViewCtrl1.PrintToImage();
-			if( bmp == null ) {
-				MessageBox.Show( "Diagram is empty", "Nothing to save", MessageBoxButtons.OK, MessageBoxIcon.Information );
+		private void menu_SaveToImage_Click (object sender,System.EventArgs e) {
+			Bitmap bmp = ViewCtrl1.PrintToImage ();
+			if (bmp == null) {
+				MessageBox.Show ("Diagram is empty","Nothing to save",MessageBoxButtons.OK,MessageBoxIcon.Information);
 				return;
 			}
 
-			SaveFileDialog sfd = new SaveFileDialog();
+			SaveFileDialog sfd = new SaveFileDialog ();
 			string filter = String.Empty;
-			for( int i = 0; i < formats.Length; i++ )
-				filter += "|" + formats[i].descr + "(*."+ formats[i].ext + ")|*." + formats[i].ext;
-			sfd.Filter = filter.Substring(1);
+			for (int i = 0;i < formats.Length;i++)
+				filter += "|" + formats[i].descr + "(*." + formats[i].ext + ")|*." + formats[i].ext;
+			sfd.Filter = filter.Substring (1);
 			sfd.FilterIndex = 0;
 			sfd.AddExtension = true;
 			sfd.Title = "保存为图片...";
@@ -248,91 +246,91 @@ namespace UMLDes
 			sfd.FileName = ViewCtrl1.Curr.name;
 
 
-			if( sfd.ShowDialog( this ) == DialogResult.OK ) {
-				string ext = System.IO.Path.GetExtension( sfd.FileName ).ToLower();
+			if (sfd.ShowDialog (this) == DialogResult.OK) {
+				string ext = System.IO.Path.GetExtension (sfd.FileName).ToLower ();
 				System.Drawing.Imaging.ImageFormat format = null;
-				for( int i = 0; i < formats.Length; i++ )
-					if( ext.Equals( "." + formats[i].ext ) )
+				for (int i = 0;i < formats.Length;i++)
+					if (ext.Equals ("." + formats[i].ext))
 						format = formats[i].format;
-				if( format != null )
-					bmp.Save( sfd.FileName, format );
+				if (format != null)
+					bmp.Save (sfd.FileName,format);
 				else
-					MessageBox.Show( "未知扩展名: " + ext, "无法保存", MessageBoxButtons.OK, MessageBoxIcon.Warning );
+					MessageBox.Show ("未知扩展名: " + ext,"无法保存",MessageBoxButtons.OK,MessageBoxIcon.Warning);
 			}
 		}
 
-		private void menu_copyAsImage_Click(object sender, System.EventArgs e) {
-			Bitmap bmp = ViewCtrl1.PrintToImage();
-			if( bmp == null ) {
-				MessageBox.Show( "Diagram is empty", "Nothing to copy", MessageBoxButtons.OK, MessageBoxIcon.Information );
+		private void menu_copyAsImage_Click (object sender,System.EventArgs e) {
+			Bitmap bmp = ViewCtrl1.PrintToImage ();
+			if (bmp == null) {
+				MessageBox.Show ("Diagram is empty","Nothing to copy",MessageBoxButtons.OK,MessageBoxIcon.Information);
 				return;
 			}
 
-			System.Windows.Forms.Clipboard.SetDataObject( bmp, false );
+			System.Windows.Forms.Clipboard.SetDataObject (bmp,false);
 		}
 
 		#endregion
 
 		#region “编辑”菜单
 
-		private void EditMenuPopup(object sender, System.EventArgs e) {
+		private void EditMenuPopup (object sender,System.EventArgs e) {
 			menu_Undo.Enabled = ViewCtrl1.Curr.undo.can_undo;
 			menu_Redo.Enabled = ViewCtrl1.Curr.undo.can_redo;
-			menu_Delete.Enabled = ViewCtrl1.Curr.IfEnabled( UMLDes.GUI.View.EditOperation.Delete );
-			menu_Cut.Enabled = ViewCtrl1.Curr.IfEnabled( UMLDes.GUI.View.EditOperation.Cut );
-			menu_Copy.Enabled = ViewCtrl1.Curr.IfEnabled( UMLDes.GUI.View.EditOperation.Copy );
-			menu_Paste.Enabled = ViewCtrl1.Curr.IfEnabled( UMLDes.GUI.View.EditOperation.Paste );
-			menu_SelectAll.Enabled = ViewCtrl1.Curr.IfEnabled( UMLDes.GUI.View.EditOperation.SelectAll );
+			menu_Delete.Enabled = ViewCtrl1.Curr.IfEnabled (UMLDes.GUI.View.EditOperation.Delete);
+			menu_Cut.Enabled = ViewCtrl1.Curr.IfEnabled (UMLDes.GUI.View.EditOperation.Cut);
+			menu_Copy.Enabled = ViewCtrl1.Curr.IfEnabled (UMLDes.GUI.View.EditOperation.Copy);
+			menu_Paste.Enabled = ViewCtrl1.Curr.IfEnabled (UMLDes.GUI.View.EditOperation.Paste);
+			menu_SelectAll.Enabled = ViewCtrl1.Curr.IfEnabled (UMLDes.GUI.View.EditOperation.SelectAll);
 		}
 
-		private void menu_Undo_Click(object sender, System.EventArgs e) {
-			ViewCtrl1.Curr.undo.DoUndo();
+		private void menu_Undo_Click (object sender,System.EventArgs e) {
+			ViewCtrl1.Curr.undo.DoUndo ();
 		}
 
-		private void menu_Redo_Click(object sender, System.EventArgs e) {
-			ViewCtrl1.Curr.undo.DoRedo();
+		private void menu_Redo_Click (object sender,System.EventArgs e) {
+			ViewCtrl1.Curr.undo.DoRedo ();
 		}
 
-		private void menu_Copy_Click(object sender, System.EventArgs e) {
-			ViewCtrl1.Curr.DoOperation( UMLDes.GUI.View.EditOperation.Copy );
+		private void menu_Copy_Click (object sender,System.EventArgs e) {
+			ViewCtrl1.Curr.DoOperation (UMLDes.GUI.View.EditOperation.Copy);
 		}
 
-		private void menu_Paste_Click(object sender, System.EventArgs e) {
-			ViewCtrl1.Curr.DoOperation( UMLDes.GUI.View.EditOperation.Paste );
+		private void menu_Paste_Click (object sender,System.EventArgs e) {
+			ViewCtrl1.Curr.DoOperation (UMLDes.GUI.View.EditOperation.Paste);
 		}
 
-		private void menu_Cut_Click(object sender, System.EventArgs e) {
-			ViewCtrl1.Curr.DoOperation( UMLDes.GUI.View.EditOperation.Cut );
+		private void menu_Cut_Click (object sender,System.EventArgs e) {
+			ViewCtrl1.Curr.DoOperation (UMLDes.GUI.View.EditOperation.Cut);
 		}
 
-		private void menuDeleteClick(object sender, System.EventArgs e) {
-			ViewCtrl1.Curr.DoOperation( UMLDes.GUI.View.EditOperation.Delete );
+		private void menuDeleteClick (object sender,System.EventArgs e) {
+			ViewCtrl1.Curr.DoOperation (UMLDes.GUI.View.EditOperation.Delete);
 		}
 
-		private void menu_SelectAll_Click(object sender, System.EventArgs e) {
-			ViewCtrl1.Curr.DoOperation( UMLDes.GUI.View.EditOperation.SelectAll );
+		private void menu_SelectAll_Click (object sender,System.EventArgs e) {
+			ViewCtrl1.Curr.DoOperation (UMLDes.GUI.View.EditOperation.SelectAll);
 		}
 
 		#endregion
 
 		#region Menu on tree items
 
-		void RenameNode( object v, EventArgs ev ) {
-			TreeNode tn = (TreeNode)((FlatMenuItem)v).Tag;
-			tn.BeginEdit();
+		void RenameNode (object v,EventArgs ev) {
+			TreeNode tn = (TreeNode) ((FlatMenuItem) v).Tag;
+			tn.BeginEdit ();
 		}
 
-		void TryDropDownMenu( int x, int y, object obj, TreeNode n ) {
+		void TryDropDownMenu (int x,int y,object obj,TreeNode n) {
 			MenuItem[] mi = null;
 
-			if( obj is UMLDes.GUI.View ) {
-				mi = new FlatMenuItem[] { FlatMenuItem.Create( "重命名", null, 0, false, new EventHandler(RenameNode), n ) };
+			if (obj is UMLDes.GUI.View) {
+				mi = new FlatMenuItem[] { FlatMenuItem.Create ("重命名",null,0,false,new EventHandler (RenameNode),n) };
 			}
 
-			if( mi == null )
+			if (mi == null)
 				return;
-			ContextMenu m = new ContextMenu( mi );
-			m.Show( ProjectTree, new Point( x, y ) );
+			ContextMenu m = new ContextMenu (mi);
+			m.Show (ProjectTree,new Point (x,y));
 		}
 
 		#endregion
@@ -341,71 +339,73 @@ namespace UMLDes
 
 		Rectangle dragbox = Rectangle.Empty;
 		UmlObject dragobject;
-		
-		void TreeMouseDown(object sender, System.Windows.Forms.MouseEventArgs e) {
-			TreeNode node = (sender as TreeView).GetNodeAt( e.X, e.Y);
-			if( node == null )
+
+		void TreeMouseDown (object sender,System.Windows.Forms.MouseEventArgs e) {
+			TreeNode node = (sender as TreeView).GetNodeAt (e.X,e.Y);
+			if (node == null)
 				return;
-			object obj = ProjectTree.GetNodeObject( node );
+			object obj = ProjectTree.GetNodeObject (node);
 
 			dragbox = Rectangle.Empty;
-			if( (e.Button & MouseButtons.Left) == MouseButtons.Left ) {
+			if ((e.Button & MouseButtons.Left) == MouseButtons.Left) {
 
-				if( obj is UMLDes.GUI.View ) {
-					if( e.Clicks == 2 ) {
+				if (obj is UMLDes.GUI.View) {
+					if (e.Clicks == 2) {
 						UMLDes.GUI.View v = obj as UMLDes.GUI.View;
-						SelectView( v, true );
+						SelectView (v,true);
 					}
 
-				} else if( !(obj is UmlDesignerSolution) ) {
+				}
+				else if (!(obj is UmlDesignerSolution)) {
 					Size dragSize = SystemInformation.DragSize;
-					dragbox = new Rectangle(new Point(e.X - (dragSize.Width /2), e.Y - (dragSize.Height /2)), dragSize);
+					dragbox = new Rectangle (new Point (e.X - (dragSize.Width / 2),e.Y - (dragSize.Height / 2)),dragSize);
 					dragobject = obj as UmlObject;
 				}
-			} else if( (e.Button & MouseButtons.Right) == MouseButtons.Right ) {
+			}
+			else if ((e.Button & MouseButtons.Right) == MouseButtons.Right) {
 				ProjectTree.SelectedNode = node;
-				if( obj != null )
-					TryDropDownMenu( e.X, e.Y, obj, node );
+				if (obj != null)
+					TryDropDownMenu (e.X,e.Y,obj,node);
 			}
 		}
 
-		void TreeMouseMove(object sender, System.Windows.Forms.MouseEventArgs e) {
-			if( (e.Button & MouseButtons.Left) == MouseButtons.Left ) {
-				if( dragbox != Rectangle.Empty && !dragbox.Contains( e.X,e.Y) && dragobject != null ) {
+		void TreeMouseMove (object sender,System.Windows.Forms.MouseEventArgs e) {
+			if ((e.Button & MouseButtons.Left) == MouseButtons.Left) {
+				if (dragbox != Rectangle.Empty && !dragbox.Contains (e.X,e.Y) && dragobject != null) {
 					ViewCtrl1.DragObject = dragobject;
-					DragDropEffects dropEffect = ((TreeView)sender).DoDragDrop( dragobject.Name, DragDropEffects.Copy );
+					DragDropEffects dropEffect = ((TreeView) sender).DoDragDrop (dragobject.Name,DragDropEffects.Copy);
 					///....
 					dragbox = Rectangle.Empty;
 				}
 			}
 		}
-		
-		void TreeMouseUp(object sender, System.Windows.Forms.MouseEventArgs e) {
-			if( (e.Button & MouseButtons.Left) == MouseButtons.Left )
+
+		void TreeMouseUp (object sender,System.Windows.Forms.MouseEventArgs e) {
+			if ((e.Button & MouseButtons.Left) == MouseButtons.Left)
 				dragbox = Rectangle.Empty;
 		}
 
-		private void BeforeLabelEdit(object sender, NodeLabelEditEventArgs e) {
-			object obj = ProjectTree.GetNodeObject( e.Node );
-			e.CancelEdit = !( obj != null && obj is UMLDes.GUI.View );
+		private void BeforeLabelEdit (object sender,NodeLabelEditEventArgs e) {
+			object obj = ProjectTree.GetNodeObject (e.Node);
+			e.CancelEdit = !(obj != null && obj is UMLDes.GUI.View);
 		}
 
-		private void AfterLabelEdit(object sender, NodeLabelEditEventArgs e) {
-			object obj = ProjectTree.GetNodeObject( e.Node );
-			if( obj != null && obj is UMLDes.GUI.View ) {
+		private void AfterLabelEdit (object sender,NodeLabelEditEventArgs e) {
+			object obj = ProjectTree.GetNodeObject (e.Node);
+			if (obj != null && obj is UMLDes.GUI.View) {
 				UMLDes.GUI.View v = obj as UMLDes.GUI.View;
-				if( e.Label != null )
+				if (e.Label != null)
 					v.name = e.Label;
 			}
-			RefreshTitle();
+			RefreshTitle ();
 		}
 
-		private void tree_GiveFeedback(object sender, System.Windows.Forms.GiveFeedbackEventArgs e) {
+		private void tree_GiveFeedback (object sender,System.Windows.Forms.GiveFeedbackEventArgs e) {
 
 			e.UseDefaultCursors = false;
 			if ((e.Effect & DragDropEffects.Copy) == DragDropEffects.Copy)
 				Cursor.Current = Cursors.Hand;
-			else 
+			else
 				Cursor.Current = Cursors.No;
 		}
 
@@ -413,29 +413,28 @@ namespace UMLDes
 
 		#region “帮助”菜单
 
-		private void Help_Popup(object sender, System.EventArgs e) {
-			menu_GC_Collect.Text = "GC.Collect (" + GC.GetTotalMemory(false)/1024 + " Kb alloc)";
+		private void Help_Popup (object sender,System.EventArgs e) {
+			menu_GC_Collect.Text = "GC.Collect (" + GC.GetTotalMemory (false) / 1024 + " Kb alloc)";
 		}
 
-		private void menu_GC_Collect_Click(object sender, System.EventArgs e) {
-			GC.Collect();
+		private void menu_GC_Collect_Click (object sender,System.EventArgs e) {
+			GC.Collect ();
 		}
 
 		//yyj
-		private void menu_About_Click(object sender, System.EventArgs e)
-		{
-			About aboutfrm = new About();
-			aboutfrm.ShowDialog();
+		private void menu_About_Click (object sender,System.EventArgs e) {
+			About aboutfrm = new About ();
+			aboutfrm.ShowDialog ();
 		}
 		#endregion
 
 		#region 状态栏相关
 
-		internal void SetStatus( string text ) {
+		internal void SetStatus (string text) {
 			status_panel.Text = text;
 		}
 
-		internal void SetAdvise( string text ) {
+		internal void SetAdvise (string text) {
 			//advise_panel.Text = text;
 		}
 

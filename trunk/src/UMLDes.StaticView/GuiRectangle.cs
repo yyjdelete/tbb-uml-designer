@@ -8,7 +8,7 @@ using UMLDes.Controls;
 
 namespace UMLDes.GUI {
 
-	#region Text information
+	#region 文本信息
 
 	public class GuiString {
 

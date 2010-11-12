@@ -10,31 +10,31 @@ namespace UMLDes.Model {
 	/// </summary>
 	class Class1 {
 
-		private static void try_load( string out_file, string[] projs ) {
+		private static void try_load (string out_file,string[] projs) {
 
-			Console.WriteLine( Path.GetFileNameWithoutExtension( out_file ) );
+			Console.WriteLine (Path.GetFileNameWithoutExtension (out_file));
 
 			ArrayList errors;
-			UmlModel m = ModelBuilder.CreateEmptyModel();
-			foreach( string s in projs ) 
-				ModelBuilder.AddProject( m, s );
-			ModelBuilder.UpdateModel( m, out errors, null );
-			if( errors != null ) {
-				Console.WriteLine( out_file );
-				foreach( string err in errors )
-					Console.WriteLine( err );
+			UmlModel m = ModelBuilder.CreateEmptyModel ();
+			foreach (string s in projs)
+				ModelBuilder.AddProject (m,s);
+			ModelBuilder.UpdateModel (m,out errors,null);
+			if (errors != null) {
+				Console.WriteLine (out_file);
+				foreach (string err in errors)
+					Console.WriteLine (err);
 				return;
 			}
 
 			try {
-				XmlSerializer ser = new XmlSerializer( typeof( UmlModel ) );
-				StreamWriter sw = new StreamWriter( out_file );
-				ser.Serialize( sw, m );
-				Console.WriteLine( "passed" );
+				XmlSerializer ser = new XmlSerializer (typeof (UmlModel));
+				StreamWriter sw = new StreamWriter (out_file);
+				ser.Serialize (sw,m);
+				Console.WriteLine ("passed");
 			}
-			catch( Exception ex ) {
-				Console.WriteLine( ex.ToString() );
-				Console.WriteLine( "failed" );
+			catch (Exception ex) {
+				Console.WriteLine (ex.ToString ());
+				Console.WriteLine ("failed");
 			}
 		}
 
@@ -42,7 +42,7 @@ namespace UMLDes.Model {
 		/// The main entry point for the application.
 		/// </summary>
 		[STAThread]
-		static void Main(string[] args) {
+		static void Main (string[] args) {
 
 			/*if( args.Length > 0 ) {
 				string text = new StreamReader(args[0]).ReadToEnd();
@@ -53,11 +53,11 @@ namespace UMLDes.Model {
 			}*/
 
 			string base_dir = @"D:\projects\CDS\report\";
-			if( !Directory.Exists( base_dir ) )
-				Directory.CreateDirectory( base_dir );
+			if (!Directory.Exists (base_dir))
+				Directory.CreateDirectory (base_dir);
 
 
-			try_load( base_dir + "UMLDes.xml", new string[] {
+			try_load (base_dir + "UMLDes.xml",new string[] {
 													@"D:\projects\CDS\UMLDes.Model.CSharp\UMLDes.Model.CSharp.csproj",
 													@"D:\projects\CDS\UMLDes.Model\UMLDes.Model.csproj",
 													@"D:\projects\CDS\UmlDes.Gui\UmlDes.Gui.csproj",
@@ -65,11 +65,11 @@ namespace UMLDes.Model {
 													@"D:\projects\CDS\UMLDes.Controls\UMLDes.Controls.csproj",
 													@"D:\projects\CDS\UMLDes.StaticView\UMLDes.StaticView.csproj",
 													@"D:\projects\CDS\UMLDes.View\UMLDes.View.csproj"
-												} );
+												});
 
-			try_load( base_dir + "test_lib.xml", new string[] { 
+			try_load (base_dir + "test_lib.xml",new string[] { 
 													@"D:\projects\test_lib\WindowsApplication1\WindowsApplication1.csproj"
-												} );
+												});
 		}
 	}
 }

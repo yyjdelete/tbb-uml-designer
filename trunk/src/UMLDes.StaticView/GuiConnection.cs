@@ -95,7 +95,7 @@ namespace UMLDes.GUI {
 		public void EndPointPositionChanged() {
 		}
 
-		#region Constructors
+		#region 构造函数
 
 		public GuiConnection() {
 		}
@@ -492,7 +492,7 @@ namespace UMLDes.GUI {
 
 		#endregion
 
-		#region Selection
+		#region 选择
 
 		public override void SelectionChanged() {
 			notify_children();
