@@ -230,6 +230,9 @@
     <Compile Include="ShowHideDialog.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ShowHideDialog.designer.cs">
+      <DependentUpon>ShowHideDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Win32.cs">
       <SubType>Code</SubType>
     </Compile>

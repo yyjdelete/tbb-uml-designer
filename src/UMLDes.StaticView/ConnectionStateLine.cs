@@ -6,9 +6,9 @@ using System.Xml.Serialization;
 
 namespace UMLDes.GUI {
 
-	public class ConnectionStateLine : ConnectionState {
+	public class ConnectionStateLine:ConnectionState {
 
-		public ConnectionStateLine( GuiConnection c ) {
+		public ConnectionStateLine (GuiConnection c) {
 			conn = c;
 		}
 
@@ -18,13 +18,13 @@ namespace UMLDes.GUI {
 			}
 		}
 
-		public override void EndPointPositionChanging(GuiConnectionPoint movepoint) {
+		public override void EndPointPositionChanging (GuiConnectionPoint movepoint) {
 
-			SetupEndPointsPositions();
+			SetupEndPointsPositions ();
 		}
 
-		private void SetupEndPointsPositions() {
-            /*int cpx1 = conn.first.x, cpy1 = conn.first.y, cpx2 = conn.second.x, cpy2 = conn.second.y;
+		private void SetupEndPointsPositions () {
+			/*int cpx1 = conn.first.x, cpy1 = conn.first.y, cpx2 = conn.second.x, cpy2 = conn.second.y;
 
 			if( conn.first.item is IHasCenter ) {
 				cpx1 = ((IHasCenter)conn.first.item).Center.X;
@@ -54,24 +54,24 @@ namespace UMLDes.GUI {
 			//conn.second.y = y2;
 		}
 
-		public override void DoCreationFixup( bool converted ) {
-			while( 2 < conn.ipoints.Count )
-				if( converted )
-					conn.remove_point_child( 1 );
+		public override void DoCreationFixup (bool converted) {
+			while (2 < conn.ipoints.Count)
+				if (converted)
+					conn.remove_point_child (1);
 				else
-					conn.remove_point( 1 );
+					conn.remove_point (1);
 
-			SetupEndPointsPositions();
+			SetupEndPointsPositions ();
 		}
 
-		public override void Moving(int x, int y, ref int ux, ref float uy) {
+		public override void Moving (int x,int y,ref int ux,ref float uy) {
 		}
 
-		public override bool CheckIntersection(ArrayList arobjs, Hashtable states) {
+		public override bool CheckIntersection (ArrayList arobjs,Hashtable states) {
 			return false;
 		}
 
-		public override void OptimizeConnection() {
+		public override void OptimizeConnection () {
 		}
 
 
