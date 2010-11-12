@@ -23,7 +23,7 @@ namespace UMLDes.GUI {
 			parent = null;
 		}
 
-		#region Content
+		#region ÄÚÈÝ
 
 		protected override void fillContent (ArrayList l) {
 
@@ -95,7 +95,7 @@ namespace UMLDes.GUI {
 
 		#endregion
 
-		#region Menu
+		#region ²Ëµ¥
 
 		public void DisplayOptions (object o,EventArgs ev) {
 			ObjectState before = GetState ();

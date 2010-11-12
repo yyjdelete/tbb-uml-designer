@@ -28,7 +28,7 @@ namespace UMLDes.Controls {
 			InitializeComponent ();
 		}
 
-		#region Button handlers
+		#region °´Å¥ÐÐÎª
 
 		private void OK_Click (object sender,System.EventArgs e) {
 			Apply ();

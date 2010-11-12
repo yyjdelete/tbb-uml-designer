@@ -650,7 +650,7 @@ namespace UMLDes {
 			}
 		}
 
-		#region ToolBar/Tree initialization
+		#region 初始化 工具栏&树
 		void initialize_tree_view (UMLDes.Controls.UmlSolutionTree tv) {
 			tv.BackColor = System.Drawing.SystemColors.Window;
 			tv.ImageList = this.treeImages;

@@ -72,7 +72,7 @@ namespace UMLDes.GUI {
 			place = new Rectangle (x - POINT_SELECTED_SIZE / 2,y - POINT_SELECTED_SIZE / 2,POINT_SELECTED_SIZE + 1,POINT_SELECTED_SIZE + 1);
 		}
 
-		#region Paint functions
+		#region 绘制功能
 
 		public override void Paint (Graphics g,Rectangle r,int offx,int offy) {
 			g.SmoothingMode = SmoothingMode.HighQuality;
@@ -163,7 +163,7 @@ namespace UMLDes.GUI {
 		[XmlIgnore]
 		int hx,hy;
 
-		#region Constructors
+		#region 构造函数
 
 		public GuiConnectionPoint () {
 		}
@@ -183,7 +183,7 @@ namespace UMLDes.GUI {
 
 		#endregion
 
-		#region Universal Coords
+		#region 通用坐标
 
 		public override void coord_getxy (int ux,float uy,out int x,out int y) {
 			x = this.x;
@@ -204,7 +204,7 @@ namespace UMLDes.GUI {
 
 		#endregion
 
-		#region Paint
+		#region 绘制
 
 		public override void Paint (Graphics g,Rectangle r,int offx,int offy) {
 			if (Hyphen)
@@ -214,7 +214,7 @@ namespace UMLDes.GUI {
 
 		#endregion
 
-		#region UpdateCoords, UpdatePlaceRect, UpdatePosition
+		#region 更新坐标, UpdatePlaceRect, UpdatePosition
 
 		public override void UpdateCoords (GuiObject orig) {
 			if (orig == item)
@@ -261,7 +261,7 @@ namespace UMLDes.GUI {
 
 		#endregion
 
-		#region Moveable
+		#region 可移动
 
 		public virtual void Moving (int x,int y,ref int ux,ref float uy) {
 			item.coord_nearest (x,y,out this.ux,out this.uy);

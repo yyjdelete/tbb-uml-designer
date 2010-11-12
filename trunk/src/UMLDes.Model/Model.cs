@@ -29,7 +29,7 @@ namespace UMLDes.Model {
 	}
 
 	/// <summary>
-	/// Persistent object, which can be saved (with its children) in XML format
+	/// 可以连同其孩子节点一起被保存为xml格式的持久化对象
 	/// </summary>
 	public abstract class UmlObject {
 
@@ -75,7 +75,7 @@ namespace UMLDes.Model {
 		[XmlElement ("DllProject",typeof (UmlProject))]
 		public ArrayList dllprojs;	// binary .dlls
 
-		#region UmlObject
+		#region 重载UmlObject
 
 		public override UmlKind Kind {
 			get {
@@ -229,7 +229,7 @@ namespace UMLDes.Model {
 
 		internal DateTime write_time;
 
-		#region UmlObject
+		#region 重载UmlObject
 
 		public override UmlKind Kind {
 			get {
@@ -296,7 +296,7 @@ namespace UMLDes.Model {
 			}
 		}
 
-		#region UmlObject
+		#region 重载UmlObject
 
 		public override UmlKind Kind {
 			get {

@@ -115,7 +115,7 @@ namespace UMLDes.GUI {
 
 		#endregion
 
-		#region Intermediate points ops, affect Universal Coords
+		#region Intermediate points ops, affect Universal Coords//中间点 操作, 影响 通用坐标
 
 		public override void ModifyUniversalCoords() {
 			base.ModifyUniversalCoords ();
@@ -215,7 +215,7 @@ namespace UMLDes.GUI {
 
 		#endregion
 
-		#region Paint, Invalidate, DrawTemporary, ContainingRect
+		#region 绘制, 使无效, DrawTemporary, ContainingRect
 
 		public override void Paint( Graphics g, Rectangle r, int offx, int offy ) {
 			switch( style ) {
@@ -387,7 +387,7 @@ namespace UMLDes.GUI {
 
 		#endregion
 
-		#region "Fixup functions: CheckIntersection, PostLoad, ConnectionCreated, DoCreationFixup, AdjustRelation"
+		#region "Fixup functions: CheckIntersection, PostLoad, ConnectionCreated, DoCreationFixup, 调整关系"
 
 		public void AdjustRelation( UmlRelation rel ) {
 			Invalidate();
@@ -539,7 +539,7 @@ namespace UMLDes.GUI {
 
 		#endregion
 
-		#region Universal coordinates
+		#region 通用坐标
 
 		//  ux:  -1   first connection point
 		//       -2   Interm
@@ -589,7 +589,7 @@ namespace UMLDes.GUI {
 
 		#endregion
 
-		#region Moving routines
+		#region 移动程序
 
 		public void Moving(int x, int y, ref int ux, ref float uy) {
 
@@ -625,7 +625,7 @@ namespace UMLDes.GUI {
 
 		#endregion
 
-		#region MENU
+		#region 菜单
 
 		public void ChangeStyleClick( object o, EventArgs ev ) {
 			ObjectState before = GetState();
@@ -783,7 +783,7 @@ namespace UMLDes.GUI {
 
 		#endregion
 
-		#region Remove/Restore
+		#region 删除/恢复
 
 		public override bool Destroy( ) {
 			while( cpoints.Count > 0 )
@@ -876,7 +876,7 @@ namespace UMLDes.GUI {
 
 		#endregion
 
-		#region Hidden
+		#region 隐藏
 
 		[XmlIgnore] public override bool Hidden {
 			get {

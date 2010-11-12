@@ -463,7 +463,7 @@ namespace UMLDes.GUI {
 			}
 		}
 
-		#region Screen Scrolling
+		#region ÆÁÄ»¹ö¶¯
 
 		bool scroll_active;
 		int scroll_x,scroll_y,scroll_dx,scroll_dy;

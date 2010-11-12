@@ -152,7 +152,7 @@ namespace UMLDes.Controls {
 			place.Width = width;
 		}
 
-		#region Painting
+		#region 绘制
 
 		public void Paint (Graphics g,ImageList l,Rectangle parent) {
 			g.FillRectangle (this.parent.back,place);
@@ -183,7 +183,7 @@ namespace UMLDes.Controls {
 
 		#endregion
 
-		#region MouseBehavior
+		#region 鼠标行为
 
 		FlatToolBarButton highlighted;
 

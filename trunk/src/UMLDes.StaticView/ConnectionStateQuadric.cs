@@ -666,7 +666,7 @@ namespace UMLDes.GUI {
 
 		}
 
-		#region "DEBUG routines"
+		#region µ÷ÊÔ³ÌÐò
 
 		private void check_current_connection () {
 #if DEBUG

@@ -78,8 +78,8 @@ namespace UMLDes.GUI {
 			base.PostLoad();
 		}
 
-		#region Universal Coordinates
-		
+		#region 通用坐标
+
 		// TODO
 		public virtual void coord_getxy( int ux, float uy, out int x, out int y ) {
 			x = y = 0;
@@ -102,7 +102,7 @@ namespace UMLDes.GUI {
 		}
 		#endregion
 
-		#region 重新计算: 大小, 位置
+		#region 重新计算: 大小&位置
 
 		internal void RecalculatePosition() {
 			int X, Y;
@@ -209,7 +209,7 @@ namespace UMLDes.GUI {
 		}
 
 		public void RenameClick( object o, EventArgs ev ) {
-			InPlaceTextEdit.Start( "Rename", Text, parent.cview.point_to_screen(place.X, place.Y), Math.Max( place.Width+20, 70 ), place.Height, parent.cview, new StringEditedEvent( Edited ), false );
+			InPlaceTextEdit.Start( "重命名", Text, parent.cview.point_to_screen(place.X, place.Y), Math.Max( place.Width+20, 70 ), place.Height, parent.cview, new StringEditedEvent( Edited ), false );
 		}
 
 		internal bool Visible {
@@ -229,8 +229,8 @@ namespace UMLDes.GUI {
 		}
 
 		public void AddMenuItems( System.Windows.Forms.ContextMenu m, int x, int y ) {
-			parent.AddItem( m, "Edit text", ToolBarIcons.None, false, new EventHandler( RenameClick ) );
-			parent.AddItem( m, "Hide", ToolBarIcons.None, false, new EventHandler( Hide ) );
+			parent.AddItem( m, "编辑文本", ToolBarIcons.None, false, new EventHandler( RenameClick ) );
+			parent.AddItem( m, "隐藏", ToolBarIcons.None, false, new EventHandler( Hide ) );
 		}
 
 		#endregion

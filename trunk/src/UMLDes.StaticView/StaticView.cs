@@ -57,7 +57,7 @@ namespace UMLDes.GUI {
 			}
 		}
 
-		#region Static View Toolbar
+		#region Static View 工具栏
 
 		UMLDes.Controls.FlatToolBarPanel drawingmode;
 		UMLDes.Controls.FlatToolBarButton defbutton;
@@ -164,7 +164,7 @@ namespace UMLDes.GUI {
 
 		#endregion
 
-		#region Item search
+		#region 搜索项目
 
 		public GuiObject FindItem (int x,int y,bool direct_search) {
 			int dx;
@@ -244,7 +244,7 @@ namespace UMLDes.GUI {
 
 		#endregion
 
-		#region Paint/Refresh
+		#region 绘制/刷新
 
 		void PaintChildren (Graphics g,Rectangle r,int offx,int offy,IDrawable dr,Rectangle piece) {
 			GuiObject o = dr as GuiObject;
@@ -439,7 +439,7 @@ namespace UMLDes.GUI {
 			return res;
 		}
 
-		#region Synchronize content on update
+		#region 同步更新内容
 
 		public override void RefreshContent () {
 			foreach (GuiObject o in active_objects)
@@ -543,10 +543,10 @@ namespace UMLDes.GUI {
 			}
 		}
 
-		#region Popup Menu
+		#region 弹出菜单
 
 		public void AddMenuItems (System.Windows.Forms.ContextMenu m) {
-			AddItem (m,"Show/Hide elements",ToolBarIcons.None,false,new EventHandler (showhide));
+			AddItem (m,"显示/隐藏 元素",ToolBarIcons.None,false,new EventHandler (showhide));
 		}
 
 		public class WrappedElement:IVisible {
@@ -623,7 +623,7 @@ namespace UMLDes.GUI {
 
 		#endregion
 
-		#region Menu helper functions
+		#region 菜单辅助功能
 
 		public void AddItem (UMLDes.Controls.FlatMenuItem fmi,string text,ToolBarIcons icon,bool Checked,EventHandler click_handler) {
 			UMLDes.Controls.FlatMenuItem curr = new UMLDes.Controls.FlatMenuItem (text,icon != ToolBarIcons.None ? proj.icon_list : null,(int) icon,Checked);

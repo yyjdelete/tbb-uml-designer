@@ -43,7 +43,7 @@ namespace UMLDes.GUI {
 			parent = null;
 		}
 
-		#region Paint
+		#region »æÖÆ
 
 		public const int padding = 8, line_space = 2, vpadding = 5;
 
@@ -94,7 +94,7 @@ namespace UMLDes.GUI {
 
 		#endregion
 
-		#region Content, PostLoad
+		#region ÄÚÈÝ, PostLoad
 
 		protected abstract void fillContent( ArrayList l );
 
