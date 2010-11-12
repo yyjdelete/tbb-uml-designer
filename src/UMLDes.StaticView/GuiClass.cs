@@ -53,7 +53,7 @@ namespace UMLDes.GUI {
 			parent = null;
 		}
 
-		#region Content
+		#region 内容
 
 		private Hashtable hash = new Hashtable ();
 
@@ -276,7 +276,7 @@ namespace UMLDes.GUI {
 			}
 		}
 
-		#region Show/Hide Members
+		#region 显示/隐藏成员
 
 		public class WrappedMember:IVisible {
 
@@ -377,8 +377,8 @@ namespace UMLDes.GUI {
 
 			// Display Options
 			evh = new EventHandler (DisplayOptions);
-			curr = new FlatMenuItem ("Display &Options...",null,0,false);
-			parent.AddItem (curr,"&Attributes",ToolBarIcons.show_attrs,show_vars,evh);
+			curr = new FlatMenuItem ("显示选项(&O)...",null,0,false);
+			parent.AddItem (curr,"属性(&A)",ToolBarIcons.show_attrs,show_vars,evh);
 			parent.AddItem (curr,"&Operations",ToolBarIcons.show_opers,show_members,evh);
 			parent.AddItem (curr,"&Properties",ToolBarIcons.show_properties,show_properties,evh);
 			parent.AddItem (curr,"Show full &qualified name",ToolBarIcons.show_qual,show_full_qual,evh);
@@ -394,7 +394,7 @@ namespace UMLDes.GUI {
 
 			m.MenuItems.Add (new StereoTypeHelper (this).GetStereoMenu ());
 
-			parent.AddItem (m,"Show/Hide Members",ToolBarIcons.None,false,new EventHandler (showhide));
+			parent.AddItem (m,"显示/隐藏成员",ToolBarIcons.None,false,new EventHandler (showhide));
 		}
 
 		#endregion

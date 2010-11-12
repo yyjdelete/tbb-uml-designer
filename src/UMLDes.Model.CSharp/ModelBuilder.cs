@@ -74,13 +74,13 @@ namespace UMLDes.Model.CSharp {
 				notify (s);
 		}
 
-		#region Model Update
+		#region 更新模型
 
 		void Update () {
 
-			Notify ("updating projects information");
+			Notify ("正在更新项目信息");
 			if (!UpdateStudioProjects (model)) {
-				errors.Add ("Project files are absent or corrupt");
+				errors.Add ("项目文件丢失或损坏");
 				return;
 			}
 
@@ -228,7 +228,7 @@ namespace UMLDes.Model.CSharp {
 
 		#endregion
 
-		#region Stage #0: Loading Project information from .csproj
+		#region 第一阶段: 从csproj文件中加载工程信息
 
 		private static void CreateProjectFromXml (XmlNode n,UmlProject proj) {
 			string fname = null;

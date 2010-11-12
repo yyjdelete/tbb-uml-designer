@@ -23,7 +23,7 @@ namespace UMLDes.GUI {
 		private void set_stereo (object o,EventArgs ev) {
 			if ((o as FlatMenuItem).Index == 0) {
 				Rectangle r = obj.EditRect;
-				InPlaceTextEdit.Start ("Edit stereotype",obj.Stereo,parent.cview.point_to_screen (r.X,r.Y),Math.Max (r.Width,70),r.Height,parent.cview,new StringEditedEvent (EditedStereo),false);
+				InPlaceTextEdit.Start ("±à¼­ stereotype",obj.Stereo,parent.cview.point_to_screen (r.X,r.Y),Math.Max (r.Width,70),r.Height,parent.cview,new StringEditedEvent (EditedStereo),false);
 				return;
 			}
 

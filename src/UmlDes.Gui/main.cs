@@ -19,18 +19,6 @@ namespace UMLDes {
 			TurnOnProject (UmlDesignerSolution.createNew ());
 		}
 
-		#region ToolBar/Tree initialization
-
-		private void menu_ZoomOut_Click (object sender,System.EventArgs e) {
-			ViewCtrl1.ZoomOut ();
-		}
-
-		private void menu_ZoomIn_Click (object sender,System.EventArgs e) {
-			ViewCtrl1.ZoomIn ();
-		}
-
-		#endregion
-
 		#region 工具栏相关
 
 		void EnableButton (UMLDes.Controls.FlatToolBarButton b,bool en) {
@@ -92,7 +80,7 @@ namespace UMLDes {
 
 		#endregion
 
-		#region Main, SaveChanges, OnClosing
+		#region 主窗口、关闭及保存提示
 
 		[STAThread]
 		static void Main () {
@@ -120,7 +108,7 @@ namespace UMLDes {
 
 		#endregion
 
-		#region Menu actions
+		#region 菜单行为
 
 		private void menu_NewProject_Click (object sender,System.EventArgs e) {
 			ToolbarAction ((int) ToolBarIcons.New);
@@ -203,6 +191,7 @@ namespace UMLDes {
 			SelectView (v,true);
 		}
 
+		#region 图像相关
 
 		#region 图像格式
 
@@ -262,12 +251,25 @@ namespace UMLDes {
 		private void menu_copyAsImage_Click (object sender,System.EventArgs e) {
 			Bitmap bmp = ViewCtrl1.PrintToImage ();
 			if (bmp == null) {
-				MessageBox.Show ("Diagram is empty","Nothing to copy",MessageBoxButtons.OK,MessageBoxIcon.Information);
+				MessageBox.Show ("图为空","没有可以复制的对象",MessageBoxButtons.OK,MessageBoxIcon.Information);
 				return;
 			}
 
 			System.Windows.Forms.Clipboard.SetDataObject (bmp,false);
 		}
+		#endregion
+
+		#region 缩放
+
+		private void menu_ZoomOut_Click (object sender,System.EventArgs e) {
+			ViewCtrl1.ZoomOut ();
+		}
+
+		private void menu_ZoomIn_Click (object sender,System.EventArgs e) {
+			ViewCtrl1.ZoomIn ();
+		}
+
+		#endregion
 
 		#endregion
 
@@ -313,7 +315,7 @@ namespace UMLDes {
 
 		#endregion
 
-		#region Menu on tree items
+		#region 树列表中的菜单(图\右键\重命名)
 
 		void RenameNode (object v,EventArgs ev) {
 			TreeNode tn = (TreeNode) ((FlatMenuItem) v).Tag;
@@ -335,7 +337,7 @@ namespace UMLDes {
 
 		#endregion
 
-		#region Drag & Drop and other tree ops
+		#region 拖放及其他树操作
 
 		Rectangle dragbox = Rectangle.Empty;
 		UmlObject dragobject;

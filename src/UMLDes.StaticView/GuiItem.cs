@@ -30,7 +30,7 @@ namespace UMLDes.GUI {
 			}
 		}
 
-		#region children
+		#region º¢×Ó½Úµã
 
 		[
 		 XmlElement ("String",typeof (GuiBoundString)),

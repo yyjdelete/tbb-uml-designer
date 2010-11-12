@@ -22,7 +22,7 @@ namespace UMLDes.GUI {
 			}
 		}
 
-		#region Paint
+		#region »æÖÆ
 
 		protected override Point[] GetPoints () {
 			return new Point[] { new Point (X,Y),new Point (X,Y + Height),new Point (X + Width,Y + Height),new Point (X + Width,Y + angle),new Point (X + Width - angle,Y) };

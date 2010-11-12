@@ -67,7 +67,7 @@ namespace UMLDes.Model {
 		[XmlAttribute]
 		public bool IsAbstract; // TODO
 
-		#region UmlObject
+		#region ÷ÿ‘ÿUmlObject
 
 		[XmlIgnore]
 		public override UmlKind Kind {
@@ -96,7 +96,7 @@ namespace UMLDes.Model {
 		public string ReturnType;
 		public ArrayList Parameters;
 
-		#region UmlObject
+		#region ÷ÿ‘ÿUmlObject
 
 		[XmlIgnore]
 		public override UmlKind Kind {
@@ -123,7 +123,7 @@ namespace UMLDes.Model {
 		[XmlElement ("field",typeof (UmlEnumField))]
 		public ArrayList Members;
 
-		#region UmlObject
+		#region ÷ÿ‘ÿUmlObject
 
 		[XmlIgnore]
 		public override UmlKind Kind {

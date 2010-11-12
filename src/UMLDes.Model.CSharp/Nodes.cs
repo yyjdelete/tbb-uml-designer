@@ -1069,7 +1069,7 @@ namespace UMLDes.CSharp.Nodes {
 
 	class NodeView:TreeView {
 
-		#region Tag Class
+		#region ±Í«©¿‡
 
 		internal class NodeTag {
 			internal object n;
