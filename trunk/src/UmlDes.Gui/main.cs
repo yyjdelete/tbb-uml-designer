@@ -49,13 +49,13 @@ namespace UMLDes {
 				case ToolBarIcons.Saveas:   // 另存为
 					SaveAsProject (null,null);
 					break;
-				case ToolBarIcons.add_file: // Add files
+				case ToolBarIcons.add_file: // 添加文件
 					AddFiles (null,null);
 					break;
 				case ToolBarIcons.new_diagram: // New Static view
 					menu_AddStaticView_Click (null,null);
 					break;
-				case ToolBarIcons.refresh:  // Refresh tree
+				case ToolBarIcons.refresh:  // 刷新树
 					RefreshProject (null,null);
 					break;
 				case ToolBarIcons.print: // 打印
