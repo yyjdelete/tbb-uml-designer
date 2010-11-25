@@ -232,8 +232,8 @@ namespace UMLDes.Model.CSharp {
 
 		private static void CreateProjectFromXml (XmlNode n,UmlProject proj) {
 			string fname = null;
-			if (n.Name.Equals ("File")) {
-				fname = n.Attributes["RelPath"].Value;
+			if (n.Name.Equals ("Compile")) {
+				fname = n.Attributes["Include"].Value;
 				if (!fname.EndsWith (".cs"))
 					fname = null;
 				else {

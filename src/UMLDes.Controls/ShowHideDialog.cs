@@ -21,7 +21,7 @@ namespace UMLDes.Controls {
 		}
 	}
 	/// <summary>
-	/// Summary description for Form1.
+	/// Form1  的摘要说明.
 	/// </summary>
 	public partial class ShowHideDialog:System.Windows.Forms.Form {
 		public ShowHideDialog () {
