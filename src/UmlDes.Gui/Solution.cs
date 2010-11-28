@@ -170,7 +170,7 @@ namespace UMLDes {
 					container.SelectView( before, true );
 			}
 			GC.Collect();
-			container.SetStatus( "Ready" );
+			container.SetStatus ("¾ÍÐ÷");
 		}
 		
 		#region ISolution support

@@ -23,68 +23,74 @@ namespace UMLDes {
 		/// 使用代码编辑器修改此方法的内容。
 		/// </summary>
 		private void InitializeComponent () {
-			this.components = new System.ComponentModel.Container ();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager (typeof (MainWnd));
-			this.menu_About = new UMLDes.Controls.FlatMenuItem ();
-			this.toolbarImages = new System.Windows.Forms.ImageList (this.components);
-			this.menumain_Help = new UMLDes.Controls.FlatMenuItem ();
-			this.menu_show_hints = new UMLDes.Controls.FlatMenuItem ();
-			this.menu_GC_Collect = new UMLDes.Controls.FlatMenuItem ();
-			this.mainMenu1 = new System.Windows.Forms.MainMenu (this.components);
-			this.menumain_File = new UMLDes.Controls.FlatMenuItem ();
-			this.menu_NewProject = new UMLDes.Controls.FlatMenuItem ();
-			this.menu_OpenProject = new UMLDes.Controls.FlatMenuItem ();
-			this.menu_SaveProject = new UMLDes.Controls.FlatMenuItem ();
-			this.menu_SaveProjAs = new UMLDes.Controls.FlatMenuItem ();
-			this.menuItem4 = new UMLDes.Controls.FlatMenuItem ();
-			this.menu_Print = new UMLDes.Controls.FlatMenuItem ();
-			this.menu_PrintPreview = new UMLDes.Controls.FlatMenuItem ();
-			this.menu_SaveToImage = new UMLDes.Controls.FlatMenuItem ();
-			this.menuItem1 = new UMLDes.Controls.FlatMenuItem ();
-			this.menu_Exit = new UMLDes.Controls.FlatMenuItem ();
-			this.menumain_Edit = new UMLDes.Controls.FlatMenuItem ();
-			this.menu_Undo = new UMLDes.Controls.FlatMenuItem ();
-			this.menu_Redo = new UMLDes.Controls.FlatMenuItem ();
-			this.menuItem26 = new UMLDes.Controls.FlatMenuItem ();
-			this.menu_Cut = new UMLDes.Controls.FlatMenuItem ();
-			this.menu_Copy = new UMLDes.Controls.FlatMenuItem ();
-			this.menu_Paste = new UMLDes.Controls.FlatMenuItem ();
-			this.menu_Delete = new UMLDes.Controls.FlatMenuItem ();
-			this.menuItem31 = new UMLDes.Controls.FlatMenuItem ();
-			this.menu_SelectAll = new UMLDes.Controls.FlatMenuItem ();
-			this.menu_copyAsImage = new UMLDes.Controls.FlatMenuItem ();
-			this.menuItem2 = new UMLDes.Controls.FlatMenuItem ();
-			this.menu_ZoomIn = new UMLDes.Controls.FlatMenuItem ();
-			this.menu_ZoomOut = new UMLDes.Controls.FlatMenuItem ();
-			this.menumain_Project = new UMLDes.Controls.FlatMenuItem ();
-			this.menu_AddFiles = new UMLDes.Controls.FlatMenuItem ();
-			this.menu_AddStaticView = new UMLDes.Controls.FlatMenuItem ();
-			this.menu_Parse = new UMLDes.Controls.FlatMenuItem ();
-			this.treeImages = new System.Windows.Forms.ImageList (this.components);
-			this.toolBar1 = new UMLDes.Controls.FlatToolBar ();
-			this.panel1 = new System.Windows.Forms.Panel ();
-			this.splitter1 = new System.Windows.Forms.Splitter ();
-			this.ViewCtrl1 = new UMLDes.ViewCtrl ();
-			this.statusBar1 = new System.Windows.Forms.StatusBar ();
-			this.status_panel = new System.Windows.Forms.StatusBarPanel ();
-			this.ProjectTree = new UMLDes.Controls.UmlSolutionTree ();
+			this.components=new System.ComponentModel.Container ();
+			System.ComponentModel.ComponentResourceManager resources=new System.ComponentModel.ComponentResourceManager (typeof (MainWnd));
+			this.menu_About=new System.Windows.Forms.ToolStripMenuItem ();
+			this.toolbarImages=new System.Windows.Forms.ImageList (this.components);
+			this.menumain_Help=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menu_show_hints=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menu_GC_Collect=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menuStrip1=new System.Windows.Forms.MenuStrip ();
+			this.menumain_File=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menu_NewProject=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menu_OpenProject=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menu_SaveProject=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menu_SaveProjAs=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menuItem4=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menu_Print=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menu_PrintPreview=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menu_SaveToImage=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menuItem1=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menu_Exit=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menumain_Edit=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menu_Undo=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menu_Redo=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menuItem26=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menu_Cut=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menu_Copy=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menu_Paste=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menu_Delete=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menuItem31=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menu_SelectAll=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menu_copyAsImage=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menumain_View=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menu_ZoomIn=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menu_ZoomOut=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menumain_Project=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menu_AddFiles=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menu_AddStaticView=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menu_Parse=new System.Windows.Forms.ToolStripMenuItem ();
+			this.treeImages=new System.Windows.Forms.ImageList (this.components);
+			this.toolBar1=new UMLDes.Controls.FlatToolBar ();
+			this.panel1=new System.Windows.Forms.Panel ();
+			this.ProjectTree=new UMLDes.Controls.UmlSolutionTree ();
+			this.splitter1=new System.Windows.Forms.Splitter ();
+			this.statusStrip1=new System.Windows.Forms.StatusStrip ();
+			this.status_panel=new System.Windows.Forms.ToolStripStatusLabel ();
+			this.toolStripContainer1=new System.Windows.Forms.ToolStripContainer ();
+			this.ViewCtrl1=new UMLDes.ViewCtrl ();
+			this.menuStrip1.SuspendLayout ();
 			this.panel1.SuspendLayout ();
-			((System.ComponentModel.ISupportInitialize) (this.status_panel)).BeginInit ();
+			this.statusStrip1.SuspendLayout ();
+			this.toolStripContainer1.BottomToolStripPanel.SuspendLayout ();
+			this.toolStripContainer1.ContentPanel.SuspendLayout ();
+			this.toolStripContainer1.TopToolStripPanel.SuspendLayout ();
+			this.toolStripContainer1.SuspendLayout ();
 			this.SuspendLayout ();
 			// 
 			// menu_About
 			// 
-			this.menu_About.ImageIndex = 14;
-			this.menu_About.Images = this.toolbarImages;
-			this.menu_About.Index = 0;
-			this.menu_About.OwnerDraw = true;
-			this.menu_About.Text = "关于(&A)";
-			this.menu_About.Click += new System.EventHandler (this.menu_About_Click);
+			this.menu_About.MergeIndex=0;
+            this.menu_About.ImageIndex = 14;
+			this.menu_About.Name="menu_About";
+			this.menu_About.Size=new System.Drawing.Size (152,22);
+			this.menu_About.Text="关于(&A)";
+			this.menu_About.Click+=new System.EventHandler (this.menu_About_Click);
 			// 
 			// toolbarImages
 			// 
-			this.toolbarImages.ImageStream = ((System.Windows.Forms.ImageListStreamer) (resources.GetObject ("toolbarImages.ImageStream")));
-			this.toolbarImages.TransparentColor = System.Drawing.Color.Silver;
+			this.toolbarImages.ImageStream=((System.Windows.Forms.ImageListStreamer) (resources.GetObject ("toolbarImages.ImageStream")));
+			this.toolbarImages.TransparentColor=System.Drawing.Color.Silver;
 			this.toolbarImages.Images.SetKeyName (0,"");
 			this.toolbarImages.Images.SetKeyName (1,"");
 			this.toolbarImages.Images.SetKeyName (2,"");
@@ -129,49 +135,50 @@ namespace UMLDes {
 			// 
 			// menumain_Help
 			// 
-			this.menumain_Help.ImageIndex = 0;
-			this.menumain_Help.Images = null;
-			this.menumain_Help.Index = 4;
-			this.menumain_Help.MenuItems.AddRange (new System.Windows.Forms.MenuItem[] {
+			this.menumain_Help.DropDownItems.AddRange (new System.Windows.Forms.ToolStripItem[] {
             this.menu_About,
             this.menu_show_hints,
             this.menu_GC_Collect});
-			this.menumain_Help.OwnerDraw = true;
-			this.menumain_Help.Text = "帮助(&H)";
-			this.menumain_Help.Popup += new System.EventHandler (this.Help_Popup);
+			this.menumain_Help.DropDown.ImageList=this.toolbarImages;
+			this.menumain_Help.MergeIndex=4;
+			this.menumain_Help.Name="menumain_Help";
+			this.menumain_Help.Size=new System.Drawing.Size (77,21);
+			this.menumain_Help.Text="帮助(&H)";
+			this.menumain_Help.DropDownOpening+=new System.EventHandler (this.Help_Popup);
 			// 
 			// menu_show_hints
 			// 
-			this.menu_show_hints.ImageIndex = 0;
-			this.menu_show_hints.Images = null;
-			this.menu_show_hints.Index = 1;
-			this.menu_show_hints.OwnerDraw = true;
-			this.menu_show_hints.Text = "显示提示(&H)";
+			this.menu_show_hints.MergeIndex=1;
+			this.menu_show_hints.Name="menu_show_hints";
+			this.menu_show_hints.Size=new System.Drawing.Size (152,22);
+			this.menu_show_hints.Text="显示提示(&H)";
 			// 
 			// menu_GC_Collect
 			// 
-			this.menu_GC_Collect.ImageIndex = 0;
-			this.menu_GC_Collect.Images = null;
-			this.menu_GC_Collect.Index = 2;
-			this.menu_GC_Collect.OwnerDraw = true;
-			this.menu_GC_Collect.Text = "GC.Collect";
-			this.menu_GC_Collect.Click += new System.EventHandler (this.menu_GC_Collect_Click);
+			this.menu_GC_Collect.MergeIndex=2;
+			this.menu_GC_Collect.Name="menu_GC_Collect";
+			this.menu_GC_Collect.Size=new System.Drawing.Size (152,22);
+			this.menu_GC_Collect.Text="GC.Collect";
+			this.menu_GC_Collect.Click+=new System.EventHandler (this.menu_GC_Collect_Click);
 			// 
-			// mainMenu1
+			// menuStrip1
 			// 
-			this.mainMenu1.MenuItems.AddRange (new System.Windows.Forms.MenuItem[] {
+			this.menuStrip1.Dock=System.Windows.Forms.DockStyle.None;
+			this.menuStrip1.ImageList=this.toolbarImages;
+			this.menuStrip1.Items.AddRange (new System.Windows.Forms.ToolStripItem[] {
             this.menumain_File,
             this.menumain_Edit,
-            this.menuItem2,
+            this.menumain_View,
             this.menumain_Project,
             this.menumain_Help});
+			this.menuStrip1.Location=new System.Drawing.Point (0,0);
+			this.menuStrip1.Name="menuStrip1";
+			this.menuStrip1.Size=new System.Drawing.Size (784,25);
+			this.menuStrip1.TabIndex=0;
 			// 
 			// menumain_File
 			// 
-			this.menumain_File.ImageIndex = 0;
-			this.menumain_File.Images = null;
-			this.menumain_File.Index = 0;
-			this.menumain_File.MenuItems.AddRange (new System.Windows.Forms.MenuItem[] {
+			this.menumain_File.DropDownItems.AddRange (new System.Windows.Forms.ToolStripItem[] {
             this.menu_NewProject,
             this.menu_OpenProject,
             this.menu_SaveProject,
@@ -182,110 +189,106 @@ namespace UMLDes {
             this.menu_SaveToImage,
             this.menuItem1,
             this.menu_Exit});
-			this.menumain_File.OwnerDraw = true;
-			this.menumain_File.Text = "文件(&F)";
+			this.menumain_File.DropDown.ImageList=this.toolbarImages;
+			this.menumain_File.MergeIndex=0;
+			this.menumain_File.Name="menumain_File";
+			this.menumain_File.Size=new System.Drawing.Size (74,21);
+			this.menumain_File.Text="文件(&F)";
 			// 
 			// menu_NewProject
 			// 
-			this.menu_NewProject.ImageIndex = 0;
-			this.menu_NewProject.Images = this.toolbarImages;
-			this.menu_NewProject.Index = 0;
-			this.menu_NewProject.OwnerDraw = true;
-			this.menu_NewProject.Shortcut = System.Windows.Forms.Shortcut.CtrlN;
-			this.menu_NewProject.Text = "新建工程(&N)";
-			this.menu_NewProject.Click += new System.EventHandler (this.menu_NewProject_Click);
+			this.menu_NewProject.MergeIndex=0;
+			this.menu_NewProject.ImageIndex=0;
+			this.menu_NewProject.Name="menu_NewProject";
+			this.menu_NewProject.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.N)));
+			this.menu_NewProject.Size=new System.Drawing.Size (255,22);
+			this.menu_NewProject.Text="新建工程(&N)";
+			this.menu_NewProject.Click+=new System.EventHandler (this.menu_NewProject_Click);
 			// 
 			// menu_OpenProject
 			// 
-			this.menu_OpenProject.ImageIndex = 1;
-			this.menu_OpenProject.Images = this.toolbarImages;
-			this.menu_OpenProject.Index = 1;
-			this.menu_OpenProject.OwnerDraw = true;
-			this.menu_OpenProject.Shortcut = System.Windows.Forms.Shortcut.CtrlO;
-			this.menu_OpenProject.Text = "打开工程(&O)";
-			this.menu_OpenProject.Click += new System.EventHandler (this.LoadProject);
+			this.menu_OpenProject.MergeIndex=1;
+			this.menu_OpenProject.Name="menu_OpenProject";
+			this.menu_OpenProject.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.O)));
+			this.menu_OpenProject.Size=new System.Drawing.Size (255,22);
+            this.menu_OpenProject.ImageIndex = 1;
+			this.menu_OpenProject.Text="打开工程(&O)";
+			this.menu_OpenProject.Click+=new System.EventHandler (this.LoadProject);
 			// 
 			// menu_SaveProject
 			// 
-			this.menu_SaveProject.ImageIndex = 2;
-			this.menu_SaveProject.Images = this.toolbarImages;
-			this.menu_SaveProject.Index = 2;
-			this.menu_SaveProject.OwnerDraw = true;
-			this.menu_SaveProject.Shortcut = System.Windows.Forms.Shortcut.CtrlS;
-			this.menu_SaveProject.Text = "保存工程(&S)";
-			this.menu_SaveProject.Click += new System.EventHandler (this.SaveProject);
+			this.menu_SaveProject.MergeIndex=2;
+			this.menu_SaveProject.Name="menu_SaveProject";
+			this.menu_SaveProject.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.S)));
+			this.menu_SaveProject.Size=new System.Drawing.Size (255,22);
+            this.menu_SaveProject.ImageIndex = 2;
+			this.menu_SaveProject.Text="保存工程(&S)";
+			this.menu_SaveProject.Click+=new System.EventHandler (this.SaveProject);
 			// 
 			// menu_SaveProjAs
 			// 
-			this.menu_SaveProjAs.ImageIndex = 0;
-			this.menu_SaveProjAs.Images = null;
-			this.menu_SaveProjAs.Index = 3;
-			this.menu_SaveProjAs.OwnerDraw = true;
-			this.menu_SaveProjAs.Text = "另存为(&A) ...";
-			this.menu_SaveProjAs.Click += new System.EventHandler (this.SaveAsProject);
+			this.menu_SaveProjAs.MergeIndex=3;
+			this.menu_SaveProjAs.Name="menu_SaveProjAs";
+			this.menu_SaveProjAs.Size=new System.Drawing.Size (255,22);
+			this.menu_SaveProjAs.Text="另存为(&A) ...";
+			this.menu_SaveProjAs.Click+=new System.EventHandler (this.SaveAsProject);
 			// 
 			// menuItem4
 			// 
-			this.menuItem4.ImageIndex = 0;
-			this.menuItem4.Images = null;
-			this.menuItem4.Index = 4;
-			this.menuItem4.OwnerDraw = true;
-			this.menuItem4.Text = "-";
+			this.menuItem4.MergeIndex=4;
+			this.menuItem4.Name="menuItem4";
+			this.menuItem4.Size=new System.Drawing.Size (255,22);
+			this.menuItem4.Text="-";
 			// 
 			// menu_Print
 			// 
-			this.menu_Print.ImageIndex = 18;
-			this.menu_Print.Images = this.toolbarImages;
-			this.menu_Print.Index = 5;
-			this.menu_Print.OwnerDraw = true;
-			this.menu_Print.Shortcut = System.Windows.Forms.Shortcut.CtrlP;
-			this.menu_Print.Text = "打印(&P)";
-			this.menu_Print.Click += new System.EventHandler (this.menu_Print_Click);
+			this.menu_Print.MergeIndex=5;
+            this.menu_Print.ImageIndex = 18;
+			this.menu_Print.Name="menu_Print";
+			this.menu_Print.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.P)));
+			this.menu_Print.Size=new System.Drawing.Size (255,22);
+			this.menu_Print.Text="打印(&P)";
+			this.menu_Print.Click+=new System.EventHandler (this.menu_Print_Click);
 			// 
 			// menu_PrintPreview
 			// 
-			this.menu_PrintPreview.ImageIndex = 24;
-			this.menu_PrintPreview.Images = this.toolbarImages;
-			this.menu_PrintPreview.Index = 6;
-			this.menu_PrintPreview.OwnerDraw = true;
-			this.menu_PrintPreview.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftP;
-			this.menu_PrintPreview.Text = "打印预览(&V)";
-			this.menu_PrintPreview.Click += new System.EventHandler (this.menu_PrintPreview_Click);
+            this.menu_PrintPreview.ImageIndex = 24;
+			this.menu_PrintPreview.MergeIndex=6;
+			this.menu_PrintPreview.Name="menu_PrintPreview";
+			this.menu_PrintPreview.ShortcutKeys=((System.Windows.Forms.Keys) (((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.Shift)
+						|System.Windows.Forms.Keys.P)));
+			this.menu_PrintPreview.Size=new System.Drawing.Size (255,22);
+			this.menu_PrintPreview.Text="打印预览(&V)";
+			this.menu_PrintPreview.Click+=new System.EventHandler (this.menu_PrintPreview_Click);
 			// 
 			// menu_SaveToImage
 			// 
-			this.menu_SaveToImage.ImageIndex = 0;
-			this.menu_SaveToImage.Images = null;
-			this.menu_SaveToImage.Index = 7;
-			this.menu_SaveToImage.OwnerDraw = true;
-			this.menu_SaveToImage.Shortcut = System.Windows.Forms.Shortcut.CtrlI;
-			this.menu_SaveToImage.Text = "Save diagram as Image";
-			this.menu_SaveToImage.Click += new System.EventHandler (this.menu_SaveToImage_Click);
+			this.menu_SaveToImage.MergeIndex=7;
+			this.menu_SaveToImage.Name="menu_SaveToImage";
+			this.menu_SaveToImage.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.I)));
+			this.menu_SaveToImage.Size=new System.Drawing.Size (255,22);
+			this.menu_SaveToImage.Text="Save diagram as Image";
+			this.menu_SaveToImage.Click+=new System.EventHandler (this.menu_SaveToImage_Click);
 			// 
 			// menuItem1
 			// 
-			this.menuItem1.ImageIndex = 0;
-			this.menuItem1.Images = null;
-			this.menuItem1.Index = 8;
-			this.menuItem1.OwnerDraw = true;
-			this.menuItem1.Text = "-";
+			this.menuItem1.MergeIndex=8;
+			this.menuItem1.Name="menuItem1";
+			this.menuItem1.Size=new System.Drawing.Size (255,22);
+			this.menuItem1.Text="-";
 			// 
 			// menu_Exit
 			// 
-			this.menu_Exit.ImageIndex = 0;
-			this.menu_Exit.Images = null;
-			this.menu_Exit.Index = 9;
-			this.menu_Exit.OwnerDraw = true;
-			this.menu_Exit.Shortcut = System.Windows.Forms.Shortcut.CtrlX;
-			this.menu_Exit.Text = "退出(&X)";
-			this.menu_Exit.Click += new System.EventHandler (this.Exit);
+			this.menu_Exit.MergeIndex=9;
+			this.menu_Exit.Name="menu_Exit";
+			this.menu_Exit.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.X)));
+			this.menu_Exit.Size=new System.Drawing.Size (255,22);
+			this.menu_Exit.Text="退出(&X)";
+			this.menu_Exit.Click+=new System.EventHandler (this.Exit);
 			// 
 			// menumain_Edit
 			// 
-			this.menumain_Edit.ImageIndex = 0;
-			this.menumain_Edit.Images = null;
-			this.menumain_Edit.Index = 1;
-			this.menumain_Edit.MenuItems.AddRange (new System.Windows.Forms.MenuItem[] {
+			this.menumain_Edit.DropDownItems.AddRange (new System.Windows.Forms.ToolStripItem[] {
             this.menu_Undo,
             this.menu_Redo,
             this.menuItem26,
@@ -296,183 +299,182 @@ namespace UMLDes {
             this.menuItem31,
             this.menu_SelectAll,
             this.menu_copyAsImage});
-			this.menumain_Edit.OwnerDraw = true;
-			this.menumain_Edit.Text = "编辑(&E)";
-			this.menumain_Edit.Popup += new System.EventHandler (this.EditMenuPopup);
+			this.menumain_Edit.DropDown.ImageList=this.toolbarImages;
+			this.menumain_Edit.MergeIndex=1;
+			this.menumain_Edit.Name="menumain_Edit";
+			this.menumain_Edit.Size=new System.Drawing.Size (75,21);
+			this.menumain_Edit.Text="编辑(&E)";
+			this.menumain_Edit.DropDownOpening+=new System.EventHandler (this.EditMenuPopup);
 			// 
 			// menu_Undo
 			// 
-			this.menu_Undo.ImageIndex = 15;
-			this.menu_Undo.Images = this.toolbarImages;
-			this.menu_Undo.Index = 0;
-			this.menu_Undo.OwnerDraw = true;
-			this.menu_Undo.Shortcut = System.Windows.Forms.Shortcut.CtrlZ;
-			this.menu_Undo.Text = "撤销(&U)";
-			this.menu_Undo.Click += new System.EventHandler (this.menu_Undo_Click);
+			this.menu_Undo.MergeIndex=0;
+            this.menu_Undo.ImageIndex = 15;
+			this.menu_Undo.Name="menu_Undo";
+			this.menu_Undo.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.Z)));
+			this.menu_Undo.Size=new System.Drawing.Size (296,22);
+			this.menu_Undo.Text="撤销(&U)";
+			this.menu_Undo.Click+=new System.EventHandler (this.menu_Undo_Click);
 			// 
 			// menu_Redo
 			// 
-			this.menu_Redo.ImageIndex = 16;
-			this.menu_Redo.Images = this.toolbarImages;
-			this.menu_Redo.Index = 1;
-			this.menu_Redo.OwnerDraw = true;
-			this.menu_Redo.Shortcut = System.Windows.Forms.Shortcut.CtrlY;
-			this.menu_Redo.Text = "重做(&R)";
-			this.menu_Redo.Click += new System.EventHandler (this.menu_Redo_Click);
+			this.menu_Redo.MergeIndex=1;
+            this.menu_Redo.ImageIndex = 16;
+			this.menu_Redo.Name="menu_Redo";
+			this.menu_Redo.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.Y)));
+			this.menu_Redo.Size=new System.Drawing.Size (296,22);
+			this.menu_Redo.Text="重做(&R)";
+			this.menu_Redo.Click+=new System.EventHandler (this.menu_Redo_Click);
 			// 
 			// menuItem26
 			// 
-			this.menuItem26.ImageIndex = 0;
-			this.menuItem26.Images = null;
-			this.menuItem26.Index = 2;
-			this.menuItem26.OwnerDraw = true;
-			this.menuItem26.Text = "-";
+			this.menuItem26.MergeIndex=2;
+			this.menuItem26.Name="menuItem26";
+			this.menuItem26.Size=new System.Drawing.Size (296,22);
+			this.menuItem26.Text="-";
 			// 
 			// menu_Cut
 			// 
-			this.menu_Cut.ImageIndex = 4;
-			this.menu_Cut.Images = this.toolbarImages;
-			this.menu_Cut.Index = 3;
-			this.menu_Cut.OwnerDraw = true;
-			this.menu_Cut.Shortcut = System.Windows.Forms.Shortcut.CtrlX;
-			this.menu_Cut.Text = "剪切(&T)";
-			this.menu_Cut.Click += new System.EventHandler (this.menu_Cut_Click);
+			this.menu_Cut.MergeIndex=3;
+            this.menu_Cut.ImageIndex = 4;
+			this.menu_Cut.Name="menu_Cut";
+			this.menu_Cut.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.X)));
+			this.menu_Cut.Size=new System.Drawing.Size (296,22);
+			this.menu_Cut.Text="剪切(&T)";
+			this.menu_Cut.Click+=new System.EventHandler (this.menu_Cut_Click);
 			// 
 			// menu_Copy
 			// 
-			this.menu_Copy.ImageIndex = 5;
-			this.menu_Copy.Images = this.toolbarImages;
-			this.menu_Copy.Index = 4;
-			this.menu_Copy.OwnerDraw = true;
-			this.menu_Copy.Shortcut = System.Windows.Forms.Shortcut.CtrlC;
-			this.menu_Copy.Text = "复制(&C)";
-			this.menu_Copy.Click += new System.EventHandler (this.menu_Copy_Click);
+			this.menu_Copy.MergeIndex=4;
+            this.menu_Copy.ImageIndex = 5;
+			this.menu_Copy.Name="menu_Copy";
+			this.menu_Copy.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.C)));
+			this.menu_Copy.Size=new System.Drawing.Size (296,22);
+			this.menu_Copy.Text="复制(&C)";
+			this.menu_Copy.Click+=new System.EventHandler (this.menu_Copy_Click);
 			// 
 			// menu_Paste
 			// 
-			this.menu_Paste.ImageIndex = 6;
-			this.menu_Paste.Images = this.toolbarImages;
-			this.menu_Paste.Index = 5;
-			this.menu_Paste.OwnerDraw = true;
-			this.menu_Paste.Shortcut = System.Windows.Forms.Shortcut.CtrlV;
-			this.menu_Paste.Text = "粘贴(&P)";
-			this.menu_Paste.Click += new System.EventHandler (this.menu_Paste_Click);
+			this.menu_Paste.MergeIndex=5;
+            this.menu_Paste.ImageIndex = 6;
+			this.menu_Paste.Name="menu_Paste";
+			this.menu_Paste.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.V)));
+			this.menu_Paste.Size=new System.Drawing.Size (296,22);
+			this.menu_Paste.Text="粘贴(&P)";
+			this.menu_Paste.Click+=new System.EventHandler (this.menu_Paste_Click);
 			// 
 			// menu_Delete
 			// 
-			this.menu_Delete.ImageIndex = 19;
-			this.menu_Delete.Images = this.toolbarImages;
-			this.menu_Delete.Index = 6;
-			this.menu_Delete.OwnerDraw = true;
-			this.menu_Delete.Shortcut = System.Windows.Forms.Shortcut.Del;
-			this.menu_Delete.Text = "删除(&D)";
-			this.menu_Delete.Click += new System.EventHandler (this.menuDeleteClick);
+            this.menu_Delete.ImageIndex = 19;
+			this.menu_Delete.MergeIndex=6;
+			this.menu_Delete.Name="menu_Delete";
+			this.menu_Delete.ShortcutKeys=System.Windows.Forms.Keys.Delete;
+			this.menu_Delete.Size=new System.Drawing.Size (296,22);
+			this.menu_Delete.Text="删除(&D)";
+			this.menu_Delete.Click+=new System.EventHandler (this.menuDeleteClick);
 			// 
 			// menuItem31
 			// 
-			this.menuItem31.ImageIndex = 0;
-			this.menuItem31.Images = null;
-			this.menuItem31.Index = 7;
-			this.menuItem31.OwnerDraw = true;
-			this.menuItem31.Text = "-";
+			this.menuItem31.MergeIndex=7;
+			this.menuItem31.Name="menuItem31";
+			this.menuItem31.Size=new System.Drawing.Size (296,22);
+			this.menuItem31.Text="-";
 			// 
 			// menu_SelectAll
 			// 
-			this.menu_SelectAll.ImageIndex = 0;
-			this.menu_SelectAll.Images = null;
-			this.menu_SelectAll.Index = 8;
-			this.menu_SelectAll.OwnerDraw = true;
-			this.menu_SelectAll.Shortcut = System.Windows.Forms.Shortcut.CtrlA;
-			this.menu_SelectAll.Text = "全选(&A)";
-			this.menu_SelectAll.Click += new System.EventHandler (this.menu_SelectAll_Click);
+			this.menu_SelectAll.MergeIndex=8;
+			this.menu_SelectAll.Name="menu_SelectAll";
+			this.menu_SelectAll.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.A)));
+			this.menu_SelectAll.Size=new System.Drawing.Size (296,22);
+			this.menu_SelectAll.Text="全选(&A)";
+			this.menu_SelectAll.Click+=new System.EventHandler (this.menu_SelectAll_Click);
 			// 
 			// menu_copyAsImage
 			// 
-			this.menu_copyAsImage.ImageIndex = 0;
-			this.menu_copyAsImage.Images = null;
-			this.menu_copyAsImage.Index = 9;
-			this.menu_copyAsImage.OwnerDraw = true;
-			this.menu_copyAsImage.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftC;
-			this.menu_copyAsImage.Text = "Copy diagram as Image";
-			this.menu_copyAsImage.Click += new System.EventHandler (this.menu_copyAsImage_Click);
+			this.menu_copyAsImage.MergeIndex=9;
+			this.menu_copyAsImage.Name="menu_copyAsImage";
+			this.menu_copyAsImage.ShortcutKeys=((System.Windows.Forms.Keys) (((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.Shift)
+						|System.Windows.Forms.Keys.C)));
+			this.menu_copyAsImage.Size=new System.Drawing.Size (296,22);
+			this.menu_copyAsImage.Text="Copy diagram as Image";
+			this.menu_copyAsImage.Click+=new System.EventHandler (this.menu_copyAsImage_Click);
 			// 
-			// menuItem2
+			// menumain_View
 			// 
-			this.menuItem2.ImageIndex = 0;
-			this.menuItem2.Images = null;
-			this.menuItem2.Index = 2;
-			this.menuItem2.MenuItems.AddRange (new System.Windows.Forms.MenuItem[] {
+			this.menumain_View.DropDownItems.AddRange (new System.Windows.Forms.ToolStripItem[] {
             this.menu_ZoomIn,
             this.menu_ZoomOut});
-			this.menuItem2.OwnerDraw = true;
-			this.menuItem2.Text = "查看(&V)";
+			this.menumain_View.DropDown.ImageList=this.toolbarImages;
+			this.menumain_View.MergeIndex=2;
+			this.menumain_View.Name="menumain_View";
+			this.menumain_View.Size=new System.Drawing.Size (76,21);
+			this.menumain_View.Text="查看(&V)";
 			// 
 			// menu_ZoomIn
 			// 
-			this.menu_ZoomIn.ImageIndex = 0;
-			this.menu_ZoomIn.Images = null;
-			this.menu_ZoomIn.Index = 0;
-			this.menu_ZoomIn.OwnerDraw = true;
-			this.menu_ZoomIn.Shortcut = System.Windows.Forms.Shortcut.CtrlJ;
-			this.menu_ZoomIn.Text = "放大";
-			this.menu_ZoomIn.Click += new System.EventHandler (this.menu_ZoomIn_Click);
+			this.menu_ZoomIn.MergeIndex=0;
+			this.menu_ZoomIn.Name="menu_ZoomIn";
+			this.menu_ZoomIn.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.J)));
+			this.menu_ZoomIn.Size=new System.Drawing.Size (152,22);
+			this.menu_ZoomIn.Text="放大";
+			this.menu_ZoomIn.Click+=new System.EventHandler (this.menu_ZoomIn_Click);
 			// 
 			// menu_ZoomOut
 			// 
-			this.menu_ZoomOut.ImageIndex = 0;
-			this.menu_ZoomOut.Images = null;
-			this.menu_ZoomOut.Index = 1;
-			this.menu_ZoomOut.OwnerDraw = true;
-			this.menu_ZoomOut.Shortcut = System.Windows.Forms.Shortcut.CtrlK;
-			this.menu_ZoomOut.Text = "缩小";
-			this.menu_ZoomOut.Click += new System.EventHandler (this.menu_ZoomOut_Click);
+			this.menu_ZoomOut.MergeIndex=1;
+			this.menu_ZoomOut.Name="menu_ZoomOut";
+			this.menu_ZoomOut.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.K)));
+			this.menu_ZoomOut.Size=new System.Drawing.Size (152,22);
+			this.menu_ZoomOut.Text="缩小";
+			this.menu_ZoomOut.Click+=new System.EventHandler (this.menu_ZoomOut_Click);
 			// 
 			// menumain_Project
 			// 
-			this.menumain_Project.ImageIndex = 0;
-			this.menumain_Project.Images = null;
-			this.menumain_Project.Index = 3;
-			this.menumain_Project.MenuItems.AddRange (new System.Windows.Forms.MenuItem[] {
+			this.menumain_Project.DropDownItems.AddRange (new System.Windows.Forms.ToolStripItem[] {
             this.menu_AddFiles,
             this.menu_AddStaticView,
             this.menu_Parse});
-			this.menumain_Project.OwnerDraw = true;
-			this.menumain_Project.Text = "工程(&P)";
+			this.menumain_Project.MergeIndex=3;
+			this.menumain_Project.DropDown.ImageList=this.toolbarImages;
+			this.menumain_Project.Name="menumain_Project";
+			this.menumain_Project.Size=new System.Drawing.Size (75,21);
+			this.menumain_Project.Text="工程(&P)";
 			// 
 			// menu_AddFiles
 			// 
-			this.menu_AddFiles.ImageIndex = 20;
-			this.menu_AddFiles.Images = this.toolbarImages;
-			this.menu_AddFiles.Index = 0;
-			this.menu_AddFiles.OwnerDraw = true;
-			this.menu_AddFiles.Shortcut = System.Windows.Forms.Shortcut.CtrlF;
-			this.menu_AddFiles.Text = "添加文件(&A)";
-			this.menu_AddFiles.Click += new System.EventHandler (this.AddFiles);
+			this.menu_AddFiles.MergeIndex=0;
+            this.menu_AddFiles.ImageIndex = 20;
+			this.menu_AddFiles.Name="menu_AddFiles";
+			this.menu_AddFiles.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.F)));
+			this.menu_AddFiles.Size=new System.Drawing.Size (244,22);
+			this.menu_AddFiles.Text="添加文件(&A)";
+			this.menu_AddFiles.Click+=new System.EventHandler (this.AddFiles);
 			// 
 			// menu_AddStaticView
 			// 
-			this.menu_AddStaticView.ImageIndex = 13;
-			this.menu_AddStaticView.Images = this.toolbarImages;
-			this.menu_AddStaticView.Index = 1;
-			this.menu_AddStaticView.OwnerDraw = true;
-			this.menu_AddStaticView.Shortcut = System.Windows.Forms.Shortcut.CtrlShiftN;
-			this.menu_AddStaticView.Text = "&Add static view";
-			this.menu_AddStaticView.Click += new System.EventHandler (this.menu_AddStaticView_Click);
+			this.menu_AddStaticView.MergeIndex=1;
+            this.menu_AddStaticView.ImageIndex = 13;
+			this.menu_AddStaticView.Name="menu_AddStaticView";
+			this.menu_AddStaticView.ShortcutKeys=((System.Windows.Forms.Keys) (((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.Shift)
+						|System.Windows.Forms.Keys.N)));
+			this.menu_AddStaticView.Size=new System.Drawing.Size (244,22);
+			this.menu_AddStaticView.Text="&Add static view";
+			this.menu_AddStaticView.Click+=new System.EventHandler (this.menu_AddStaticView_Click);
 			// 
 			// menu_Parse
 			// 
-			this.menu_Parse.ImageIndex = 17;
-			this.menu_Parse.Images = this.toolbarImages;
-			this.menu_Parse.Index = 2;
-			this.menu_Parse.OwnerDraw = true;
-			this.menu_Parse.Shortcut = System.Windows.Forms.Shortcut.F5;
-			this.menu_Parse.Text = "Parse files, refresh tree";
-			this.menu_Parse.Click += new System.EventHandler (this.RefreshProject);
+            this.menu_Parse.ImageIndex = 17;
+			this.menu_Parse.MergeIndex=2;
+			this.menu_Parse.Name="menu_Parse";
+			this.menu_Parse.ShortcutKeys=System.Windows.Forms.Keys.F5;
+			this.menu_Parse.Size=new System.Drawing.Size (244,22);
+			this.menu_Parse.Text="Parse files, refresh tree";
+			this.menu_Parse.Click+=new System.EventHandler (this.RefreshProject);
 			// 
 			// treeImages
 			// 
-			this.treeImages.ImageStream = ((System.Windows.Forms.ImageListStreamer) (resources.GetObject ("treeImages.ImageStream")));
-			this.treeImages.TransparentColor = System.Drawing.Color.Transparent;
+			this.treeImages.ImageStream=((System.Windows.Forms.ImageListStreamer) (resources.GetObject ("treeImages.ImageStream")));
+			this.treeImages.TransparentColor=System.Drawing.Color.Transparent;
 			this.treeImages.Images.SetKeyName (0,"");
 			this.treeImages.Images.SetKeyName (1,"");
 			this.treeImages.Images.SetKeyName (2,"");
@@ -513,136 +515,171 @@ namespace UMLDes {
 			// 
 			// toolBar1
 			// 
-			this.toolBar1.BackColor = System.Drawing.Color.FromArgb (((int) (((byte) (219)))),((int) (((byte) (216)))),((int) (((byte) (209)))));
-			this.toolBar1.Dock = System.Windows.Forms.DockStyle.Top;
-			this.toolBar1.ForeColor = System.Drawing.Color.FromArgb (((int) (((byte) (219)))),((int) (((byte) (216)))),((int) (((byte) (209)))));
-			this.toolBar1.images = this.toolbarImages;
-			this.toolBar1.Location = new System.Drawing.Point (0,0);
-			this.toolBar1.Name = "toolBar1";
-			this.toolBar1.Size = new System.Drawing.Size (784,26);
-			this.toolBar1.TabIndex = 10;
-			this.toolBar1.TabStop = false;
+			this.toolBar1.BackColor=System.Drawing.Color.FromArgb (((int) (((byte) (219)))),((int) (((byte) (216)))),((int) (((byte) (209)))));
+			this.toolBar1.Dock=System.Windows.Forms.DockStyle.Top;
+			this.toolBar1.ForeColor=System.Drawing.Color.FromArgb (((int) (((byte) (219)))),((int) (((byte) (216)))),((int) (((byte) (209)))));
+			this.toolBar1.images=this.toolbarImages;
+			this.toolBar1.Location=new System.Drawing.Point (0,0);
+			this.toolBar1.Name="toolBar1";
+			this.toolBar1.Size=new System.Drawing.Size (784,26);
+			this.toolBar1.TabIndex=10;
+			this.toolBar1.TabStop=false;
 			// 
 			// panel1
 			// 
 			this.panel1.Controls.Add (this.ProjectTree);
-			this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-			this.panel1.Location = new System.Drawing.Point (0,26);
-			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size (259,286);
-			this.panel1.TabIndex = 13;
-			// 
-			// splitter1
-			// 
-			this.splitter1.Location = new System.Drawing.Point (259,26);
-			this.splitter1.Name = "splitter1";
-			this.splitter1.Size = new System.Drawing.Size (4,286);
-			this.splitter1.TabIndex = 14;
-			this.splitter1.TabStop = false;
-			// 
-			// ViewCtrl1
-			// 
-			this.ViewCtrl1.AllowDrop = true;
-			this.ViewCtrl1.Curr = null;
-			this.ViewCtrl1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.ViewCtrl1.Font = new System.Drawing.Font ("Arial",9F,System.Drawing.FontStyle.Regular,System.Drawing.GraphicsUnit.Point,((byte) (204)));
-			this.ViewCtrl1.Location = new System.Drawing.Point (263,26);
-			this.ViewCtrl1.Name = "ViewCtrl1";
-			this.ViewCtrl1.Size = new System.Drawing.Size (521,286);
-			this.ViewCtrl1.TabIndex = 15;
-			// 
-			// statusBar1
-			// 
-			this.statusBar1.Location = new System.Drawing.Point (0,312);
-			this.statusBar1.Name = "statusBar1";
-			this.statusBar1.Panels.AddRange (new System.Windows.Forms.StatusBarPanel[] {
-            this.status_panel});
-			this.statusBar1.ShowPanels = true;
-			this.statusBar1.Size = new System.Drawing.Size (784,19);
-			this.statusBar1.TabIndex = 1;
-			// 
-			// status_panel
-			// 
-			this.status_panel.AutoSize = System.Windows.Forms.StatusBarPanelAutoSize.Spring;
-			this.status_panel.Name = "status_panel";
-			this.status_panel.Text = "Ready";
-			this.status_panel.ToolTipText = "Status";
-			this.status_panel.Width = 767;
+			this.panel1.Dock=System.Windows.Forms.DockStyle.Left;
+			this.panel1.Location=new System.Drawing.Point (0,26);
+			this.panel1.Name="panel1";
+			this.panel1.Size=new System.Drawing.Size (259,222);
+			this.panel1.TabIndex=13;
 			// 
 			// ProjectTree
 			// 
-			this.ProjectTree.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.ProjectTree.Location = new System.Drawing.Point (0,0);
-			this.ProjectTree.Name = "ProjectTree";
-			this.ProjectTree.Size = new System.Drawing.Size (259,286);
-			this.ProjectTree.TabIndex = 2;
+			this.ProjectTree.Dock=System.Windows.Forms.DockStyle.Fill;
+			this.ProjectTree.Location=new System.Drawing.Point (0,0);
+			this.ProjectTree.Name="ProjectTree";
+			this.ProjectTree.Size=new System.Drawing.Size (259,222);
+			this.ProjectTree.TabIndex=2;
+			// 
+			// splitter1
+			// 
+			this.splitter1.Location=new System.Drawing.Point (259,26);
+			this.splitter1.Name="splitter1";
+			this.splitter1.Size=new System.Drawing.Size (4,222);
+			this.splitter1.TabIndex=14;
+			this.splitter1.TabStop=false;
+			// 
+			// statusStrip1
+			// 
+			this.statusStrip1.Dock=System.Windows.Forms.DockStyle.None;
+			this.statusStrip1.Items.AddRange (new System.Windows.Forms.ToolStripItem[] {
+            this.status_panel});
+			this.statusStrip1.Location=new System.Drawing.Point (0,0);
+			this.statusStrip1.Name="statusStrip1";
+			this.statusStrip1.ShowItemToolTips=true;
+			this.statusStrip1.Size=new System.Drawing.Size (784,22);
+			this.statusStrip1.TabIndex=1;
+			// 
+			// status_panel
+			// 
+			this.status_panel.AutoToolTip=true;
+			this.status_panel.Name="status_panel";
+			this.status_panel.Size=new System.Drawing.Size (769,17);
+			this.status_panel.Spring=true;
+			this.status_panel.Text="就绪";
+			this.status_panel.TextAlign=System.Drawing.ContentAlignment.MiddleLeft;
+			this.status_panel.ToolTipText="状态";
+			// 
+			// toolStripContainer1
+			// 
+			// 
+			// toolStripContainer1.BottomToolStripPanel
+			// 
+			this.toolStripContainer1.BottomToolStripPanel.Controls.Add (this.statusStrip1);
+			// 
+			// toolStripContainer1.ContentPanel
+			// 
+			this.toolStripContainer1.ContentPanel.AutoScroll=true;
+			this.toolStripContainer1.ContentPanel.Controls.Add (this.ViewCtrl1);
+			this.toolStripContainer1.ContentPanel.Controls.Add (this.splitter1);
+			this.toolStripContainer1.ContentPanel.Controls.Add (this.panel1);
+			this.toolStripContainer1.ContentPanel.Controls.Add (this.toolBar1);
+			this.toolStripContainer1.ContentPanel.Size=new System.Drawing.Size (784,248);
+			this.toolStripContainer1.Dock=System.Windows.Forms.DockStyle.Fill;
+			this.toolStripContainer1.Location=new System.Drawing.Point (0,0);
+			this.toolStripContainer1.Name="toolStripContainer1";
+			this.toolStripContainer1.Size=new System.Drawing.Size (784,295);
+			this.toolStripContainer1.TabIndex=17;
+			this.toolStripContainer1.Text="toolStripContainer1";
+			// 
+			// toolStripContainer1.TopToolStripPanel
+			// 
+			this.toolStripContainer1.TopToolStripPanel.Controls.Add (this.menuStrip1);
+			// 
+			// ViewCtrl1
+			// 
+			this.ViewCtrl1.AllowDrop=true;
+			this.ViewCtrl1.Curr=null;
+			this.ViewCtrl1.Dock=System.Windows.Forms.DockStyle.Fill;
+			this.ViewCtrl1.Font=new System.Drawing.Font ("Arial",9F,System.Drawing.FontStyle.Regular,System.Drawing.GraphicsUnit.Point,((byte) (204)));
+			this.ViewCtrl1.Location=new System.Drawing.Point (263,26);
+			this.ViewCtrl1.Name="ViewCtrl1";
+			this.ViewCtrl1.Size=new System.Drawing.Size (521,222);
+			this.ViewCtrl1.TabIndex=15;
 			// 
 			// MainWnd
 			// 
-			this.AutoScaleBaseSize = new System.Drawing.Size (6,14);
-			this.ClientSize = new System.Drawing.Size (784,331);
-			this.Controls.Add (this.ViewCtrl1);
-			this.Controls.Add (this.splitter1);
-			this.Controls.Add (this.panel1);
-			this.Controls.Add (this.toolBar1);
-			this.Controls.Add (this.statusBar1);
-			this.Icon = ((System.Drawing.Icon) (resources.GetObject ("$this.Icon")));
-			this.Location = new System.Drawing.Point (0,0);
-			this.Menu = this.mainMenu1;
-			this.Name = "MainWnd";
-			this.Text = "TBB UML Designer";
+			this.AutoScaleBaseSize=new System.Drawing.Size (6,14);
+			this.ClientSize=new System.Drawing.Size (784,295);
+			this.Controls.Add (this.toolStripContainer1);
+			this.Icon=((System.Drawing.Icon) (resources.GetObject ("$this.Icon")));
+			this.Location=new System.Drawing.Point (0,0);
+			this.MainMenuStrip=this.menuStrip1;
+			this.Name="MainWnd";
+			this.Text=" ";
+			this.menuStrip1.ResumeLayout (false);
+			this.menuStrip1.PerformLayout ();
 			this.panel1.ResumeLayout (false);
-			((System.ComponentModel.ISupportInitialize) (this.status_panel)).EndInit ();
+			this.statusStrip1.ResumeLayout (false);
+			this.statusStrip1.PerformLayout ();
+			this.toolStripContainer1.BottomToolStripPanel.ResumeLayout (false);
+			this.toolStripContainer1.BottomToolStripPanel.PerformLayout ();
+			this.toolStripContainer1.ContentPanel.ResumeLayout (false);
+			this.toolStripContainer1.TopToolStripPanel.ResumeLayout (false);
+			this.toolStripContainer1.TopToolStripPanel.PerformLayout ();
+			this.toolStripContainer1.ResumeLayout (false);
+			this.toolStripContainer1.PerformLayout ();
 			this.ResumeLayout (false);
 
 		}
 		#endregion
 
-		private UMLDes.Controls.FlatMenuItem menuItem4;
-		private System.Windows.Forms.MainMenu mainMenu1;
+		private System.Windows.Forms.ToolStripMenuItem menuItem4;
+		private System.Windows.Forms.MenuStrip menuStrip1;
 		public System.Windows.Forms.ImageList treeImages;
 		public UMLDes.Controls.FlatToolBar toolBar1;
 		private System.Windows.Forms.ImageList toolbarImages;
 
 		public UmlDesignerSolution p;
-		private UMLDes.Controls.FlatMenuItem menuItem26;
-		private UMLDes.Controls.FlatMenuItem menuItem31;
-		private UMLDes.Controls.FlatMenuItem menu_About;
-		private UMLDes.Controls.FlatMenuItem menu_NewProject;
-		private UMLDes.Controls.FlatMenuItem menu_OpenProject;
-		private UMLDes.Controls.FlatMenuItem menu_SaveProject;
-		private UMLDes.Controls.FlatMenuItem menu_SaveProjAs;
-		private UMLDes.Controls.FlatMenuItem menu_Print;
-		private UMLDes.Controls.FlatMenuItem menu_Exit;
-		private UMLDes.Controls.FlatMenuItem menu_Undo;
-		private UMLDes.Controls.FlatMenuItem menu_Cut;
-		private UMLDes.Controls.FlatMenuItem menu_Copy;
-		private UMLDes.Controls.FlatMenuItem menu_Paste;
-		private UMLDes.Controls.FlatMenuItem menu_Delete;
-		private UMLDes.Controls.FlatMenuItem menu_SelectAll;
-		private UMLDes.Controls.FlatMenuItem menu_AddFiles;
-		private UMLDes.Controls.FlatMenuItem menu_AddStaticView;
-		private UMLDes.Controls.FlatMenuItem menu_Parse;
-		private UMLDes.Controls.FlatMenuItem menumain_Help;
-		private UMLDes.Controls.FlatMenuItem menumain_File;
-		private UMLDes.Controls.FlatMenuItem menumain_Edit;
-		private UMLDes.Controls.FlatMenuItem menumain_Project;
-		private UMLDes.Controls.FlatMenuItem menu_Redo;
-		private UMLDes.Controls.FlatMenuItem menu_GC_Collect;
+		private System.Windows.Forms.ToolStripMenuItem menuItem26;
+		private System.Windows.Forms.ToolStripMenuItem menuItem31;
+		private System.Windows.Forms.ToolStripMenuItem menu_About;
+		private System.Windows.Forms.ToolStripMenuItem menu_NewProject;
+		private System.Windows.Forms.ToolStripMenuItem menu_OpenProject;
+		private System.Windows.Forms.ToolStripMenuItem menu_SaveProject;
+		private System.Windows.Forms.ToolStripMenuItem menu_SaveProjAs;
+		private System.Windows.Forms.ToolStripMenuItem menu_Print;
+		private System.Windows.Forms.ToolStripMenuItem menu_Exit;
+		private System.Windows.Forms.ToolStripMenuItem menu_Undo;
+		private System.Windows.Forms.ToolStripMenuItem menu_Cut;
+		private System.Windows.Forms.ToolStripMenuItem menu_Copy;
+		private System.Windows.Forms.ToolStripMenuItem menu_Paste;
+		private System.Windows.Forms.ToolStripMenuItem menu_Delete;
+		private System.Windows.Forms.ToolStripMenuItem menu_SelectAll;
+		private System.Windows.Forms.ToolStripMenuItem menu_AddFiles;
+		private System.Windows.Forms.ToolStripMenuItem menu_AddStaticView;
+		private System.Windows.Forms.ToolStripMenuItem menu_Parse;
+		private System.Windows.Forms.ToolStripMenuItem menumain_Help;
+		private System.Windows.Forms.ToolStripMenuItem menumain_File;
+		private System.Windows.Forms.ToolStripMenuItem menumain_Edit;
+		private System.Windows.Forms.ToolStripMenuItem menumain_Project;
+		private System.Windows.Forms.ToolStripMenuItem menumain_View;
+		private System.Windows.Forms.ToolStripMenuItem menu_Redo;
+		private System.Windows.Forms.ToolStripMenuItem menu_GC_Collect;
 		private System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.Splitter splitter1;
 		private UMLDes.ViewCtrl ViewCtrl1;
 		private UMLDes.Controls.UmlSolutionTree ProjectTree;
-		private UMLDes.Controls.FlatMenuItem menu_PrintPreview;
-		private UMLDes.Controls.FlatMenuItem menu_show_hints;
-		private System.Windows.Forms.StatusBar statusBar1;
-		internal System.Windows.Forms.StatusBarPanel status_panel;
-		private UMLDes.Controls.FlatMenuItem menuItem1;
-		private UMLDes.Controls.FlatMenuItem menu_SaveToImage;
-		private UMLDes.Controls.FlatMenuItem menuItem2;
-		private UMLDes.Controls.FlatMenuItem menu_ZoomIn;
-		private UMLDes.Controls.FlatMenuItem menu_ZoomOut;
-		private UMLDes.Controls.FlatMenuItem menu_copyAsImage;
+		private System.Windows.Forms.ToolStripMenuItem menu_PrintPreview;
+		private System.Windows.Forms.ToolStripMenuItem menu_show_hints;
+		private System.Windows.Forms.StatusStrip statusStrip1;
+		internal System.Windows.Forms.ToolStripStatusLabel status_panel;
+		private System.Windows.Forms.ToolStripMenuItem menuItem1;
+		private System.Windows.Forms.ToolStripMenuItem menu_SaveToImage;
+		private System.Windows.Forms.ToolStripMenuItem menu_ZoomIn;
+		private System.Windows.Forms.ToolStripMenuItem menu_ZoomOut;
+		private System.Windows.Forms.ToolStripMenuItem menu_copyAsImage;
 		public System.Windows.Forms.ImageList list;
 		public UMLDes.Controls.UmlSolutionTree SolutionTree {
 			get {
@@ -710,6 +747,8 @@ namespace UMLDes {
 			p.AddControl (cb);
 		}
 		#endregion
+
+		private System.Windows.Forms.ToolStripContainer toolStripContainer1;
 
 	}
 }
