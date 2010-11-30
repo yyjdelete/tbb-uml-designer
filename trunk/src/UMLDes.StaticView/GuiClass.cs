@@ -3,6 +3,7 @@ using System.Collections;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Xml.Serialization;
+using System.Windows.Forms;
 using UMLDes.Model;
 using UMLDes.Controls;
 
@@ -207,7 +208,7 @@ namespace UMLDes.GUI {
 
 		public void DisplayOptions (object o,EventArgs ev) {
 			ObjectState before = GetState ();
-			switch ((o as FlatMenuItem).Index) {
+			switch (((o as ToolStripMenuItem).OwnerItem as ToolStripMenuItem).DropDownItems.IndexOf(o as ToolStripMenuItem)) {
 				case 0: // Attributes
 					show_vars = !show_vars;
 					break;
@@ -255,20 +256,20 @@ namespace UMLDes.GUI {
 		public void Import (object o,EventArgs ev) {
 			if (st == null)
 				return;
-			switch ((o as FlatMenuItem).Index) {
+			switch (((o as ToolStripMenuItem).OwnerItem as ToolStripMenuItem).DropDownItems.IndexOf (o as ToolStripMenuItem)) {
 				case 0: // ancestor & interfaces
-					x_coord_counter = X;
-					ancest = true;
-					if (st.BaseObjects != null)
+					x_coord_counter=X;
+					ancest=true;
+					if (st.BaseObjects!=null)
 						foreach (string s in st.BaseObjects) {
-							UmlClass imp_cl = parent.proj.model.GetObject (s) as UmlClass;
-							if (imp_cl != null)
+							UmlClass imp_cl=parent.proj.model.GetObject (s) as UmlClass;
+							if (imp_cl!=null)
 								ImportClass (imp_cl);
 						}
 					break;
 				case 1: // successors
-					ancest = false;
-					x_coord_counter = X;
+					ancest=false;
+					x_coord_counter=X;
 					parent.proj.model.Visit (new UmlObject.Visitor (VisitClassAndImport),null);
 					break;
 				default:
@@ -365,9 +366,9 @@ namespace UMLDes.GUI {
 
 		#endregion
 
-		public void AddMenuItems (System.Windows.Forms.ContextMenu m,int x,int y) {
+		public void AddMenuItems (System.Windows.Forms.ContextMenuStrip m,int x,int y) {
 
-			FlatMenuItem curr;
+			ToolStripMenuItem curr;
 			EventHandler evh;
 
 			if (st == null || st.Deleted) {
@@ -377,22 +378,24 @@ namespace UMLDes.GUI {
 
 			// Display Options
 			evh = new EventHandler (DisplayOptions);
-			curr = new FlatMenuItem ("显示选项(&O)...",null,0,false);
+			curr = new ToolStripMenuItem ("显示选项(&O)...");
 			parent.AddItem (curr,"属性(&A)",ToolBarIcons.show_attrs,show_vars,evh);
 			parent.AddItem (curr,"&Operations",ToolBarIcons.show_opers,show_members,evh);
 			parent.AddItem (curr,"&Properties",ToolBarIcons.show_properties,show_properties,evh);
 			parent.AddItem (curr,"Show full &qualified name",ToolBarIcons.show_qual,show_full_qual,evh);
 			parent.AddItem (curr,"Show operations &signature",ToolBarIcons.oper_signature,show_method_signatures,evh);
 			parent.AddItem (curr,"Only public",ToolBarIcons.None,show_only_public,evh);
-			m.MenuItems.Add (curr);
+			m.Items.Add (curr);
 
 			evh = new EventHandler (Import);
-			curr = new FlatMenuItem ("Import",parent.proj.icon_list,(int) ToolBarIcons.add_related,false);
+			curr = new ToolStripMenuItem ("Import");
+			if (curr.Owner!=null) curr.Owner.ImageList=parent.proj.icon_list;
+			curr.ImageIndex=(int) ToolBarIcons.add_related;
 			parent.AddItem (curr,"Import ancestor && interfaces",ToolBarIcons.None,false,evh);
 			parent.AddItem (curr,"Import successors",ToolBarIcons.None,false,evh);
-			m.MenuItems.Add (curr);
+			m.Items.Add (curr);
 
-			m.MenuItems.Add (new StereoTypeHelper (this).GetStereoMenu ());
+			m.Items.Add (new StereoTypeHelper (this).GetStereoMenu ());
 
 			parent.AddItem (m,"显示/隐藏成员",ToolBarIcons.None,false,new EventHandler (showhide));
 		}

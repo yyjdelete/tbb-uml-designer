@@ -36,9 +36,7 @@ namespace UMLDes {
 		void ToolbarAction (int index) {
 			switch ((ToolBarIcons) index) {
 				case ToolBarIcons.New:   // 新建
-					if (!SaveChanges ())
-						return;
-					TurnOnProject (UmlDesignerSolution.createNew ());
+					NewProject (null,null);
 					break;
 				case ToolBarIcons.Open:   // 打开
 					LoadProject (null,null);
@@ -53,16 +51,16 @@ namespace UMLDes {
 					AddFiles (null,null);
 					break;
 				case ToolBarIcons.new_diagram: // New Static view
-					menu_AddStaticView_Click (null,null);
+					AddStaticView (null,null);
 					break;
 				case ToolBarIcons.refresh:  // 刷新树
 					RefreshProject (null,null);
 					break;
 				case ToolBarIcons.print: // 打印
-					ViewCtrl1.Print (false);
+					Print (null,null);
 					break;
 				case ToolBarIcons.print_preview: // 打印预览
-					ViewCtrl1.Print (true);
+					PrintPreview (null,null);
 					break;
 				case ToolBarIcons.undo:   // 撤销
 					ViewCtrl1.Curr.undo.DoUndo ();
@@ -110,8 +108,10 @@ namespace UMLDes {
 
 		#region 菜单行为
 
-		private void menu_NewProject_Click (object sender,System.EventArgs e) {
-			ToolbarAction ((int) ToolBarIcons.New);
+		private void NewProject (object sender,System.EventArgs e) {
+			if (!SaveChanges ())
+				return;
+			TurnOnProject (UmlDesignerSolution.createNew ());
 		}
 
 		private void Exit (object sender,System.EventArgs e) {
@@ -178,15 +178,15 @@ namespace UMLDes {
 			p.Refresh ();
 		}
 
-		private void menu_Print_Click (object sender,System.EventArgs e) {
-			ToolbarAction ((int) ToolBarIcons.print);
+		private void Print (object sender,System.EventArgs e) {
+			ViewCtrl1.Print (false);
 		}
 
-		private void menu_PrintPreview_Click (object sender,System.EventArgs e) {
-			ToolbarAction ((int) ToolBarIcons.print_preview);
+		private void PrintPreview (object sender,System.EventArgs e) {
+			ViewCtrl1.Print (true);
 		}
 
-		private void menu_AddStaticView_Click (object sender,System.EventArgs e) {
+		private void AddStaticView (object sender,System.EventArgs e) {
 			UMLDes.GUI.View v = p.newStaticView ();
 			SelectView (v,true);
 		}
@@ -318,20 +318,24 @@ namespace UMLDes {
 		#region 树列表中的菜单(图\右键\重命名)
 
 		void RenameNode (object v,EventArgs ev) {
-			TreeNode tn = (TreeNode) ((FlatMenuItem) v).Tag;
+			TreeNode tn = (TreeNode) ((ToolStripMenuItem) v).Tag;
 			tn.BeginEdit ();
 		}
 
 		void TryDropDownMenu (int x,int y,object obj,TreeNode n) {
-			MenuItem[] mi = null;
-
+			ToolStripItem[] mi=null;
+			ToolStripMenuItem fmi=null;
 			if (obj is UMLDes.GUI.View) {
-				mi = new FlatMenuItem[] { FlatMenuItem.Create ("重命名",null,0,false,new EventHandler (RenameNode),n) };
+				fmi=new ToolStripMenuItem ("重命名");
+				fmi.Click += new EventHandler (RenameNode);
+				fmi.Tag=n;
+				mi=new ToolStripMenuItem[] { fmi };
 			}
 
 			if (mi == null)
 				return;
-			ContextMenu m = new ContextMenu (mi);
+			ContextMenuStrip m=new ContextMenuStrip ();
+			m.Items.AddRange (mi);
 			m.Show (ProjectTree,new Point (x,y));
 		}
 

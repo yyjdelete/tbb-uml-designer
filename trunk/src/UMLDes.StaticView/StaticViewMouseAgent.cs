@@ -264,9 +264,9 @@ namespace UMLDes.GUI {
 						parent.SelectedObjects.Clear ();
 						parent.SelectedObjects.Add (obj as GuiObject);
 
-						System.Windows.Forms.ContextMenu m = new ContextMenu ();
+						System.Windows.Forms.ContextMenuStrip m = new ContextMenuStrip ();
 						(obj as IDropMenu).AddMenuItems (m,x,y);
-						if (m.MenuItems.Count > 0)
+						if (m.Items.Count > 0)
 							m.Show (parent.cview,new Point (realx,realy));
 					}
 
@@ -375,9 +375,9 @@ namespace UMLDes.GUI {
 				case MouseAction.Scroll:
 					Cursor.Current = Cursors.Arrow;
 					if (first_move) {
-						System.Windows.Forms.ContextMenu m = new ContextMenu ();
+						System.Windows.Forms.ContextMenuStrip m = new ContextMenuStrip ();
 						parent.AddMenuItems (m);
-						if (m.MenuItems.Count > 0)
+						if (m.Items.Count > 0)
 							m.Show (parent.cview,new Point (menurealx,menurealy));
 					}
 					break;

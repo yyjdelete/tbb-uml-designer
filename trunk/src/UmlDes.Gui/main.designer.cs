@@ -36,21 +36,21 @@ namespace UMLDes {
 			this.menu_OpenProject=new System.Windows.Forms.ToolStripMenuItem ();
 			this.menu_SaveProject=new System.Windows.Forms.ToolStripMenuItem ();
 			this.menu_SaveProjAs=new System.Windows.Forms.ToolStripMenuItem ();
-			this.menuItem4=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menuSeparator1=new System.Windows.Forms.ToolStripSeparator ();
 			this.menu_Print=new System.Windows.Forms.ToolStripMenuItem ();
 			this.menu_PrintPreview=new System.Windows.Forms.ToolStripMenuItem ();
 			this.menu_SaveToImage=new System.Windows.Forms.ToolStripMenuItem ();
-			this.menuItem1=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menuSeparator2=new System.Windows.Forms.ToolStripSeparator ();
 			this.menu_Exit=new System.Windows.Forms.ToolStripMenuItem ();
 			this.menumain_Edit=new System.Windows.Forms.ToolStripMenuItem ();
 			this.menu_Undo=new System.Windows.Forms.ToolStripMenuItem ();
 			this.menu_Redo=new System.Windows.Forms.ToolStripMenuItem ();
-			this.menuItem26=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menuSeparator3=new System.Windows.Forms.ToolStripSeparator ();
 			this.menu_Cut=new System.Windows.Forms.ToolStripMenuItem ();
 			this.menu_Copy=new System.Windows.Forms.ToolStripMenuItem ();
 			this.menu_Paste=new System.Windows.Forms.ToolStripMenuItem ();
 			this.menu_Delete=new System.Windows.Forms.ToolStripMenuItem ();
-			this.menuItem31=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menuSeparator4=new System.Windows.Forms.ToolStripSeparator ();
 			this.menu_SelectAll=new System.Windows.Forms.ToolStripMenuItem ();
 			this.menu_copyAsImage=new System.Windows.Forms.ToolStripMenuItem ();
 			this.menumain_View=new System.Windows.Forms.ToolStripMenuItem ();
@@ -69,6 +69,12 @@ namespace UMLDes {
 			this.status_panel=new System.Windows.Forms.ToolStripStatusLabel ();
 			this.toolStripContainer1=new System.Windows.Forms.ToolStripContainer ();
 			this.ViewCtrl1=new UMLDes.ViewCtrl ();
+			this.toolStrip2=new System.Windows.Forms.ToolStrip ();
+			this.toolStrip6=new System.Windows.Forms.ToolStrip ();
+			this.toolStrip5=new System.Windows.Forms.ToolStrip ();
+			this.toolStrip4=new System.Windows.Forms.ToolStrip ();
+			this.toolStrip3=new System.Windows.Forms.ToolStrip ();
+			this.toolStrip1=new System.Windows.Forms.ToolStrip ();
 			this.menuStrip1.SuspendLayout ();
 			this.panel1.SuspendLayout ();
 			this.statusStrip1.SuspendLayout ();
@@ -80,10 +86,11 @@ namespace UMLDes {
 			// 
 			// menu_About
 			// 
+			this.menu_About.Image=((System.Drawing.Image) (resources.GetObject ("menu_About.Image")));
 			this.menu_About.MergeIndex=0;
-            this.menu_About.ImageIndex = 14;
 			this.menu_About.Name="menu_About";
-			this.menu_About.Size=new System.Drawing.Size (152,22);
+			this.menu_About.ShortcutKeys=System.Windows.Forms.Keys.F1;
+			this.menu_About.Size=new System.Drawing.Size (141,22);
 			this.menu_About.Text="关于(&A)";
 			this.menu_About.Click+=new System.EventHandler (this.menu_About_Click);
 			// 
@@ -139,10 +146,9 @@ namespace UMLDes {
             this.menu_About,
             this.menu_show_hints,
             this.menu_GC_Collect});
-			this.menumain_Help.DropDown.ImageList=this.toolbarImages;
 			this.menumain_Help.MergeIndex=4;
 			this.menumain_Help.Name="menumain_Help";
-			this.menumain_Help.Size=new System.Drawing.Size (77,21);
+			this.menumain_Help.Size=new System.Drawing.Size (61,21);
 			this.menumain_Help.Text="帮助(&H)";
 			this.menumain_Help.DropDownOpening+=new System.EventHandler (this.Help_Popup);
 			// 
@@ -150,14 +156,14 @@ namespace UMLDes {
 			// 
 			this.menu_show_hints.MergeIndex=1;
 			this.menu_show_hints.Name="menu_show_hints";
-			this.menu_show_hints.Size=new System.Drawing.Size (152,22);
+			this.menu_show_hints.Size=new System.Drawing.Size (141,22);
 			this.menu_show_hints.Text="显示提示(&H)";
 			// 
 			// menu_GC_Collect
 			// 
 			this.menu_GC_Collect.MergeIndex=2;
 			this.menu_GC_Collect.Name="menu_GC_Collect";
-			this.menu_GC_Collect.Size=new System.Drawing.Size (152,22);
+			this.menu_GC_Collect.Size=new System.Drawing.Size (141,22);
 			this.menu_GC_Collect.Text="GC.Collect";
 			this.menu_GC_Collect.Click+=new System.EventHandler (this.menu_GC_Collect_Click);
 			// 
@@ -171,7 +177,7 @@ namespace UMLDes {
             this.menumain_View,
             this.menumain_Project,
             this.menumain_Help});
-			this.menuStrip1.Location=new System.Drawing.Point (0,0);
+			this.menuStrip1.Location=new System.Drawing.Point (0,25);
 			this.menuStrip1.Name="menuStrip1";
 			this.menuStrip1.Size=new System.Drawing.Size (784,25);
 			this.menuStrip1.TabIndex=0;
@@ -183,83 +189,81 @@ namespace UMLDes {
             this.menu_OpenProject,
             this.menu_SaveProject,
             this.menu_SaveProjAs,
-            this.menuItem4,
+            this.menuSeparator1,
             this.menu_Print,
             this.menu_PrintPreview,
             this.menu_SaveToImage,
-            this.menuItem1,
+            this.menuSeparator2,
             this.menu_Exit});
-			this.menumain_File.DropDown.ImageList=this.toolbarImages;
 			this.menumain_File.MergeIndex=0;
 			this.menumain_File.Name="menumain_File";
-			this.menumain_File.Size=new System.Drawing.Size (74,21);
+			this.menumain_File.Size=new System.Drawing.Size (58,21);
 			this.menumain_File.Text="文件(&F)";
 			// 
 			// menu_NewProject
 			// 
+			this.menu_NewProject.Image=((System.Drawing.Image) (resources.GetObject ("menu_NewProject.Image")));
 			this.menu_NewProject.MergeIndex=0;
-			this.menu_NewProject.ImageIndex=0;
 			this.menu_NewProject.Name="menu_NewProject";
 			this.menu_NewProject.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.N)));
 			this.menu_NewProject.Size=new System.Drawing.Size (255,22);
 			this.menu_NewProject.Text="新建工程(&N)";
-			this.menu_NewProject.Click+=new System.EventHandler (this.menu_NewProject_Click);
+			this.menu_NewProject.Click+=new System.EventHandler (this.NewProject);
 			// 
 			// menu_OpenProject
 			// 
+			this.menu_OpenProject.Image=((System.Drawing.Image) (resources.GetObject ("menu_OpenProject.Image")));
 			this.menu_OpenProject.MergeIndex=1;
 			this.menu_OpenProject.Name="menu_OpenProject";
 			this.menu_OpenProject.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.O)));
 			this.menu_OpenProject.Size=new System.Drawing.Size (255,22);
-            this.menu_OpenProject.ImageIndex = 1;
 			this.menu_OpenProject.Text="打开工程(&O)";
 			this.menu_OpenProject.Click+=new System.EventHandler (this.LoadProject);
 			// 
 			// menu_SaveProject
 			// 
+			this.menu_SaveProject.Image=((System.Drawing.Image) (resources.GetObject ("menu_SaveProject.Image")));
 			this.menu_SaveProject.MergeIndex=2;
 			this.menu_SaveProject.Name="menu_SaveProject";
 			this.menu_SaveProject.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.S)));
 			this.menu_SaveProject.Size=new System.Drawing.Size (255,22);
-            this.menu_SaveProject.ImageIndex = 2;
 			this.menu_SaveProject.Text="保存工程(&S)";
 			this.menu_SaveProject.Click+=new System.EventHandler (this.SaveProject);
 			// 
 			// menu_SaveProjAs
 			// 
+			this.menu_SaveProjAs.Image=((System.Drawing.Image) (resources.GetObject ("menu_SaveProjAs.Image")));
 			this.menu_SaveProjAs.MergeIndex=3;
 			this.menu_SaveProjAs.Name="menu_SaveProjAs";
 			this.menu_SaveProjAs.Size=new System.Drawing.Size (255,22);
 			this.menu_SaveProjAs.Text="另存为(&A) ...";
 			this.menu_SaveProjAs.Click+=new System.EventHandler (this.SaveAsProject);
 			// 
-			// menuItem4
+			// menuSeparator1
 			// 
-			this.menuItem4.MergeIndex=4;
-			this.menuItem4.Name="menuItem4";
-			this.menuItem4.Size=new System.Drawing.Size (255,22);
-			this.menuItem4.Text="-";
+			this.menuSeparator1.MergeIndex=4;
+			this.menuSeparator1.Name="menuSeparator1";
+			this.menuSeparator1.Size=new System.Drawing.Size (252,6);
 			// 
 			// menu_Print
 			// 
+			this.menu_Print.Image=((System.Drawing.Image) (resources.GetObject ("menu_Print.Image")));
 			this.menu_Print.MergeIndex=5;
-            this.menu_Print.ImageIndex = 18;
 			this.menu_Print.Name="menu_Print";
 			this.menu_Print.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.P)));
 			this.menu_Print.Size=new System.Drawing.Size (255,22);
 			this.menu_Print.Text="打印(&P)";
-			this.menu_Print.Click+=new System.EventHandler (this.menu_Print_Click);
+			this.menu_Print.Click+=new System.EventHandler (this.Print);
 			// 
 			// menu_PrintPreview
 			// 
-            this.menu_PrintPreview.ImageIndex = 24;
 			this.menu_PrintPreview.MergeIndex=6;
 			this.menu_PrintPreview.Name="menu_PrintPreview";
 			this.menu_PrintPreview.ShortcutKeys=((System.Windows.Forms.Keys) (((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.Shift)
 						|System.Windows.Forms.Keys.P)));
 			this.menu_PrintPreview.Size=new System.Drawing.Size (255,22);
 			this.menu_PrintPreview.Text="打印预览(&V)";
-			this.menu_PrintPreview.Click+=new System.EventHandler (this.menu_PrintPreview_Click);
+			this.menu_PrintPreview.Click+=new System.EventHandler (this.PrintPreview);
 			// 
 			// menu_SaveToImage
 			// 
@@ -270,18 +274,17 @@ namespace UMLDes {
 			this.menu_SaveToImage.Text="Save diagram as Image";
 			this.menu_SaveToImage.Click+=new System.EventHandler (this.menu_SaveToImage_Click);
 			// 
-			// menuItem1
+			// menuSeparator2
 			// 
-			this.menuItem1.MergeIndex=8;
-			this.menuItem1.Name="menuItem1";
-			this.menuItem1.Size=new System.Drawing.Size (255,22);
-			this.menuItem1.Text="-";
+			this.menuSeparator2.MergeIndex=8;
+			this.menuSeparator2.Name="menuSeparator2";
+			this.menuSeparator2.Size=new System.Drawing.Size (252,6);
 			// 
 			// menu_Exit
 			// 
 			this.menu_Exit.MergeIndex=9;
 			this.menu_Exit.Name="menu_Exit";
-			this.menu_Exit.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.X)));
+			this.menu_Exit.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Alt|System.Windows.Forms.Keys.F4)));
 			this.menu_Exit.Size=new System.Drawing.Size (255,22);
 			this.menu_Exit.Text="退出(&X)";
 			this.menu_Exit.Click+=new System.EventHandler (this.Exit);
@@ -291,25 +294,24 @@ namespace UMLDes {
 			this.menumain_Edit.DropDownItems.AddRange (new System.Windows.Forms.ToolStripItem[] {
             this.menu_Undo,
             this.menu_Redo,
-            this.menuItem26,
+            this.menuSeparator3,
             this.menu_Cut,
             this.menu_Copy,
             this.menu_Paste,
             this.menu_Delete,
-            this.menuItem31,
+            this.menuSeparator4,
             this.menu_SelectAll,
             this.menu_copyAsImage});
-			this.menumain_Edit.DropDown.ImageList=this.toolbarImages;
 			this.menumain_Edit.MergeIndex=1;
 			this.menumain_Edit.Name="menumain_Edit";
-			this.menumain_Edit.Size=new System.Drawing.Size (75,21);
+			this.menumain_Edit.Size=new System.Drawing.Size (59,21);
 			this.menumain_Edit.Text="编辑(&E)";
 			this.menumain_Edit.DropDownOpening+=new System.EventHandler (this.EditMenuPopup);
 			// 
 			// menu_Undo
 			// 
+			this.menu_Undo.Image=((System.Drawing.Image) (resources.GetObject ("menu_Undo.Image")));
 			this.menu_Undo.MergeIndex=0;
-            this.menu_Undo.ImageIndex = 15;
 			this.menu_Undo.Name="menu_Undo";
 			this.menu_Undo.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.Z)));
 			this.menu_Undo.Size=new System.Drawing.Size (296,22);
@@ -318,25 +320,24 @@ namespace UMLDes {
 			// 
 			// menu_Redo
 			// 
+			this.menu_Redo.Image=((System.Drawing.Image) (resources.GetObject ("menu_Redo.Image")));
 			this.menu_Redo.MergeIndex=1;
-            this.menu_Redo.ImageIndex = 16;
 			this.menu_Redo.Name="menu_Redo";
 			this.menu_Redo.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.Y)));
 			this.menu_Redo.Size=new System.Drawing.Size (296,22);
 			this.menu_Redo.Text="重做(&R)";
 			this.menu_Redo.Click+=new System.EventHandler (this.menu_Redo_Click);
 			// 
-			// menuItem26
+			// menuSeparator3
 			// 
-			this.menuItem26.MergeIndex=2;
-			this.menuItem26.Name="menuItem26";
-			this.menuItem26.Size=new System.Drawing.Size (296,22);
-			this.menuItem26.Text="-";
+			this.menuSeparator3.MergeIndex=2;
+			this.menuSeparator3.Name="menuSeparator3";
+			this.menuSeparator3.Size=new System.Drawing.Size (293,6);
 			// 
 			// menu_Cut
 			// 
+			this.menu_Cut.Image=((System.Drawing.Image) (resources.GetObject ("menu_Cut.Image")));
 			this.menu_Cut.MergeIndex=3;
-            this.menu_Cut.ImageIndex = 4;
 			this.menu_Cut.Name="menu_Cut";
 			this.menu_Cut.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.X)));
 			this.menu_Cut.Size=new System.Drawing.Size (296,22);
@@ -345,8 +346,8 @@ namespace UMLDes {
 			// 
 			// menu_Copy
 			// 
+			this.menu_Copy.Image=((System.Drawing.Image) (resources.GetObject ("menu_Copy.Image")));
 			this.menu_Copy.MergeIndex=4;
-            this.menu_Copy.ImageIndex = 5;
 			this.menu_Copy.Name="menu_Copy";
 			this.menu_Copy.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.C)));
 			this.menu_Copy.Size=new System.Drawing.Size (296,22);
@@ -355,8 +356,8 @@ namespace UMLDes {
 			// 
 			// menu_Paste
 			// 
+			this.menu_Paste.Image=((System.Drawing.Image) (resources.GetObject ("menu_Paste.Image")));
 			this.menu_Paste.MergeIndex=5;
-            this.menu_Paste.ImageIndex = 6;
 			this.menu_Paste.Name="menu_Paste";
 			this.menu_Paste.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.V)));
 			this.menu_Paste.Size=new System.Drawing.Size (296,22);
@@ -365,7 +366,7 @@ namespace UMLDes {
 			// 
 			// menu_Delete
 			// 
-            this.menu_Delete.ImageIndex = 19;
+			this.menu_Delete.Image=((System.Drawing.Image) (resources.GetObject ("menu_Delete.Image")));
 			this.menu_Delete.MergeIndex=6;
 			this.menu_Delete.Name="menu_Delete";
 			this.menu_Delete.ShortcutKeys=System.Windows.Forms.Keys.Delete;
@@ -373,12 +374,11 @@ namespace UMLDes {
 			this.menu_Delete.Text="删除(&D)";
 			this.menu_Delete.Click+=new System.EventHandler (this.menuDeleteClick);
 			// 
-			// menuItem31
+			// menuSeparator4
 			// 
-			this.menuItem31.MergeIndex=7;
-			this.menuItem31.Name="menuItem31";
-			this.menuItem31.Size=new System.Drawing.Size (296,22);
-			this.menuItem31.Text="-";
+			this.menuSeparator4.MergeIndex=7;
+			this.menuSeparator4.Name="menuSeparator4";
+			this.menuSeparator4.Size=new System.Drawing.Size (293,6);
 			// 
 			// menu_SelectAll
 			// 
@@ -404,27 +404,28 @@ namespace UMLDes {
 			this.menumain_View.DropDownItems.AddRange (new System.Windows.Forms.ToolStripItem[] {
             this.menu_ZoomIn,
             this.menu_ZoomOut});
-			this.menumain_View.DropDown.ImageList=this.toolbarImages;
 			this.menumain_View.MergeIndex=2;
 			this.menumain_View.Name="menumain_View";
-			this.menumain_View.Size=new System.Drawing.Size (76,21);
+			this.menumain_View.Size=new System.Drawing.Size (60,21);
 			this.menumain_View.Text="查看(&V)";
 			// 
 			// menu_ZoomIn
 			// 
+			this.menu_ZoomIn.Image=((System.Drawing.Image) (resources.GetObject ("menu_ZoomIn.Image")));
 			this.menu_ZoomIn.MergeIndex=0;
 			this.menu_ZoomIn.Name="menu_ZoomIn";
 			this.menu_ZoomIn.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.J)));
-			this.menu_ZoomIn.Size=new System.Drawing.Size (152,22);
+			this.menu_ZoomIn.Size=new System.Drawing.Size (145,22);
 			this.menu_ZoomIn.Text="放大";
 			this.menu_ZoomIn.Click+=new System.EventHandler (this.menu_ZoomIn_Click);
 			// 
 			// menu_ZoomOut
 			// 
+			this.menu_ZoomOut.Image=((System.Drawing.Image) (resources.GetObject ("menu_ZoomOut.Image")));
 			this.menu_ZoomOut.MergeIndex=1;
 			this.menu_ZoomOut.Name="menu_ZoomOut";
 			this.menu_ZoomOut.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.K)));
-			this.menu_ZoomOut.Size=new System.Drawing.Size (152,22);
+			this.menu_ZoomOut.Size=new System.Drawing.Size (145,22);
 			this.menu_ZoomOut.Text="缩小";
 			this.menu_ZoomOut.Click+=new System.EventHandler (this.menu_ZoomOut_Click);
 			// 
@@ -435,15 +436,14 @@ namespace UMLDes {
             this.menu_AddStaticView,
             this.menu_Parse});
 			this.menumain_Project.MergeIndex=3;
-			this.menumain_Project.DropDown.ImageList=this.toolbarImages;
 			this.menumain_Project.Name="menumain_Project";
-			this.menumain_Project.Size=new System.Drawing.Size (75,21);
+			this.menumain_Project.Size=new System.Drawing.Size (59,21);
 			this.menumain_Project.Text="工程(&P)";
 			// 
 			// menu_AddFiles
 			// 
+			this.menu_AddFiles.Image=((System.Drawing.Image) (resources.GetObject ("menu_AddFiles.Image")));
 			this.menu_AddFiles.MergeIndex=0;
-            this.menu_AddFiles.ImageIndex = 20;
 			this.menu_AddFiles.Name="menu_AddFiles";
 			this.menu_AddFiles.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.F)));
 			this.menu_AddFiles.Size=new System.Drawing.Size (244,22);
@@ -452,18 +452,18 @@ namespace UMLDes {
 			// 
 			// menu_AddStaticView
 			// 
+			this.menu_AddStaticView.Image=((System.Drawing.Image) (resources.GetObject ("menu_AddStaticView.Image")));
 			this.menu_AddStaticView.MergeIndex=1;
-            this.menu_AddStaticView.ImageIndex = 13;
 			this.menu_AddStaticView.Name="menu_AddStaticView";
 			this.menu_AddStaticView.ShortcutKeys=((System.Windows.Forms.Keys) (((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.Shift)
 						|System.Windows.Forms.Keys.N)));
 			this.menu_AddStaticView.Size=new System.Drawing.Size (244,22);
 			this.menu_AddStaticView.Text="&Add static view";
-			this.menu_AddStaticView.Click+=new System.EventHandler (this.menu_AddStaticView_Click);
+			this.menu_AddStaticView.Click+=new System.EventHandler (this.AddStaticView);
 			// 
 			// menu_Parse
 			// 
-            this.menu_Parse.ImageIndex = 17;
+			this.menu_Parse.Image=((System.Drawing.Image) (resources.GetObject ("menu_Parse.Image")));
 			this.menu_Parse.MergeIndex=2;
 			this.menu_Parse.Name="menu_Parse";
 			this.menu_Parse.ShortcutKeys=System.Windows.Forms.Keys.F5;
@@ -531,7 +531,7 @@ namespace UMLDes {
 			this.panel1.Dock=System.Windows.Forms.DockStyle.Left;
 			this.panel1.Location=new System.Drawing.Point (0,26);
 			this.panel1.Name="panel1";
-			this.panel1.Size=new System.Drawing.Size (259,222);
+			this.panel1.Size=new System.Drawing.Size (259,122);
 			this.panel1.TabIndex=13;
 			// 
 			// ProjectTree
@@ -539,14 +539,14 @@ namespace UMLDes {
 			this.ProjectTree.Dock=System.Windows.Forms.DockStyle.Fill;
 			this.ProjectTree.Location=new System.Drawing.Point (0,0);
 			this.ProjectTree.Name="ProjectTree";
-			this.ProjectTree.Size=new System.Drawing.Size (259,222);
+			this.ProjectTree.Size=new System.Drawing.Size (259,122);
 			this.ProjectTree.TabIndex=2;
 			// 
 			// splitter1
 			// 
 			this.splitter1.Location=new System.Drawing.Point (259,26);
 			this.splitter1.Name="splitter1";
-			this.splitter1.Size=new System.Drawing.Size (4,222);
+			this.splitter1.Size=new System.Drawing.Size (4,122);
 			this.splitter1.TabIndex=14;
 			this.splitter1.TabStop=false;
 			// 
@@ -585,7 +585,7 @@ namespace UMLDes {
 			this.toolStripContainer1.ContentPanel.Controls.Add (this.splitter1);
 			this.toolStripContainer1.ContentPanel.Controls.Add (this.panel1);
 			this.toolStripContainer1.ContentPanel.Controls.Add (this.toolBar1);
-			this.toolStripContainer1.ContentPanel.Size=new System.Drawing.Size (784,248);
+			this.toolStripContainer1.ContentPanel.Size=new System.Drawing.Size (784,148);
 			this.toolStripContainer1.Dock=System.Windows.Forms.DockStyle.Fill;
 			this.toolStripContainer1.Location=new System.Drawing.Point (0,0);
 			this.toolStripContainer1.Name="toolStripContainer1";
@@ -596,6 +596,12 @@ namespace UMLDes {
 			// toolStripContainer1.TopToolStripPanel
 			// 
 			this.toolStripContainer1.TopToolStripPanel.Controls.Add (this.menuStrip1);
+			this.toolStripContainer1.TopToolStripPanel.Controls.Add (this.toolStrip3);
+			this.toolStripContainer1.TopToolStripPanel.Controls.Add (this.toolStrip4);
+			this.toolStripContainer1.TopToolStripPanel.Controls.Add (this.toolStrip1);
+			this.toolStripContainer1.TopToolStripPanel.Controls.Add (this.toolStrip2);
+			this.toolStripContainer1.TopToolStripPanel.Controls.Add (this.toolStrip6);
+			this.toolStripContainer1.TopToolStripPanel.Controls.Add (this.toolStrip5);
 			// 
 			// ViewCtrl1
 			// 
@@ -605,8 +611,56 @@ namespace UMLDes {
 			this.ViewCtrl1.Font=new System.Drawing.Font ("Arial",9F,System.Drawing.FontStyle.Regular,System.Drawing.GraphicsUnit.Point,((byte) (204)));
 			this.ViewCtrl1.Location=new System.Drawing.Point (263,26);
 			this.ViewCtrl1.Name="ViewCtrl1";
-			this.ViewCtrl1.Size=new System.Drawing.Size (521,222);
+			this.ViewCtrl1.Size=new System.Drawing.Size (521,122);
 			this.ViewCtrl1.TabIndex=15;
+			// 
+			// toolStrip2
+			// 
+			this.toolStrip2.Dock=System.Windows.Forms.DockStyle.None;
+			this.toolStrip2.Location=new System.Drawing.Point (420,0);
+			this.toolStrip2.Name="toolStrip2";
+			this.toolStrip2.Size=new System.Drawing.Size (111,25);
+			this.toolStrip2.TabIndex=2;
+			// 
+			// toolStrip6
+			// 
+			this.toolStrip6.Dock=System.Windows.Forms.DockStyle.None;
+			this.toolStrip6.Location=new System.Drawing.Point (39,75);
+			this.toolStrip6.Name="toolStrip6";
+			this.toolStrip6.Size=new System.Drawing.Size (43,25);
+			this.toolStrip6.TabIndex=6;
+			// 
+			// toolStrip5
+			// 
+			this.toolStrip5.Dock=System.Windows.Forms.DockStyle.None;
+			this.toolStrip5.Location=new System.Drawing.Point (39,100);
+			this.toolStrip5.Name="toolStrip5";
+			this.toolStrip5.Size=new System.Drawing.Size (111,25);
+			this.toolStrip5.TabIndex=5;
+			// 
+			// toolStrip4
+			// 
+			this.toolStrip4.Dock=System.Windows.Forms.DockStyle.None;
+			this.toolStrip4.Location=new System.Drawing.Point (153,50);
+			this.toolStrip4.Name="toolStrip4";
+			this.toolStrip4.Size=new System.Drawing.Size (111,25);
+			this.toolStrip4.TabIndex=4;
+			// 
+			// toolStrip3
+			// 
+			this.toolStrip3.Dock=System.Windows.Forms.DockStyle.None;
+			this.toolStrip3.Location=new System.Drawing.Point (5,50);
+			this.toolStrip3.Name="toolStrip3";
+			this.toolStrip3.Size=new System.Drawing.Size (111,25);
+			this.toolStrip3.TabIndex=3;
+			// 
+			// toolStrip1
+			// 
+			this.toolStrip1.Dock=System.Windows.Forms.DockStyle.None;
+			this.toolStrip1.Location=new System.Drawing.Point (294,50);
+			this.toolStrip1.Name="toolStrip1";
+			this.toolStrip1.Size=new System.Drawing.Size (111,25);
+			this.toolStrip1.TabIndex=1;
 			// 
 			// MainWnd
 			// 
@@ -635,15 +689,12 @@ namespace UMLDes {
 		}
 		#endregion
 
-		private System.Windows.Forms.ToolStripMenuItem menuItem4;
 		private System.Windows.Forms.MenuStrip menuStrip1;
 		public System.Windows.Forms.ImageList treeImages;
 		public UMLDes.Controls.FlatToolBar toolBar1;
 		private System.Windows.Forms.ImageList toolbarImages;
 
 		public UmlDesignerSolution p;
-		private System.Windows.Forms.ToolStripMenuItem menuItem26;
-		private System.Windows.Forms.ToolStripMenuItem menuItem31;
 		private System.Windows.Forms.ToolStripMenuItem menu_About;
 		private System.Windows.Forms.ToolStripMenuItem menu_NewProject;
 		private System.Windows.Forms.ToolStripMenuItem menu_OpenProject;
@@ -675,7 +726,6 @@ namespace UMLDes {
 		private System.Windows.Forms.ToolStripMenuItem menu_show_hints;
 		private System.Windows.Forms.StatusStrip statusStrip1;
 		internal System.Windows.Forms.ToolStripStatusLabel status_panel;
-		private System.Windows.Forms.ToolStripMenuItem menuItem1;
 		private System.Windows.Forms.ToolStripMenuItem menu_SaveToImage;
 		private System.Windows.Forms.ToolStripMenuItem menu_ZoomIn;
 		private System.Windows.Forms.ToolStripMenuItem menu_ZoomOut;
@@ -749,6 +799,16 @@ namespace UMLDes {
 		#endregion
 
 		private System.Windows.Forms.ToolStripContainer toolStripContainer1;
+		private System.Windows.Forms.ToolStripSeparator menuSeparator1;
+		private System.Windows.Forms.ToolStripSeparator menuSeparator2;
+		private System.Windows.Forms.ToolStripSeparator menuSeparator3;
+		private System.Windows.Forms.ToolStripSeparator menuSeparator4;
+		private System.Windows.Forms.ToolStrip toolStrip1;
+		private System.Windows.Forms.ToolStrip toolStrip6;
+		private System.Windows.Forms.ToolStrip toolStrip5;
+		private System.Windows.Forms.ToolStrip toolStrip4;
+		private System.Windows.Forms.ToolStrip toolStrip3;
+		private System.Windows.Forms.ToolStrip toolStrip2;
 
 	}
 }

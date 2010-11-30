@@ -3,6 +3,7 @@ using System.Collections;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Xml.Serialization;
+using System.Windows.Forms;
 using UMLDes.Controls;
 using UMLDes.Model;
 
@@ -630,7 +631,7 @@ namespace UMLDes.GUI {
 		public void ChangeStyleClick( object o, EventArgs ev ) {
 			ObjectState before = GetState();
 			Invalidate();
-			switch( (ToolBarIcons)(o as FlatMenuItem).ImageIndex ) {
+			switch( (ToolBarIcons)(o as ToolStripMenuItem).ImageIndex ) {
 				case ToolBarIcons.straight_conn:	// Line
 					style = GuiConnectionStyle.Line;
 					break;
@@ -653,7 +654,7 @@ namespace UMLDes.GUI {
 		public void ChangeTypeClick( object o, EventArgs ev ) {
 			ObjectState before = GetState();
 			this.Invalidate();
-			switch( (ToolBarIcons)(o as FlatMenuItem).ImageIndex ) {
+			switch( (ToolBarIcons)(o as ToolStripMenuItem).ImageIndex ) {
 				case ToolBarIcons.conn_inher:	// Inheritance
 					type = UmlRelationType.Inheritance;
 					break;
@@ -683,7 +684,7 @@ namespace UMLDes.GUI {
 		public void ChangeNavigationClick( object o, EventArgs ev ) {
 			ObjectState before = GetState();
 			this.Invalidate();
-			switch( (o as FlatMenuItem).Index ) {
+			switch (((o as ToolStripMenuItem).OwnerItem as ToolStripMenuItem).DropDownItems.IndexOf (o as ToolStripMenuItem)) {
 				case 0: // None
 					nav = GuiConnectionNavigation.None;
 					break;
@@ -698,8 +699,8 @@ namespace UMLDes.GUI {
 			parent.Undo.Push( new StateOperation( this, before, GetState() ), false );
 		}
 
-		public void DisplayOptions( object o, EventArgs ev ) { 
-			switch( (o as FlatMenuItem).Index ) {
+		public void DisplayOptions( object o, EventArgs ev ) {
+			switch (((o as ToolStripMenuItem).OwnerItem as ToolStripMenuItem).DropDownItems.IndexOf (o as ToolStripMenuItem)) {
 				case 0: // Show roles
 					ShowRoles = !ShowRoles;
 					break;
@@ -723,23 +724,23 @@ namespace UMLDes.GUI {
 			Hidden = true;
 		}
 
-		public void AddMenuItems( System.Windows.Forms.ContextMenu m, int x, int y ) {
+		public void AddMenuItems( System.Windows.Forms.ContextMenuStrip m, int x, int y ) {
 
-			FlatMenuItem curr;
+			ToolStripMenuItem curr;
 			EventHandler evh;
 
 			// Style
-			curr = new FlatMenuItem( "Style", null, 0, false );
+			curr = new ToolStripMenuItem("Style");
 			evh = new EventHandler( ChangeStyleClick );
 			parent.AddItem( curr, "Line", ToolBarIcons.straight_conn, this.style == GuiConnectionStyle.Line, evh );
 			parent.AddItem( curr, "Segmented", ToolBarIcons.segmented_conn, this.style == GuiConnectionStyle.Segmented, evh );
 			parent.AddItem( curr, "Quadric", ToolBarIcons.quadric_conn, this.style == GuiConnectionStyle.Quadric, evh );
 			parent.AddItem( curr, "Bezier", ToolBarIcons.curved_conn, this.style == GuiConnectionStyle.Besier, null );
-			m.MenuItems.Add( curr );
+			m.Items.Add( curr );
 
 			// Type
 			evh = new EventHandler( ChangeTypeClick );
-			curr = new FlatMenuItem( "Type", null, 0, false );
+			curr = new ToolStripMenuItem("Type");
 			parent.AddItem( curr, "Inheritance", ToolBarIcons.conn_inher, this.type == UmlRelationType.Inheritance, evh );
 			parent.AddItem( curr, "Association", ToolBarIcons.conn_assoc, this.type == UmlRelationType.Association, evh );
 			parent.AddItem( curr, "Aggregation", ToolBarIcons.conn_aggregation, this.type == UmlRelationType.Aggregation, evh );
@@ -747,27 +748,27 @@ namespace UMLDes.GUI {
 			parent.AddItem( curr, "Attachment", ToolBarIcons.conn_attachm, this.type == UmlRelationType.Attachment, evh );
 			parent.AddItem( curr, "Dependancy/Usage", ToolBarIcons.conn_dependence, this.type == UmlRelationType.Dependency, evh );
 			parent.AddItem( curr, "Realization", ToolBarIcons.conn_realiz, this.type == UmlRelationType.Realization, evh );
-			m.MenuItems.Add( curr );
+			m.Items.Add( curr );
 
 			// Navigation
 			evh = new EventHandler( ChangeNavigationClick );
-			curr = new FlatMenuItem( "Navigation", null, 0, false );
+			curr = new ToolStripMenuItem("Navigation");
 			parent.AddItem( curr, "None", ToolBarIcons.None, this.nav == GuiConnectionNavigation.None, evh );
 			parent.AddItem( curr, "Left", ToolBarIcons.None, this.nav == GuiConnectionNavigation.Left, evh );
 			parent.AddItem( curr, "Right", ToolBarIcons.None, this.nav == GuiConnectionNavigation.Right, evh );
 			curr.Enabled = ( this.type == UmlRelationType.Association || this.type == UmlRelationType.Aggregation || this.type == UmlRelationType.Composition );
-			m.MenuItems.Add( curr );
+			m.Items.Add (curr);
 
 			// Display Options
 			evh = new EventHandler( DisplayOptions );
-			curr = new FlatMenuItem( "Display &Options...", null, 0, false );
+			curr=new ToolStripMenuItem ("œ‘ æ—°œÓ(&O)...");
 			parent.AddItem( curr, "Show roles", ToolBarIcons.None, ShowRoles, evh );
 			parent.AddItem( curr, "Show connection name", ToolBarIcons.None, conn_name.Visible, evh );
 			parent.AddItem( curr, "Show stereotype", ToolBarIcons.None, conn_stereo.Visible, evh );
 			parent.AddItem( curr, "-", ToolBarIcons.None, false, null );
 			parent.AddItem( curr, "Show all", ToolBarIcons.None, false, evh );
 			parent.AddItem( curr, "Hide all", ToolBarIcons.None, false, evh );
-			m.MenuItems.Add( curr );
+			m.Items.Add( curr );
 
 			parent.AddItem( m, "Hide connection", ToolBarIcons.None, false, new EventHandler( Hide ) );
 		}
