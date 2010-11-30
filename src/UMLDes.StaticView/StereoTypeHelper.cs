@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Drawing;
+using System.Windows.Forms;
 using UMLDes.Controls;
 
 namespace UMLDes.GUI {
@@ -21,27 +22,28 @@ namespace UMLDes.GUI {
 		}
 
 		private void set_stereo (object o,EventArgs ev) {
-			if ((o as FlatMenuItem).Index == 0) {
+			int MergeIndex=((o as ToolStripMenuItem).OwnerItem as ToolStripMenuItem).DropDownItems.IndexOf (o as ToolStripMenuItem);
+			if (MergeIndex==0) {
 				Rectangle r = obj.EditRect;
 				InPlaceTextEdit.Start ("±à¼­ stereotype",obj.Stereo,parent.cview.point_to_screen (r.X,r.Y),Math.Max (r.Width,70),r.Height,parent.cview,new StringEditedEvent (EditedStereo),false);
 				return;
 			}
 
-			if ((o as FlatMenuItem).Index >= 3) {
-				obj.Stereo = hashed_stereo_list[(o as FlatMenuItem).Index - 3];
+			if (MergeIndex>=3) {
+				obj.Stereo=hashed_stereo_list[MergeIndex-3];
 			}
-			else if ((o as FlatMenuItem).Index == 1)
+			else if (MergeIndex==1)
 				obj.Stereo = null;
 		}
 
-		public FlatMenuItem GetStereoMenu () {
+		public ToolStripMenuItem  GetStereoMenu () {
 
-			FlatMenuItem curr;
+			ToolStripMenuItem curr;
 			EventHandler evh;
 
 			// Display Options
 			evh = new EventHandler (set_stereo);
-			curr = new FlatMenuItem ("Stereotype",null,0,false);
+			curr = new ToolStripMenuItem ("Stereotype");
 			parent.AddItem (curr,"ÆäËü",ToolBarIcons.None,false,evh);
 			parent.AddItem (curr,"Çå³ý",ToolBarIcons.None,false,evh);
 			parent.AddItem (curr,"-",ToolBarIcons.None,false,null);

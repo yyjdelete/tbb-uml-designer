@@ -3,6 +3,7 @@ using System.Collections;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Xml.Serialization;
+using System.Windows.Forms;
 using UMLDes.Model;
 using UMLDes.Controls;
 
@@ -101,7 +102,7 @@ namespace UMLDes.GUI {
 
 		public void DisplayOptions (object o,EventArgs ev) {
 			ObjectState before = GetState ();
-			switch ((o as FlatMenuItem).Index) {
+			switch (((o as ToolStripMenuItem).OwnerItem as ToolStripMenuItem).DropDownItems.IndexOf (o as ToolStripMenuItem)) {
 				case 0: // Show full qualified header
 					show_full_qual = !show_full_qual;
 					break;
@@ -131,22 +132,22 @@ namespace UMLDes.GUI {
 
 		#endregion
 
-		public void AddMenuItems (System.Windows.Forms.ContextMenu m,int x,int y) {
+		public void AddMenuItems (System.Windows.Forms.ContextMenuStrip m,int x,int y) {
 
 			if (!source_dependant)
 				parent.AddItem (m,"Rename package",ToolBarIcons.None,false,new EventHandler (Rename_click));
 
-			FlatMenuItem curr;
+			ToolStripMenuItem curr;
 			EventHandler evh;
 
 			// Display Options
 			evh = new EventHandler (DisplayOptions);
-			curr = new FlatMenuItem ("Display &Options...",null,0,false);
+			curr = new ToolStripMenuItem ("显示选项(&O)...");
 			parent.AddItem (curr,"Show full &qualified name",ToolBarIcons.show_qual,show_full_qual,evh);
 			parent.AddItem (curr,"显示成员(&S)",ToolBarIcons.None,show_members,evh);
-			m.MenuItems.Add (curr);
+			m.Items.Add (curr);
 
-			m.MenuItems.Add (new StereoTypeHelper (this).GetStereoMenu ());
+			m.Items.Add (new StereoTypeHelper (this).GetStereoMenu ());
 		}
 
 		#endregion

@@ -50,7 +50,7 @@ namespace UMLDes.GUI {
 	}
 
 	public interface IDropMenu {
-		void AddMenuItems (System.Windows.Forms.ContextMenu m,int x,int y);
+		void AddMenuItems (System.Windows.Forms.ContextMenuStrip m,int x,int y);
 	}
 
 	public interface ISelectable:IUniversalCoords,IDrawable {

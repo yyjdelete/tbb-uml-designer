@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Drawing;
 using System.Xml.Serialization;
+using System.Windows.Forms;
 using UMLDes.Controls;
 using UMLDes.Model;
 
@@ -545,7 +546,7 @@ namespace UMLDes.GUI {
 
 		#region 弹出菜单
 
-		public void AddMenuItems (System.Windows.Forms.ContextMenu m) {
+		public void AddMenuItems (System.Windows.Forms.ContextMenuStrip m) {
 			AddItem (m,"显示/隐藏 元素",ToolBarIcons.None,false,new EventHandler (showhide));
 		}
 
@@ -624,23 +625,31 @@ namespace UMLDes.GUI {
 		#endregion
 
 		#region 菜单辅助功能
-
-		public void AddItem (UMLDes.Controls.FlatMenuItem fmi,string text,ToolBarIcons icon,bool Checked,EventHandler click_handler) {
-			UMLDes.Controls.FlatMenuItem curr = new UMLDes.Controls.FlatMenuItem (text,icon != ToolBarIcons.None ? proj.icon_list : null,(int) icon,Checked);
+		public void AddItem (ToolStripMenuItem fmi,string text,ToolBarIcons icon,bool Checked,EventHandler click_handler) {
+			ToolStripMenuItem curr = new ToolStripMenuItem (text);
+			curr.Checked=Checked;
+			if (icon!=ToolBarIcons.None&&curr.Owner!=null) {
+				curr.Owner.ImageList=proj.icon_list;
+				curr.ImageIndex=(int) icon;
+			}
 			if (click_handler != null)
 				curr.Click += click_handler;
 			else
 				curr.Enabled = false;
-			fmi.MenuItems.Add (curr);
+			fmi.DropDownItems.Add (curr);
 		}
 
-		public void AddItem (System.Windows.Forms.ContextMenu cm,string text,ToolBarIcons icon,bool Checked,EventHandler click_handler) {
-			UMLDes.Controls.FlatMenuItem curr = new UMLDes.Controls.FlatMenuItem (text,icon != ToolBarIcons.None ? proj.icon_list : null,(int) icon,Checked);
+		public void AddItem (System.Windows.Forms.ContextMenuStrip cm,string text,ToolBarIcons icon,bool Checked,EventHandler click_handler) {
+			ToolStripMenuItem curr = new ToolStripMenuItem (text);
+			if (icon!=ToolBarIcons.None) {
+				curr.Owner.ImageList=proj.icon_list;
+				curr.ImageIndex=(int) icon;
+			}
 			if (click_handler != null)
 				curr.Click += click_handler;
 			else
 				curr.Enabled = false;
-			cm.MenuItems.Add (curr);
+			cm.Items.Add (curr);
 		}
 
 		#endregion

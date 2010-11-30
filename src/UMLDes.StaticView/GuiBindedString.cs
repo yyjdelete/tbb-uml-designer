@@ -92,8 +92,8 @@ namespace UMLDes.GUI {
 		}
 
 		public virtual void translate_coords( ref int ux, ref float uy ) {
-			ux = ux;
-			uy = uy;
+			//ux = ux;
+			//uy = uy;
 		}
 
 		public override void UpdateCoords( GuiObject orig ) {
@@ -228,7 +228,7 @@ namespace UMLDes.GUI {
 			Visible = false;
 		}
 
-		public void AddMenuItems( System.Windows.Forms.ContextMenu m, int x, int y ) {
+		public void AddMenuItems( System.Windows.Forms.ContextMenuStrip m, int x, int y ) {
 			parent.AddItem( m, "±à¼­ÎÄ±¾", ToolBarIcons.None, false, new EventHandler( RenameClick ) );
 			parent.AddItem( m, "Òþ²Ø", ToolBarIcons.None, false, new EventHandler( Hide ) );
 		}

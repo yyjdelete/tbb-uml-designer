@@ -33,7 +33,7 @@ namespace UMLDes.GUI {
 		SizeF text_size,stereo_size;
 
 		/// <summary>
-		/// Calculates width and height of object
+		/// 计算对象的宽和高
 		/// </summary>
 		/// <param name="g">graphics object for measurements</param>
 		public override void RefreshView (Graphics g) {
@@ -97,9 +97,9 @@ namespace UMLDes.GUI {
 			InPlaceTextEdit.Start ("Edit memo text",text,parent.cview.point_to_screen (place.X + inflate + 1,place.Y + inflate + 1),Math.Max (place.Width + 20,70),place.Height + 40,parent.cview,new StringEditedEvent (Edited),true);
 		}
 
-		public void AddMenuItems (System.Windows.Forms.ContextMenu m,int x,int y) {
+		public void AddMenuItems (System.Windows.Forms.ContextMenuStrip m,int x,int y) {
 			parent.AddItem (m,"Edit text",ToolBarIcons.None,false,new EventHandler (RenameClick));
-			m.MenuItems.Add (new StereoTypeHelper (this).GetStereoMenu ());
+			m.Items.Add (new StereoTypeHelper (this).GetStereoMenu ());
 		}
 
 		#endregion
