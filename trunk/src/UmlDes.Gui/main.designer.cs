@@ -63,6 +63,7 @@ namespace UMLDes {
 			this.treeImages=new System.Windows.Forms.ImageList (this.components);
 			this.toolBar1=new UMLDes.Controls.FlatToolBar ();
 			this.panel1=new System.Windows.Forms.Panel ();
+			this.ProjectTree=new UMLDes.Controls.UmlSolutionTree ();
 			this.splitter1=new System.Windows.Forms.Splitter ();
 			this.statusStrip1=new System.Windows.Forms.StatusStrip ();
 			this.status_panel=new System.Windows.Forms.ToolStripStatusLabel ();
@@ -112,7 +113,6 @@ namespace UMLDes {
 			this.toolStripSeparator7=new System.Windows.Forms.ToolStripSeparator ();
 			this.toolStripButton17=new System.Windows.Forms.ToolStripButton ();
 			this.toolStripButton18=new System.Windows.Forms.ToolStripButton ();
-			this.ProjectTree=new UMLDes.Controls.UmlSolutionTree ();
 			this.menuStrip1.SuspendLayout ();
 			this.panel1.SuspendLayout ();
 			this.statusStrip1.SuspendLayout ();
@@ -573,14 +573,22 @@ namespace UMLDes {
 			this.panel1.Dock=System.Windows.Forms.DockStyle.Left;
 			this.panel1.Location=new System.Drawing.Point (0,26);
 			this.panel1.Name="panel1";
-			this.panel1.Size=new System.Drawing.Size (259,147);
+			this.panel1.Size=new System.Drawing.Size (259,122);
 			this.panel1.TabIndex=13;
+			// 
+			// ProjectTree
+			// 
+			this.ProjectTree.Dock=System.Windows.Forms.DockStyle.Fill;
+			this.ProjectTree.Location=new System.Drawing.Point (0,0);
+			this.ProjectTree.Name="ProjectTree";
+			this.ProjectTree.Size=new System.Drawing.Size (259,122);
+			this.ProjectTree.TabIndex=2;
 			// 
 			// splitter1
 			// 
 			this.splitter1.Location=new System.Drawing.Point (259,26);
 			this.splitter1.Name="splitter1";
-			this.splitter1.Size=new System.Drawing.Size (4,147);
+			this.splitter1.Size=new System.Drawing.Size (4,122);
 			this.splitter1.TabIndex=14;
 			this.splitter1.TabStop=false;
 			// 
@@ -619,7 +627,7 @@ namespace UMLDes {
 			this.toolStripContainer1.ContentPanel.Controls.Add (this.splitter1);
 			this.toolStripContainer1.ContentPanel.Controls.Add (this.panel1);
 			this.toolStripContainer1.ContentPanel.Controls.Add (this.toolBar1);
-			this.toolStripContainer1.ContentPanel.Size=new System.Drawing.Size (784,173);
+			this.toolStripContainer1.ContentPanel.Size=new System.Drawing.Size (784,148);
 			this.toolStripContainer1.Dock=System.Windows.Forms.DockStyle.Fill;
 			this.toolStripContainer1.Location=new System.Drawing.Point (0,0);
 			this.toolStripContainer1.Name="toolStripContainer1";
@@ -631,9 +639,9 @@ namespace UMLDes {
 			// 
 			this.toolStripContainer1.TopToolStripPanel.Controls.Add (this.menuStrip1);
 			this.toolStripContainer1.TopToolStripPanel.Controls.Add (this.toolStrip1);
+			this.toolStripContainer1.TopToolStripPanel.Controls.Add (this.toolStrip2);
 			this.toolStripContainer1.TopToolStripPanel.Controls.Add (this.toolStrip3);
 			this.toolStripContainer1.TopToolStripPanel.Controls.Add (this.toolStrip4);
-			this.toolStripContainer1.TopToolStripPanel.Controls.Add (this.toolStrip2);
 			// 
 			// ViewCtrl1
 			// 
@@ -643,7 +651,7 @@ namespace UMLDes {
 			this.ViewCtrl1.Font=new System.Drawing.Font ("Arial",9F,System.Drawing.FontStyle.Regular,System.Drawing.GraphicsUnit.Point,((byte) (204)));
 			this.ViewCtrl1.Location=new System.Drawing.Point (263,26);
 			this.ViewCtrl1.Name="ViewCtrl1";
-			this.ViewCtrl1.Size=new System.Drawing.Size (521,147);
+			this.ViewCtrl1.Size=new System.Drawing.Size (521,122);
 			this.ViewCtrl1.TabIndex=15;
 			// 
 			// toolStrip1
@@ -838,9 +846,9 @@ namespace UMLDes {
 			this.toolStrip2.Dock=System.Windows.Forms.DockStyle.None;
 			this.toolStrip2.Items.AddRange (new System.Windows.Forms.ToolStripItem[] {
             this.toolStripComboBox1});
-			this.toolStrip2.Location=new System.Drawing.Point (190,75);
+			this.toolStrip2.Location=new System.Drawing.Point (3,50);
 			this.toolStrip2.Name="toolStrip2";
-			this.toolStrip2.Size=new System.Drawing.Size (135,25);
+			this.toolStrip2.Size=new System.Drawing.Size (168,25);
 			this.toolStrip2.TabIndex=2;
 			// 
 			// toolStripComboBox1
@@ -867,7 +875,7 @@ namespace UMLDes {
             this.tool_package,
             this.tool_constraint,
             this.tool_actor});
-			this.toolStrip3.Location=new System.Drawing.Point (3,50);
+			this.toolStrip3.Location=new System.Drawing.Point (3,75);
 			this.toolStrip3.Name="toolStrip3";
 			this.toolStrip3.Size=new System.Drawing.Size (300,25);
 			this.toolStrip3.TabIndex=3;
@@ -1001,9 +1009,9 @@ namespace UMLDes {
             this.toolStripSeparator7,
             this.toolStripButton17,
             this.toolStripButton18});
-			this.toolStrip4.Location=new System.Drawing.Point (3,75);
+			this.toolStrip4.Location=new System.Drawing.Point (3,100);
 			this.toolStrip4.Name="toolStrip4";
-			this.toolStrip4.Size=new System.Drawing.Size (187,25);
+			this.toolStrip4.Size=new System.Drawing.Size (156,25);
 			this.toolStrip4.TabIndex=4;
 			// 
 			// toolStripButton13
@@ -1064,14 +1072,6 @@ namespace UMLDes {
 			this.toolStripButton18.Name="toolStripButton18";
 			this.toolStripButton18.Size=new System.Drawing.Size (23,22);
 			this.toolStripButton18.Text="toolStripButton18";
-			// 
-			// ProjectTree
-			// 
-			this.ProjectTree.Dock=System.Windows.Forms.DockStyle.Fill;
-			this.ProjectTree.Location=new System.Drawing.Point (0,0);
-			this.ProjectTree.Name="ProjectTree";
-			this.ProjectTree.Size=new System.Drawing.Size (259,147);
-			this.ProjectTree.TabIndex=2;
 			// 
 			// MainWnd
 			// 
@@ -1175,7 +1175,7 @@ namespace UMLDes {
 			initialize_tree_view (ProjectTree);
 
 			UMLDes.Controls.MouseClickEvent m = new UMLDes.Controls.MouseClickEvent (ToolbarAction);
-			UMLDes.Controls.FlatToolBarPanel p;
+/*			UMLDes.Controls.FlatToolBarPanel p;
 
 			//  project toolbar
 			p = toolBar1.AddPanel (0,"Standard");
@@ -1217,7 +1217,11 @@ namespace UMLDes {
 			p.AddControl (cb);
 			*/
 
-			//新工具栏toolStrip1
+			//修改新工具栏toolStrip1234位置
+			toolStrip1.Location=new System.Drawing.Point (3,menuStrip1.Size.Height);//工具栏前面4个点宽3个像素
+			toolStrip2.Location=new System.Drawing.Point (toolStrip1.Size.Width+3,menuStrip1.Size.Height);
+			toolStrip3.Location=new System.Drawing.Point (3,menuStrip1.Size.Height+toolStrip1.Size.Height);
+			toolStrip4.Location=new System.Drawing.Point (toolStrip3.Size.Width+3,menuStrip1.Size.Height+toolStrip1.Size.Height);
 			//禁用剪切、复制、粘贴
 			tool_Cut.Enabled=tool_Copy.Enabled=tool_Paste.Enabled=false;
 			//处理缩放下拉栏
