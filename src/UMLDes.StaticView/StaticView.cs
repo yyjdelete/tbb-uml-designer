@@ -133,6 +133,7 @@ namespace UMLDes.GUI {
 
 			// UML Elements drawing
 			p = toolbar.AddPanel (0,"UML");
+
 			l.Add (p);
 			defbutton = p.AddButton (FlatButtonType.RadioDown,(int) ToolBarIcons.arrow,"Select",m);
 			p.AddButton (FlatButtonType.Line,0,null,null);

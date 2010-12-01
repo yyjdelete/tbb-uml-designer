@@ -29,8 +29,8 @@ namespace UMLDes {
 		}
 
 		public void UpdateToolBar () {
-			EnableButton (tool_undo,ViewCtrl1.Curr.undo.can_undo);
-			EnableButton (tool_redo,ViewCtrl1.Curr.undo.can_redo);
+//			EnableButton (tool_undo,ViewCtrl1.Curr.undo.can_undo);
+//			EnableButton (tool_redo,ViewCtrl1.Curr.undo.can_redo);
 		}
 
 		void ToolbarAction (int index) {
@@ -53,7 +53,7 @@ namespace UMLDes {
 				case ToolBarIcons.new_diagram: // New Static view
 					AddStaticView (null,null);
 					break;
-				case ToolBarIcons.refresh:  // 刷新树
+				case ToolBarIcons.refresh:  // 刷新模型
 					RefreshProject (null,null);
 					break;
 				case ToolBarIcons.print: // 打印
@@ -63,10 +63,10 @@ namespace UMLDes {
 					PrintPreview (null,null);
 					break;
 				case ToolBarIcons.undo:   // 撤销
-					ViewCtrl1.Curr.undo.DoUndo ();
+					Undo (null,null);
 					break;
 				case ToolBarIcons.redo:   // 重做
-					ViewCtrl1.Curr.undo.DoRedo ();
+					Redo (null,null);
 					break;
 				case ToolBarIcons.cut:
 				case ToolBarIcons.copy:
@@ -216,7 +216,7 @@ namespace UMLDes {
 
 		#endregion
 
-		private void menu_SaveToImage_Click (object sender,System.EventArgs e) {
+		private void SaveToImage (object sender,System.EventArgs e) {
 			Bitmap bmp = ViewCtrl1.PrintToImage ();
 			if (bmp == null) {
 				MessageBox.Show ("Diagram is empty","Nothing to save",MessageBoxButtons.OK,MessageBoxIcon.Information);
@@ -248,7 +248,7 @@ namespace UMLDes {
 			}
 		}
 
-		private void menu_copyAsImage_Click (object sender,System.EventArgs e) {
+		private void CopyAsImage (object sender,System.EventArgs e) {
 			Bitmap bmp = ViewCtrl1.PrintToImage ();
 			if (bmp == null) {
 				MessageBox.Show ("图为空","没有可以复制的对象",MessageBoxButtons.OK,MessageBoxIcon.Information);
@@ -282,34 +282,34 @@ namespace UMLDes {
 			menu_Cut.Enabled = ViewCtrl1.Curr.IfEnabled (UMLDes.GUI.View.EditOperation.Cut);
 			menu_Copy.Enabled = ViewCtrl1.Curr.IfEnabled (UMLDes.GUI.View.EditOperation.Copy);
 			menu_Paste.Enabled = ViewCtrl1.Curr.IfEnabled (UMLDes.GUI.View.EditOperation.Paste);
-			menu_SelectAll.Enabled = ViewCtrl1.Curr.IfEnabled (UMLDes.GUI.View.EditOperation.SelectAll);
+//			menu_SelectAll.Enabled = ViewCtrl1.Curr.IfEnabled (UMLDes.GUI.View.EditOperation.SelectAll);
 		}
 
-		private void menu_Undo_Click (object sender,System.EventArgs e) {
+		private void Undo (object sender,System.EventArgs e) {
 			ViewCtrl1.Curr.undo.DoUndo ();
 		}
 
-		private void menu_Redo_Click (object sender,System.EventArgs e) {
+		private void Redo (object sender,System.EventArgs e) {
 			ViewCtrl1.Curr.undo.DoRedo ();
 		}
 
-		private void menu_Copy_Click (object sender,System.EventArgs e) {
+		private void Copy (object sender,System.EventArgs e) {
 			ViewCtrl1.Curr.DoOperation (UMLDes.GUI.View.EditOperation.Copy);
 		}
 
-		private void menu_Paste_Click (object sender,System.EventArgs e) {
+		private void Paste (object sender,System.EventArgs e) {
 			ViewCtrl1.Curr.DoOperation (UMLDes.GUI.View.EditOperation.Paste);
 		}
 
-		private void menu_Cut_Click (object sender,System.EventArgs e) {
+		private void Cut (object sender,System.EventArgs e) {
 			ViewCtrl1.Curr.DoOperation (UMLDes.GUI.View.EditOperation.Cut);
 		}
 
-		private void menuDeleteClick (object sender,System.EventArgs e) {
+		private void Delete (object sender,System.EventArgs e) {
 			ViewCtrl1.Curr.DoOperation (UMLDes.GUI.View.EditOperation.Delete);
 		}
 
-		private void menu_SelectAll_Click (object sender,System.EventArgs e) {
+		private void SelectAll (object sender,System.EventArgs e) {
 			ViewCtrl1.Curr.DoOperation (UMLDes.GUI.View.EditOperation.SelectAll);
 		}
 

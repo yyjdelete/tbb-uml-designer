@@ -577,7 +577,7 @@ namespace UMLDes {
 												1, 5,		// 20 %
 		};
 
-		public ComboBox scalecombo = null;
+		public ToolStripComboBox scalecombo=null;
 
 		public void ScaleChanged (object v,EventArgs e) {
 			if (scalecombo != null)
