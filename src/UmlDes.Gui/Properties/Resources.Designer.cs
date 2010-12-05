@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace UmlDes.Gui.Properties {
+namespace UMLDes.Gui.Properties {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace UmlDes.Gui.Properties {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("UmlDes.Gui.Properties.Resources", typeof(Resources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("UMLDes.Gui.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -60,128 +60,128 @@ namespace UmlDes.Gui.Properties {
             }
         }
         
-        internal static System.Drawing.Bitmap menu_About {
+        internal static System.Drawing.Bitmap menu_About_Image {
             get {
-                object obj = ResourceManager.GetObject("menu_About", resourceCulture);
+                object obj = ResourceManager.GetObject("menu_About_Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap menu_AddFiles {
+        internal static System.Drawing.Bitmap menu_AddFiles_Image {
             get {
-                object obj = ResourceManager.GetObject("menu_AddFiles", resourceCulture);
+                object obj = ResourceManager.GetObject("menu_AddFiles_Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap menu_AddStaticView {
+        internal static System.Drawing.Bitmap menu_AddStaticView_Image {
             get {
-                object obj = ResourceManager.GetObject("menu_AddStaticView", resourceCulture);
+                object obj = ResourceManager.GetObject("menu_AddStaticView_Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap menu_Copy {
+        internal static System.Drawing.Bitmap menu_Copy_Image {
             get {
-                object obj = ResourceManager.GetObject("menu_Copy", resourceCulture);
+                object obj = ResourceManager.GetObject("menu_Copy_Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap menu_Cut {
+        internal static System.Drawing.Bitmap menu_Cut_Image {
             get {
-                object obj = ResourceManager.GetObject("menu_Cut", resourceCulture);
+                object obj = ResourceManager.GetObject("menu_Cut_Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap menu_Delete {
+        internal static System.Drawing.Bitmap menu_Delete_Image {
             get {
-                object obj = ResourceManager.GetObject("menu_Delete", resourceCulture);
+                object obj = ResourceManager.GetObject("menu_Delete_Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap menu_NewProject {
+        internal static System.Drawing.Bitmap menu_NewProject_Image {
             get {
-                object obj = ResourceManager.GetObject("menu_NewProject", resourceCulture);
+                object obj = ResourceManager.GetObject("menu_NewProject_Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap menu_OpenProject {
+        internal static System.Drawing.Bitmap menu_OpenProject_Image {
             get {
-                object obj = ResourceManager.GetObject("menu_OpenProject", resourceCulture);
+                object obj = ResourceManager.GetObject("menu_OpenProject_Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap menu_Parse {
+        internal static System.Drawing.Bitmap menu_Parse_Image {
             get {
-                object obj = ResourceManager.GetObject("menu_Parse", resourceCulture);
+                object obj = ResourceManager.GetObject("menu_Parse_Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap menu_Paste {
+        internal static System.Drawing.Bitmap menu_Paste_Image {
             get {
-                object obj = ResourceManager.GetObject("menu_Paste", resourceCulture);
+                object obj = ResourceManager.GetObject("menu_Paste_Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap menu_Print {
+        internal static System.Drawing.Bitmap menu_Print_Image {
             get {
-                object obj = ResourceManager.GetObject("menu_Print", resourceCulture);
+                object obj = ResourceManager.GetObject("menu_Print_Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap menu_PrintPreview {
+        internal static System.Drawing.Bitmap menu_PrintPreview_Image {
             get {
-                object obj = ResourceManager.GetObject("menu_PrintPreview", resourceCulture);
+                object obj = ResourceManager.GetObject("menu_PrintPreview_Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap menu_Redo {
+        internal static System.Drawing.Bitmap menu_Redo_Image {
             get {
-                object obj = ResourceManager.GetObject("menu_Redo", resourceCulture);
+                object obj = ResourceManager.GetObject("menu_Redo_Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap menu_SaveProjAs {
+        internal static System.Drawing.Bitmap menu_SaveProjAs_Image {
             get {
-                object obj = ResourceManager.GetObject("menu_SaveProjAs", resourceCulture);
+                object obj = ResourceManager.GetObject("menu_SaveProjAs_Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap menu_SaveProject {
+        internal static System.Drawing.Bitmap menu_SaveProject_Image {
             get {
-                object obj = ResourceManager.GetObject("menu_SaveProject", resourceCulture);
+                object obj = ResourceManager.GetObject("menu_SaveProject_Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap menu_Undo {
+        internal static System.Drawing.Bitmap menu_Undo_Image {
             get {
-                object obj = ResourceManager.GetObject("menu_Undo", resourceCulture);
+                object obj = ResourceManager.GetObject("menu_Undo_Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap menu_ZoomIn {
+        internal static System.Drawing.Bitmap menu_ZoomIn_Image {
             get {
-                object obj = ResourceManager.GetObject("menu_ZoomIn", resourceCulture);
+                object obj = ResourceManager.GetObject("menu_ZoomIn_Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
         
-        internal static System.Drawing.Bitmap menu_ZoomOut {
+        internal static System.Drawing.Bitmap menu_ZoomOut_Image {
             get {
-                object obj = ResourceManager.GetObject("menu_ZoomOut", resourceCulture);
+                object obj = ResourceManager.GetObject("menu_ZoomOut_Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

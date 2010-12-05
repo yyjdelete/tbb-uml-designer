@@ -13,7 +13,7 @@ namespace UMLDes.GUI {
 	/// Summary description for StaticView.
 	/// </summary>
 	[XmlInclude (typeof (GuiClass))]
-	public class StaticView:View,IPostload,IUndoNotification {
+	public class StaticView:View,IPostload,IUndoNotification,IDrawSelect {
 
 		// list of GuiActive
 		[XmlElement ("class",typeof (GuiClass)),
@@ -47,7 +47,7 @@ namespace UMLDes.GUI {
 		public ArrayList AroundObjects = new ArrayList ();
 
 		public StaticView () {
-			this.name = "StaticView1";
+			this.name = "静态视图1";
 			mouseagent = new StaticViewMouseAgent (this);
 			Undo = new StaticViewUndo (this);
 		}
@@ -60,14 +60,78 @@ namespace UMLDes.GUI {
 
 		#region Static View 工具栏
 
-		UMLDes.Controls.FlatToolBarPanel drawingmode;
-		UMLDes.Controls.FlatToolBarButton defbutton;
+//		UMLDes.Controls.FlatToolBarPanel drawingmode;
+//		UMLDes.Controls.FlatToolBarButton defbutton;
 
 		public void SetDefaultDrawingMode () {
 			MouseAgent.current_operation = MouseOperation.Select;
-			drawingmode.MakeRadioDown (defbutton);
+//			drawingmode.MakeRadioDown (defbutton);
 		}
 
+/*		void IDrawSelect.ToolbarAction (string tsb_Name) {
+			ToolbarAction (tsb_Name);
+		}*/
+
+		public void ToolbarAction (string tsb_Name) {
+			switch (tsb_Name) {
+				// what to do
+				case "tool_arrow":
+					MouseAgent.current_operation=MouseOperation.Select;
+					break;
+				case "tool_conn_inher":
+					MouseAgent.current_operation=MouseOperation.DrawConnection;
+					MouseAgent.conn_type=UmlRelationType.Inheritance;
+					break;
+				case "tool_conn_assoc":
+					MouseAgent.current_operation=MouseOperation.DrawConnection;
+					MouseAgent.conn_type=UmlRelationType.Association;
+					break;
+				case "tool_conn_aggregation":
+					MouseAgent.current_operation=MouseOperation.DrawConnection;
+					MouseAgent.conn_type=UmlRelationType.Aggregation;
+					break;
+				case "tool_conn_composition":
+					MouseAgent.current_operation=MouseOperation.DrawConnection;
+					MouseAgent.conn_type=UmlRelationType.Composition;
+					break;
+				case "tool_conn_realiz":
+					MouseAgent.current_operation=MouseOperation.DrawConnection;
+					MouseAgent.conn_type=UmlRelationType.Realization;
+					break;
+				case "tool_conn_attachm":
+					MouseAgent.current_operation=MouseOperation.DrawConnection;
+					MouseAgent.conn_type=UmlRelationType.Attachment;
+					break;
+				case "tool_conn_dependence":
+					MouseAgent.current_operation=MouseOperation.DrawConnection;
+					MouseAgent.conn_type=UmlRelationType.Dependency;
+					break;
+				case "tool_memo":
+					MouseAgent.current_operation=MouseOperation.DrawComment;
+					break;
+				case "tool_package":
+					MouseAgent.current_operation=MouseOperation.DrawPackage;
+					break;
+				// line type
+				case "tool_straight_conn":
+					MouseAgent.conn_style=GuiConnectionStyle.Line;
+					break;
+				case "tool_segmented_conn":
+					MouseAgent.conn_style=GuiConnectionStyle.Segmented;
+					break;
+				case "tool_quadric_conn":
+					MouseAgent.conn_style=GuiConnectionStyle.Quadric;
+					break;
+				case "tool_curved_conn":
+					MouseAgent.conn_style=GuiConnectionStyle.Besier;
+					break;
+				case "tool_constraint":
+				case "tool_actor":
+				default:
+					MessageBox.Show ("功能"+tsb_Name+"暂未提供,请等待新版本");
+					break;
+			}
+		}
 		void ToolbarAction (int index) {
 			switch ((ToolBarIcons) index) {
 				// what to do
@@ -126,13 +190,13 @@ namespace UMLDes.GUI {
 
 		public override ArrayList LoadToolbars () {
 			ArrayList l = new ArrayList ();
-			FlatToolBar toolbar = proj.tool_bar;
+//			FlatToolBar toolbar = proj.tool_bar;
 
-			UMLDes.Controls.MouseClickEvent m = new UMLDes.Controls.MouseClickEvent (ToolbarAction);
-			UMLDes.Controls.FlatToolBarPanel p;
+//			UMLDes.Controls.MouseClickEvent m = new UMLDes.Controls.MouseClickEvent (ToolbarAction);
+//			UMLDes.Controls.FlatToolBarPanel p;
 
 			// UML Elements drawing
-			p = toolbar.AddPanel (0,"UML");
+/*			p = toolbar.AddPanel (0,"UML");
 
 			l.Add (p);
 			defbutton = p.AddButton (FlatButtonType.RadioDown,(int) ToolBarIcons.arrow,"Select",m);
@@ -160,7 +224,7 @@ namespace UMLDes.GUI {
 			p.AddButton (FlatButtonType.Line,0,null,null);
 			p.AddButton (FlatButtonType.Simple,(int) ToolBarIcons.show_qual,"Show full qualified",m).disabled = true;
 			p.AddButton (FlatButtonType.Simple,(int) ToolBarIcons.oper_signature,"Operations signature",m).disabled = true;
-
+*/
 			return l;
 		}
 
@@ -301,9 +365,9 @@ namespace UMLDes.GUI {
 			if (o is IHasID) {
 				IHasID p = o as IHasID;
 				if (p.ID == null)
-					throw new ArgumentException ("no id");
+					throw new ArgumentException ("存在没有id的对象");
 				if (gui_objects.ContainsKey (p.ID))
-					throw new ArgumentException ("two identical ids");
+					throw new ArgumentException ("存在两个及以上对象具有相同id");
 				gui_objects[p.ID] = o;
 			}
 			if (o is IAroundObject)

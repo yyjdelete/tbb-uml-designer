@@ -61,14 +61,13 @@ namespace UMLDes {
 			this.menu_AddStaticView=new System.Windows.Forms.ToolStripMenuItem ();
 			this.menu_Parse=new System.Windows.Forms.ToolStripMenuItem ();
 			this.treeImages=new System.Windows.Forms.ImageList (this.components);
-			this.toolBar1=new UMLDes.Controls.FlatToolBar ();
 			this.panel1=new System.Windows.Forms.Panel ();
-			this.ProjectTree=new UMLDes.Controls.UmlSolutionTree ();
 			this.splitter1=new System.Windows.Forms.Splitter ();
 			this.statusStrip1=new System.Windows.Forms.StatusStrip ();
-			this.status_panel=new System.Windows.Forms.ToolStripStatusLabel ();
+			this.status_Label=new System.Windows.Forms.ToolStripStatusLabel ();
 			this.toolStripContainer1=new System.Windows.Forms.ToolStripContainer ();
 			this.ViewCtrl1=new UMLDes.ViewCtrl ();
+			this.toolBar1=new UMLDes.Controls.FlatToolBar ();
 			this.toolStrip1=new System.Windows.Forms.ToolStrip ();
 			this.tool_NewProject=new System.Windows.Forms.ToolStripButton ();
 			this.tool_OpenProject=new System.Windows.Forms.ToolStripButton ();
@@ -106,13 +105,14 @@ namespace UMLDes {
 			this.tool_constraint=new System.Windows.Forms.ToolStripButton ();
 			this.tool_actor=new System.Windows.Forms.ToolStripButton ();
 			this.toolStrip4=new System.Windows.Forms.ToolStrip ();
-			this.toolStripButton13=new System.Windows.Forms.ToolStripButton ();
-			this.toolStripButton14=new System.Windows.Forms.ToolStripButton ();
-			this.toolStripButton15=new System.Windows.Forms.ToolStripButton ();
-			this.toolStripButton16=new System.Windows.Forms.ToolStripButton ();
+			this.tool_straight_conn=new System.Windows.Forms.ToolStripButton ();
+			this.tool_segmented_conn=new System.Windows.Forms.ToolStripButton ();
+			this.tool_quadric_conn=new System.Windows.Forms.ToolStripButton ();
+			this.tool_curved_conn=new System.Windows.Forms.ToolStripButton ();
 			this.toolStripSeparator7=new System.Windows.Forms.ToolStripSeparator ();
-			this.toolStripButton17=new System.Windows.Forms.ToolStripButton ();
-			this.toolStripButton18=new System.Windows.Forms.ToolStripButton ();
+			this.tool_show_qual=new System.Windows.Forms.ToolStripButton ();
+			this.tool_oper_signature=new System.Windows.Forms.ToolStripButton ();
+			this.ProjectTree=new UMLDes.Controls.UmlSolutionTree ();
 			this.menuStrip1.SuspendLayout ();
 			this.panel1.SuspendLayout ();
 			this.statusStrip1.SuspendLayout ();
@@ -186,7 +186,7 @@ namespace UMLDes {
 			// 
 			// menu_About
 			// 
-			this.menu_About.Image=global::UmlDes.Gui.Properties.Resources.menu_About;
+			this.menu_About.Image=global::UMLDes.Gui.Properties.Resources.menu_About_Image;
 			this.menu_About.MergeIndex=0;
 			this.menu_About.Name="menu_About";
 			this.menu_About.ShortcutKeys=System.Windows.Forms.Keys.F1;
@@ -243,40 +243,40 @@ namespace UMLDes {
 			// 
 			// menu_NewProject
 			// 
-			this.menu_NewProject.Image=global::UmlDes.Gui.Properties.Resources.menu_NewProject;
+			this.menu_NewProject.Image=global::UMLDes.Gui.Properties.Resources.menu_NewProject_Image;
 			this.menu_NewProject.MergeIndex=0;
 			this.menu_NewProject.Name="menu_NewProject";
 			this.menu_NewProject.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.N)));
-			this.menu_NewProject.Size=new System.Drawing.Size (255,22);
+			this.menu_NewProject.Size=new System.Drawing.Size (218,22);
 			this.menu_NewProject.Text="新建工程(&N)";
 			this.menu_NewProject.Click+=new System.EventHandler (this.NewProject);
 			// 
 			// menu_OpenProject
 			// 
-			this.menu_OpenProject.Image=global::UmlDes.Gui.Properties.Resources.menu_OpenProject;
+			this.menu_OpenProject.Image=global::UMLDes.Gui.Properties.Resources.menu_OpenProject_Image;
 			this.menu_OpenProject.MergeIndex=1;
 			this.menu_OpenProject.Name="menu_OpenProject";
 			this.menu_OpenProject.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.O)));
-			this.menu_OpenProject.Size=new System.Drawing.Size (255,22);
+			this.menu_OpenProject.Size=new System.Drawing.Size (218,22);
 			this.menu_OpenProject.Text="打开工程(&O)";
 			this.menu_OpenProject.Click+=new System.EventHandler (this.LoadProject);
 			// 
 			// menu_SaveProject
 			// 
-			this.menu_SaveProject.Image=global::UmlDes.Gui.Properties.Resources.menu_SaveProject;
+			this.menu_SaveProject.Image=global::UMLDes.Gui.Properties.Resources.menu_SaveProject_Image;
 			this.menu_SaveProject.MergeIndex=2;
 			this.menu_SaveProject.Name="menu_SaveProject";
 			this.menu_SaveProject.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.S)));
-			this.menu_SaveProject.Size=new System.Drawing.Size (255,22);
+			this.menu_SaveProject.Size=new System.Drawing.Size (218,22);
 			this.menu_SaveProject.Text="保存工程(&S)";
 			this.menu_SaveProject.Click+=new System.EventHandler (this.SaveProject);
 			// 
 			// menu_SaveProjAs
 			// 
-			this.menu_SaveProjAs.Image=global::UmlDes.Gui.Properties.Resources.menu_SaveProjAs;
+			this.menu_SaveProjAs.Image=global::UMLDes.Gui.Properties.Resources.menu_SaveProjAs_Image;
 			this.menu_SaveProjAs.MergeIndex=3;
 			this.menu_SaveProjAs.Name="menu_SaveProjAs";
-			this.menu_SaveProjAs.Size=new System.Drawing.Size (255,22);
+			this.menu_SaveProjAs.Size=new System.Drawing.Size (218,22);
 			this.menu_SaveProjAs.Text="另存为(&A) ...";
 			this.menu_SaveProjAs.Click+=new System.EventHandler (this.SaveAsProject);
 			// 
@@ -284,26 +284,26 @@ namespace UMLDes {
 			// 
 			this.menuSeparator1.MergeIndex=4;
 			this.menuSeparator1.Name="menuSeparator1";
-			this.menuSeparator1.Size=new System.Drawing.Size (252,6);
+			this.menuSeparator1.Size=new System.Drawing.Size (215,6);
 			// 
 			// menu_Print
 			// 
-			this.menu_Print.Image=global::UmlDes.Gui.Properties.Resources.menu_Print;
+			this.menu_Print.Image=global::UMLDes.Gui.Properties.Resources.menu_Print_Image;
 			this.menu_Print.MergeIndex=5;
 			this.menu_Print.Name="menu_Print";
 			this.menu_Print.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.P)));
-			this.menu_Print.Size=new System.Drawing.Size (255,22);
+			this.menu_Print.Size=new System.Drawing.Size (218,22);
 			this.menu_Print.Text="打印(&P)";
 			this.menu_Print.Click+=new System.EventHandler (this.Print);
 			// 
 			// menu_PrintPreview
 			// 
-			this.menu_PrintPreview.Image=global::UmlDes.Gui.Properties.Resources.menu_PrintPreview;
+			this.menu_PrintPreview.Image=global::UMLDes.Gui.Properties.Resources.menu_PrintPreview_Image;
 			this.menu_PrintPreview.MergeIndex=6;
 			this.menu_PrintPreview.Name="menu_PrintPreview";
 			this.menu_PrintPreview.ShortcutKeys=((System.Windows.Forms.Keys) (((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.Shift)
 						|System.Windows.Forms.Keys.P)));
-			this.menu_PrintPreview.Size=new System.Drawing.Size (255,22);
+			this.menu_PrintPreview.Size=new System.Drawing.Size (218,22);
 			this.menu_PrintPreview.Text="打印预览(&V)";
 			this.menu_PrintPreview.Click+=new System.EventHandler (this.PrintPreview);
 			// 
@@ -312,22 +312,22 @@ namespace UMLDes {
 			this.menu_SaveToImage.MergeIndex=7;
 			this.menu_SaveToImage.Name="menu_SaveToImage";
 			this.menu_SaveToImage.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.I)));
-			this.menu_SaveToImage.Size=new System.Drawing.Size (255,22);
-			this.menu_SaveToImage.Text="Save diagram as Image";
+			this.menu_SaveToImage.Size=new System.Drawing.Size (218,22);
+			this.menu_SaveToImage.Text="以图片格式保存";
 			this.menu_SaveToImage.Click+=new System.EventHandler (this.SaveToImage);
 			// 
 			// menuSeparator2
 			// 
 			this.menuSeparator2.MergeIndex=8;
 			this.menuSeparator2.Name="menuSeparator2";
-			this.menuSeparator2.Size=new System.Drawing.Size (252,6);
+			this.menuSeparator2.Size=new System.Drawing.Size (215,6);
 			// 
 			// menu_Exit
 			// 
 			this.menu_Exit.MergeIndex=9;
 			this.menu_Exit.Name="menu_Exit";
 			this.menu_Exit.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Alt|System.Windows.Forms.Keys.F4)));
-			this.menu_Exit.Size=new System.Drawing.Size (255,22);
+			this.menu_Exit.Size=new System.Drawing.Size (218,22);
 			this.menu_Exit.Text="退出(&X)";
 			this.menu_Exit.Click+=new System.EventHandler (this.Exit);
 			// 
@@ -352,21 +352,21 @@ namespace UMLDes {
 			// 
 			// menu_Undo
 			// 
-			this.menu_Undo.Image=global::UmlDes.Gui.Properties.Resources.menu_Undo;
+			this.menu_Undo.Image=global::UMLDes.Gui.Properties.Resources.menu_Undo_Image;
 			this.menu_Undo.MergeIndex=0;
 			this.menu_Undo.Name="menu_Undo";
 			this.menu_Undo.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.Z)));
-			this.menu_Undo.Size=new System.Drawing.Size (296,22);
+			this.menu_Undo.Size=new System.Drawing.Size (239,22);
 			this.menu_Undo.Text="撤销(&U)";
 			this.menu_Undo.Click+=new System.EventHandler (this.Undo);
 			// 
 			// menu_Redo
 			// 
-			this.menu_Redo.Image=global::UmlDes.Gui.Properties.Resources.menu_Redo;
+			this.menu_Redo.Image=global::UMLDes.Gui.Properties.Resources.menu_Redo_Image;
 			this.menu_Redo.MergeIndex=1;
 			this.menu_Redo.Name="menu_Redo";
 			this.menu_Redo.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.Y)));
-			this.menu_Redo.Size=new System.Drawing.Size (296,22);
+			this.menu_Redo.Size=new System.Drawing.Size (239,22);
 			this.menu_Redo.Text="重做(&R)";
 			this.menu_Redo.Click+=new System.EventHandler (this.Redo);
 			// 
@@ -374,45 +374,45 @@ namespace UMLDes {
 			// 
 			this.menuSeparator3.MergeIndex=2;
 			this.menuSeparator3.Name="menuSeparator3";
-			this.menuSeparator3.Size=new System.Drawing.Size (293,6);
+			this.menuSeparator3.Size=new System.Drawing.Size (236,6);
 			// 
 			// menu_Cut
 			// 
-			this.menu_Cut.Image=global::UmlDes.Gui.Properties.Resources.menu_Cut;
+			this.menu_Cut.Image=global::UMLDes.Gui.Properties.Resources.menu_Cut_Image;
 			this.menu_Cut.MergeIndex=3;
 			this.menu_Cut.Name="menu_Cut";
 			this.menu_Cut.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.X)));
-			this.menu_Cut.Size=new System.Drawing.Size (296,22);
+			this.menu_Cut.Size=new System.Drawing.Size (239,22);
 			this.menu_Cut.Text="剪切(&T)";
 			this.menu_Cut.Click+=new System.EventHandler (this.Cut);
 			// 
 			// menu_Copy
 			// 
-			this.menu_Copy.Image=global::UmlDes.Gui.Properties.Resources.menu_Copy;
+			this.menu_Copy.Image=global::UMLDes.Gui.Properties.Resources.menu_Copy_Image;
 			this.menu_Copy.MergeIndex=4;
 			this.menu_Copy.Name="menu_Copy";
 			this.menu_Copy.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.C)));
-			this.menu_Copy.Size=new System.Drawing.Size (296,22);
+			this.menu_Copy.Size=new System.Drawing.Size (239,22);
 			this.menu_Copy.Text="复制(&C)";
 			this.menu_Copy.Click+=new System.EventHandler (this.Copy);
 			// 
 			// menu_Paste
 			// 
-			this.menu_Paste.Image=global::UmlDes.Gui.Properties.Resources.menu_Paste;
+			this.menu_Paste.Image=global::UMLDes.Gui.Properties.Resources.menu_Paste_Image;
 			this.menu_Paste.MergeIndex=5;
 			this.menu_Paste.Name="menu_Paste";
 			this.menu_Paste.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.V)));
-			this.menu_Paste.Size=new System.Drawing.Size (296,22);
+			this.menu_Paste.Size=new System.Drawing.Size (239,22);
 			this.menu_Paste.Text="粘贴(&P)";
 			this.menu_Paste.Click+=new System.EventHandler (this.Paste);
 			// 
 			// menu_Delete
 			// 
-			this.menu_Delete.Image=global::UmlDes.Gui.Properties.Resources.menu_Delete;
+			this.menu_Delete.Image=global::UMLDes.Gui.Properties.Resources.menu_Delete_Image;
 			this.menu_Delete.MergeIndex=6;
 			this.menu_Delete.Name="menu_Delete";
 			this.menu_Delete.ShortcutKeys=System.Windows.Forms.Keys.Delete;
-			this.menu_Delete.Size=new System.Drawing.Size (296,22);
+			this.menu_Delete.Size=new System.Drawing.Size (239,22);
 			this.menu_Delete.Text="删除(&D)";
 			this.menu_Delete.Click+=new System.EventHandler (this.Delete);
 			// 
@@ -420,14 +420,14 @@ namespace UMLDes {
 			// 
 			this.menuSeparator4.MergeIndex=7;
 			this.menuSeparator4.Name="menuSeparator4";
-			this.menuSeparator4.Size=new System.Drawing.Size (293,6);
+			this.menuSeparator4.Size=new System.Drawing.Size (236,6);
 			// 
 			// menu_SelectAll
 			// 
 			this.menu_SelectAll.MergeIndex=8;
 			this.menu_SelectAll.Name="menu_SelectAll";
 			this.menu_SelectAll.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.A)));
-			this.menu_SelectAll.Size=new System.Drawing.Size (296,22);
+			this.menu_SelectAll.Size=new System.Drawing.Size (239,22);
 			this.menu_SelectAll.Text="全选(&A)";
 			this.menu_SelectAll.Click+=new System.EventHandler (this.SelectAll);
 			// 
@@ -437,8 +437,8 @@ namespace UMLDes {
 			this.menu_copyAsImage.Name="menu_copyAsImage";
 			this.menu_copyAsImage.ShortcutKeys=((System.Windows.Forms.Keys) (((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.Shift)
 						|System.Windows.Forms.Keys.C)));
-			this.menu_copyAsImage.Size=new System.Drawing.Size (296,22);
-			this.menu_copyAsImage.Text="Copy diagram as Image";
+			this.menu_copyAsImage.Size=new System.Drawing.Size (239,22);
+			this.menu_copyAsImage.Text="以图片格式复制";
 			this.menu_copyAsImage.Click+=new System.EventHandler (this.CopyAsImage);
 			// 
 			// menumain_View
@@ -453,7 +453,7 @@ namespace UMLDes {
 			// 
 			// menu_ZoomIn
 			// 
-			this.menu_ZoomIn.Image=global::UmlDes.Gui.Properties.Resources.menu_ZoomIn;
+			this.menu_ZoomIn.Image=global::UMLDes.Gui.Properties.Resources.menu_ZoomIn_Image;
 			this.menu_ZoomIn.MergeIndex=0;
 			this.menu_ZoomIn.Name="menu_ZoomIn";
 			this.menu_ZoomIn.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.J)));
@@ -463,7 +463,7 @@ namespace UMLDes {
 			// 
 			// menu_ZoomOut
 			// 
-			this.menu_ZoomOut.Image=global::UmlDes.Gui.Properties.Resources.menu_ZoomOut;
+			this.menu_ZoomOut.Image=global::UMLDes.Gui.Properties.Resources.menu_ZoomOut_Image;
 			this.menu_ZoomOut.MergeIndex=1;
 			this.menu_ZoomOut.Name="menu_ZoomOut";
 			this.menu_ZoomOut.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.K)));
@@ -484,32 +484,32 @@ namespace UMLDes {
 			// 
 			// menu_AddFiles
 			// 
-			this.menu_AddFiles.Image=global::UmlDes.Gui.Properties.Resources.menu_AddFiles;
+			this.menu_AddFiles.Image=global::UMLDes.Gui.Properties.Resources.menu_AddFiles_Image;
 			this.menu_AddFiles.MergeIndex=0;
 			this.menu_AddFiles.Name="menu_AddFiles";
 			this.menu_AddFiles.ShortcutKeys=((System.Windows.Forms.Keys) ((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.F)));
-			this.menu_AddFiles.Size=new System.Drawing.Size (244,22);
+			this.menu_AddFiles.Size=new System.Drawing.Size (245,22);
 			this.menu_AddFiles.Text="添加文件(&A)";
 			this.menu_AddFiles.Click+=new System.EventHandler (this.AddFiles);
 			// 
 			// menu_AddStaticView
 			// 
-			this.menu_AddStaticView.Image=global::UmlDes.Gui.Properties.Resources.menu_AddStaticView;
+			this.menu_AddStaticView.Image=global::UMLDes.Gui.Properties.Resources.menu_AddStaticView_Image;
 			this.menu_AddStaticView.MergeIndex=1;
 			this.menu_AddStaticView.Name="menu_AddStaticView";
 			this.menu_AddStaticView.ShortcutKeys=((System.Windows.Forms.Keys) (((System.Windows.Forms.Keys.Control|System.Windows.Forms.Keys.Shift)
 						|System.Windows.Forms.Keys.N)));
-			this.menu_AddStaticView.Size=new System.Drawing.Size (244,22);
-			this.menu_AddStaticView.Text="&Add static view";
+			this.menu_AddStaticView.Size=new System.Drawing.Size (245,22);
+			this.menu_AddStaticView.Text="添加静态视图(&A)";
 			this.menu_AddStaticView.Click+=new System.EventHandler (this.AddStaticView);
 			// 
 			// menu_Parse
 			// 
-			this.menu_Parse.Image=global::UmlDes.Gui.Properties.Resources.menu_Parse;
+			this.menu_Parse.Image=global::UMLDes.Gui.Properties.Resources.menu_Parse_Image;
 			this.menu_Parse.MergeIndex=2;
 			this.menu_Parse.Name="menu_Parse";
 			this.menu_Parse.ShortcutKeys=System.Windows.Forms.Keys.F5;
-			this.menu_Parse.Size=new System.Drawing.Size (244,22);
+			this.menu_Parse.Size=new System.Drawing.Size (245,22);
 			this.menu_Parse.Text="Parse files, refresh tree";
 			this.menu_Parse.Click+=new System.EventHandler (this.RefreshProject);
 			// 
@@ -555,18 +555,6 @@ namespace UMLDes {
 			this.treeImages.Images.SetKeyName (35,"");
 			this.treeImages.Images.SetKeyName (36,"");
 			// 
-			// toolBar1
-			// 
-			this.toolBar1.BackColor=System.Drawing.Color.FromArgb (((int) (((byte) (219)))),((int) (((byte) (216)))),((int) (((byte) (209)))));
-			this.toolBar1.Dock=System.Windows.Forms.DockStyle.Top;
-			this.toolBar1.ForeColor=System.Drawing.Color.FromArgb (((int) (((byte) (219)))),((int) (((byte) (216)))),((int) (((byte) (209)))));
-			this.toolBar1.images=this.toolbarImages;
-			this.toolBar1.Location=new System.Drawing.Point (0,0);
-			this.toolBar1.Name="toolBar1";
-			this.toolBar1.Size=new System.Drawing.Size (784,26);
-			this.toolBar1.TabIndex=10;
-			this.toolBar1.TabStop=false;
-			// 
 			// panel1
 			// 
 			this.panel1.Controls.Add (this.ProjectTree);
@@ -575,14 +563,6 @@ namespace UMLDes {
 			this.panel1.Name="panel1";
 			this.panel1.Size=new System.Drawing.Size (259,122);
 			this.panel1.TabIndex=13;
-			// 
-			// ProjectTree
-			// 
-			this.ProjectTree.Dock=System.Windows.Forms.DockStyle.Fill;
-			this.ProjectTree.Location=new System.Drawing.Point (0,0);
-			this.ProjectTree.Name="ProjectTree";
-			this.ProjectTree.Size=new System.Drawing.Size (259,122);
-			this.ProjectTree.TabIndex=2;
 			// 
 			// splitter1
 			// 
@@ -596,22 +576,22 @@ namespace UMLDes {
 			// 
 			this.statusStrip1.Dock=System.Windows.Forms.DockStyle.None;
 			this.statusStrip1.Items.AddRange (new System.Windows.Forms.ToolStripItem[] {
-            this.status_panel});
+            this.status_Label});
 			this.statusStrip1.Location=new System.Drawing.Point (0,0);
 			this.statusStrip1.Name="statusStrip1";
 			this.statusStrip1.ShowItemToolTips=true;
 			this.statusStrip1.Size=new System.Drawing.Size (784,22);
 			this.statusStrip1.TabIndex=1;
 			// 
-			// status_panel
+			// status_Label
 			// 
-			this.status_panel.AutoToolTip=true;
-			this.status_panel.Name="status_panel";
-			this.status_panel.Size=new System.Drawing.Size (769,17);
-			this.status_panel.Spring=true;
-			this.status_panel.Text="就绪";
-			this.status_panel.TextAlign=System.Drawing.ContentAlignment.MiddleLeft;
-			this.status_panel.ToolTipText="状态";
+			this.status_Label.AutoToolTip=true;
+			this.status_Label.Name="status_Label";
+			this.status_Label.Size=new System.Drawing.Size (769,17);
+			this.status_Label.Spring=true;
+			this.status_Label.Text="就绪";
+			this.status_Label.TextAlign=System.Drawing.ContentAlignment.MiddleLeft;
+			this.status_Label.ToolTipText="状态";
 			// 
 			// toolStripContainer1
 			// 
@@ -654,6 +634,18 @@ namespace UMLDes {
 			this.ViewCtrl1.Size=new System.Drawing.Size (521,122);
 			this.ViewCtrl1.TabIndex=15;
 			// 
+			// toolBar1
+			// 
+			this.toolBar1.BackColor=System.Drawing.Color.FromArgb (((int) (((byte) (219)))),((int) (((byte) (216)))),((int) (((byte) (209)))));
+			this.toolBar1.Dock=System.Windows.Forms.DockStyle.Top;
+			this.toolBar1.ForeColor=System.Drawing.Color.FromArgb (((int) (((byte) (219)))),((int) (((byte) (216)))),((int) (((byte) (209)))));
+			this.toolBar1.images=this.toolbarImages;
+			this.toolBar1.Location=new System.Drawing.Point (0,0);
+			this.toolBar1.Name="toolBar1";
+			this.toolBar1.Size=new System.Drawing.Size (784,26);
+			this.toolBar1.TabIndex=10;
+			this.toolBar1.TabStop=false;
+			// 
 			// toolStrip1
 			// 
 			this.toolStrip1.Dock=System.Windows.Forms.DockStyle.None;
@@ -684,7 +676,7 @@ namespace UMLDes {
 			// tool_NewProject
 			// 
 			this.tool_NewProject.DisplayStyle=System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.tool_NewProject.Image=global::UmlDes.Gui.Properties.Resources.menu_NewProject;
+			this.tool_NewProject.Image=global::UMLDes.Gui.Properties.Resources.menu_NewProject_Image;
 			this.tool_NewProject.ImageTransparentColor=System.Drawing.Color.Magenta;
 			this.tool_NewProject.Name="tool_NewProject";
 			this.tool_NewProject.Size=new System.Drawing.Size (23,22);
@@ -694,7 +686,7 @@ namespace UMLDes {
 			// tool_OpenProject
 			// 
 			this.tool_OpenProject.DisplayStyle=System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.tool_OpenProject.Image=global::UmlDes.Gui.Properties.Resources.menu_OpenProject;
+			this.tool_OpenProject.Image=global::UMLDes.Gui.Properties.Resources.menu_OpenProject_Image;
 			this.tool_OpenProject.ImageTransparentColor=System.Drawing.Color.Magenta;
 			this.tool_OpenProject.Name="tool_OpenProject";
 			this.tool_OpenProject.Size=new System.Drawing.Size (23,22);
@@ -704,7 +696,7 @@ namespace UMLDes {
 			// tool_SaveProject
 			// 
 			this.tool_SaveProject.DisplayStyle=System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.tool_SaveProject.Image=global::UmlDes.Gui.Properties.Resources.menu_SaveProject;
+			this.tool_SaveProject.Image=global::UMLDes.Gui.Properties.Resources.menu_SaveProject_Image;
 			this.tool_SaveProject.ImageTransparentColor=System.Drawing.Color.Magenta;
 			this.tool_SaveProject.Name="tool_SaveProject";
 			this.tool_SaveProject.Size=new System.Drawing.Size (23,22);
@@ -714,7 +706,7 @@ namespace UMLDes {
 			// tool_SaveProjAs
 			// 
 			this.tool_SaveProjAs.DisplayStyle=System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.tool_SaveProjAs.Image=global::UmlDes.Gui.Properties.Resources.menu_SaveProjAs;
+			this.tool_SaveProjAs.Image=global::UMLDes.Gui.Properties.Resources.menu_SaveProjAs_Image;
 			this.tool_SaveProjAs.ImageTransparentColor=System.Drawing.Color.Magenta;
 			this.tool_SaveProjAs.Name="tool_SaveProjAs";
 			this.tool_SaveProjAs.Size=new System.Drawing.Size (23,22);
@@ -729,7 +721,7 @@ namespace UMLDes {
 			// tool_AddFiles
 			// 
 			this.tool_AddFiles.DisplayStyle=System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.tool_AddFiles.Image=global::UmlDes.Gui.Properties.Resources.menu_AddFiles;
+			this.tool_AddFiles.Image=global::UMLDes.Gui.Properties.Resources.menu_AddFiles_Image;
 			this.tool_AddFiles.ImageTransparentColor=System.Drawing.Color.Magenta;
 			this.tool_AddFiles.Name="tool_AddFiles";
 			this.tool_AddFiles.Size=new System.Drawing.Size (23,22);
@@ -739,17 +731,17 @@ namespace UMLDes {
 			// tool_AddStaticView
 			// 
 			this.tool_AddStaticView.DisplayStyle=System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.tool_AddStaticView.Image=global::UmlDes.Gui.Properties.Resources.menu_AddStaticView;
+			this.tool_AddStaticView.Image=global::UMLDes.Gui.Properties.Resources.menu_AddStaticView_Image;
 			this.tool_AddStaticView.ImageTransparentColor=System.Drawing.Color.Magenta;
 			this.tool_AddStaticView.Name="tool_AddStaticView";
 			this.tool_AddStaticView.Size=new System.Drawing.Size (23,22);
-			this.tool_AddStaticView.Text="Add static view";
+			this.tool_AddStaticView.Text="添加静态视图";
 			this.tool_AddStaticView.Click+=new System.EventHandler (this.AddStaticView);
 			// 
 			// tool_Parse
 			// 
 			this.tool_Parse.DisplayStyle=System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.tool_Parse.Image=global::UmlDes.Gui.Properties.Resources.menu_Parse;
+			this.tool_Parse.Image=global::UMLDes.Gui.Properties.Resources.menu_Parse_Image;
 			this.tool_Parse.ImageTransparentColor=System.Drawing.Color.Magenta;
 			this.tool_Parse.Name="tool_Parse";
 			this.tool_Parse.Size=new System.Drawing.Size (23,22);
@@ -764,7 +756,7 @@ namespace UMLDes {
 			// tool_Print
 			// 
 			this.tool_Print.DisplayStyle=System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.tool_Print.Image=global::UmlDes.Gui.Properties.Resources.menu_Print;
+			this.tool_Print.Image=global::UMLDes.Gui.Properties.Resources.menu_Print_Image;
 			this.tool_Print.ImageTransparentColor=System.Drawing.Color.Magenta;
 			this.tool_Print.Name="tool_Print";
 			this.tool_Print.Size=new System.Drawing.Size (23,22);
@@ -774,7 +766,7 @@ namespace UMLDes {
 			// tool_PrintPreview
 			// 
 			this.tool_PrintPreview.DisplayStyle=System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.tool_PrintPreview.Image=global::UmlDes.Gui.Properties.Resources.menu_PrintPreview;
+			this.tool_PrintPreview.Image=global::UMLDes.Gui.Properties.Resources.menu_PrintPreview_Image;
 			this.tool_PrintPreview.ImageTransparentColor=System.Drawing.Color.Magenta;
 			this.tool_PrintPreview.Name="tool_PrintPreview";
 			this.tool_PrintPreview.Size=new System.Drawing.Size (23,22);
@@ -789,7 +781,7 @@ namespace UMLDes {
 			// tool_Cut
 			// 
 			this.tool_Cut.DisplayStyle=System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.tool_Cut.Image=global::UmlDes.Gui.Properties.Resources.menu_Cut;
+			this.tool_Cut.Image=global::UMLDes.Gui.Properties.Resources.menu_Cut_Image;
 			this.tool_Cut.ImageTransparentColor=System.Drawing.Color.Magenta;
 			this.tool_Cut.Name="tool_Cut";
 			this.tool_Cut.Size=new System.Drawing.Size (23,22);
@@ -799,7 +791,7 @@ namespace UMLDes {
 			// tool_Copy
 			// 
 			this.tool_Copy.DisplayStyle=System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.tool_Copy.Image=global::UmlDes.Gui.Properties.Resources.menu_Copy;
+			this.tool_Copy.Image=global::UMLDes.Gui.Properties.Resources.menu_Copy_Image;
 			this.tool_Copy.ImageTransparentColor=System.Drawing.Color.Magenta;
 			this.tool_Copy.Name="tool_Copy";
 			this.tool_Copy.Size=new System.Drawing.Size (23,22);
@@ -809,7 +801,7 @@ namespace UMLDes {
 			// tool_Paste
 			// 
 			this.tool_Paste.DisplayStyle=System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.tool_Paste.Image=global::UmlDes.Gui.Properties.Resources.menu_Paste;
+			this.tool_Paste.Image=global::UMLDes.Gui.Properties.Resources.menu_Paste_Image;
 			this.tool_Paste.ImageTransparentColor=System.Drawing.Color.Magenta;
 			this.tool_Paste.Name="tool_Paste";
 			this.tool_Paste.Size=new System.Drawing.Size (23,22);
@@ -824,7 +816,7 @@ namespace UMLDes {
 			// tool_Undo
 			// 
 			this.tool_Undo.DisplayStyle=System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.tool_Undo.Image=global::UmlDes.Gui.Properties.Resources.menu_Undo;
+			this.tool_Undo.Image=global::UMLDes.Gui.Properties.Resources.menu_Undo_Image;
 			this.tool_Undo.ImageTransparentColor=System.Drawing.Color.Magenta;
 			this.tool_Undo.Name="tool_Undo";
 			this.tool_Undo.Size=new System.Drawing.Size (23,22);
@@ -834,7 +826,7 @@ namespace UMLDes {
 			// tool_Redo
 			// 
 			this.tool_Redo.DisplayStyle=System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.tool_Redo.Image=global::UmlDes.Gui.Properties.Resources.menu_Redo;
+			this.tool_Redo.Image=global::UMLDes.Gui.Properties.Resources.menu_Redo_Image;
 			this.tool_Redo.ImageTransparentColor=System.Drawing.Color.Magenta;
 			this.tool_Redo.Name="tool_Redo";
 			this.tool_Redo.Size=new System.Drawing.Size (23,22);
@@ -848,14 +840,16 @@ namespace UMLDes {
             this.toolStripComboBox1});
 			this.toolStrip2.Location=new System.Drawing.Point (3,50);
 			this.toolStrip2.Name="toolStrip2";
-			this.toolStrip2.Size=new System.Drawing.Size (168,25);
+			this.toolStrip2.Size=new System.Drawing.Size (135,25);
 			this.toolStrip2.TabIndex=2;
 			// 
 			// toolStripComboBox1
 			// 
+			this.toolStripComboBox1.AutoToolTip=true;
 			this.toolStripComboBox1.MaxDropDownItems=15;
 			this.toolStripComboBox1.Name="toolStripComboBox1";
 			this.toolStripComboBox1.Size=new System.Drawing.Size (121,25);
+			this.toolStripComboBox1.ToolTipText="缩放";
 			// 
 			// toolStrip3
 			// 
@@ -882,12 +876,15 @@ namespace UMLDes {
 			// 
 			// tool_arrow
 			// 
+			this.tool_arrow.Checked=true;
+			this.tool_arrow.CheckState=System.Windows.Forms.CheckState.Checked;
 			this.tool_arrow.DisplayStyle=System.Windows.Forms.ToolStripItemDisplayStyle.Image;
 			this.tool_arrow.Image=((System.Drawing.Image) (resources.GetObject ("tool_arrow.Image")));
 			this.tool_arrow.ImageTransparentColor=System.Drawing.Color.Magenta;
 			this.tool_arrow.Name="tool_arrow";
 			this.tool_arrow.Size=new System.Drawing.Size (23,22);
 			this.tool_arrow.Text="选择";
+			this.tool_arrow.Click+=new System.EventHandler (this.toolStrip_Select);
 			// 
 			// toolStripSeparator5
 			// 
@@ -902,6 +899,7 @@ namespace UMLDes {
 			this.tool_conn_inher.Name="tool_conn_inher";
 			this.tool_conn_inher.Size=new System.Drawing.Size (23,22);
 			this.tool_conn_inher.Text="Draw inhreitance";
+			this.tool_conn_inher.Click+=new System.EventHandler (this.toolStrip_Select);
 			// 
 			// tool_conn_assoc
 			// 
@@ -910,7 +908,8 @@ namespace UMLDes {
 			this.tool_conn_assoc.ImageTransparentColor=System.Drawing.Color.Magenta;
 			this.tool_conn_assoc.Name="tool_conn_assoc";
 			this.tool_conn_assoc.Size=new System.Drawing.Size (23,22);
-			this.tool_conn_assoc.Text="toolStripButton3";
+			this.tool_conn_assoc.Text="Draw association";
+			this.tool_conn_assoc.Click+=new System.EventHandler (this.toolStrip_Select);
 			// 
 			// tool_conn_aggregation
 			// 
@@ -919,7 +918,8 @@ namespace UMLDes {
 			this.tool_conn_aggregation.ImageTransparentColor=System.Drawing.Color.Magenta;
 			this.tool_conn_aggregation.Name="tool_conn_aggregation";
 			this.tool_conn_aggregation.Size=new System.Drawing.Size (23,22);
-			this.tool_conn_aggregation.Text="toolStripButton4";
+			this.tool_conn_aggregation.Text="Draw aggregation";
+			this.tool_conn_aggregation.Click+=new System.EventHandler (this.toolStrip_Select);
 			// 
 			// tool_conn_composition
 			// 
@@ -928,7 +928,8 @@ namespace UMLDes {
 			this.tool_conn_composition.ImageTransparentColor=System.Drawing.Color.Magenta;
 			this.tool_conn_composition.Name="tool_conn_composition";
 			this.tool_conn_composition.Size=new System.Drawing.Size (23,22);
-			this.tool_conn_composition.Text="toolStripButton5";
+			this.tool_conn_composition.Text="Draw composition";
+			this.tool_conn_composition.Click+=new System.EventHandler (this.toolStrip_Select);
 			// 
 			// tool_conn_attachm
 			// 
@@ -937,7 +938,8 @@ namespace UMLDes {
 			this.tool_conn_attachm.ImageTransparentColor=System.Drawing.Color.Magenta;
 			this.tool_conn_attachm.Name="tool_conn_attachm";
 			this.tool_conn_attachm.Size=new System.Drawing.Size (23,22);
-			this.tool_conn_attachm.Text="toolStripButton6";
+			this.tool_conn_attachm.Text="Draw attachment";
+			this.tool_conn_attachm.Click+=new System.EventHandler (this.toolStrip_Select);
 			// 
 			// tool_conn_dependence
 			// 
@@ -946,7 +948,8 @@ namespace UMLDes {
 			this.tool_conn_dependence.ImageTransparentColor=System.Drawing.Color.Magenta;
 			this.tool_conn_dependence.Name="tool_conn_dependence";
 			this.tool_conn_dependence.Size=new System.Drawing.Size (23,22);
-			this.tool_conn_dependence.Text="toolStripButton7";
+			this.tool_conn_dependence.Text="Draw dependency/usage";
+			this.tool_conn_dependence.Click+=new System.EventHandler (this.toolStrip_Select);
 			// 
 			// tool_conn_realiz
 			// 
@@ -955,7 +958,8 @@ namespace UMLDes {
 			this.tool_conn_realiz.ImageTransparentColor=System.Drawing.Color.Magenta;
 			this.tool_conn_realiz.Name="tool_conn_realiz";
 			this.tool_conn_realiz.Size=new System.Drawing.Size (23,22);
-			this.tool_conn_realiz.Text="toolStripButton8";
+			this.tool_conn_realiz.Text="Draw realization";
+			this.tool_conn_realiz.Click+=new System.EventHandler (this.toolStrip_Select);
 			// 
 			// toolStripSeparator6
 			// 
@@ -969,7 +973,8 @@ namespace UMLDes {
 			this.tool_memo.ImageTransparentColor=System.Drawing.Color.Magenta;
 			this.tool_memo.Name="tool_memo";
 			this.tool_memo.Size=new System.Drawing.Size (23,22);
-			this.tool_memo.Text="toolStripButton9";
+			this.tool_memo.Text="Draw memo";
+			this.tool_memo.Click+=new System.EventHandler (this.toolStrip_Select);
 			// 
 			// tool_package
 			// 
@@ -978,7 +983,8 @@ namespace UMLDes {
 			this.tool_package.ImageTransparentColor=System.Drawing.Color.Magenta;
 			this.tool_package.Name="tool_package";
 			this.tool_package.Size=new System.Drawing.Size (23,22);
-			this.tool_package.Text="toolStripButton10";
+			this.tool_package.Text="Draw package";
+			this.tool_package.Click+=new System.EventHandler (this.toolStrip_Select);
 			// 
 			// tool_constraint
 			// 
@@ -987,7 +993,8 @@ namespace UMLDes {
 			this.tool_constraint.ImageTransparentColor=System.Drawing.Color.Magenta;
 			this.tool_constraint.Name="tool_constraint";
 			this.tool_constraint.Size=new System.Drawing.Size (23,22);
-			this.tool_constraint.Text="toolStripButton11";
+			this.tool_constraint.Text="Draw constraint";
+			this.tool_constraint.Click+=new System.EventHandler (this.toolStrip_Select);
 			// 
 			// tool_actor
 			// 
@@ -996,82 +1003,97 @@ namespace UMLDes {
 			this.tool_actor.ImageTransparentColor=System.Drawing.Color.Magenta;
 			this.tool_actor.Name="tool_actor";
 			this.tool_actor.Size=new System.Drawing.Size (23,22);
-			this.tool_actor.Text="toolStripButton12";
+			this.tool_actor.Text="Draw actor";
+			this.tool_actor.Click+=new System.EventHandler (this.toolStrip_Select);
 			// 
 			// toolStrip4
 			// 
 			this.toolStrip4.Dock=System.Windows.Forms.DockStyle.None;
 			this.toolStrip4.Items.AddRange (new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton13,
-            this.toolStripButton14,
-            this.toolStripButton15,
-            this.toolStripButton16,
+            this.tool_straight_conn,
+            this.tool_segmented_conn,
+            this.tool_quadric_conn,
+            this.tool_curved_conn,
             this.toolStripSeparator7,
-            this.toolStripButton17,
-            this.toolStripButton18});
+            this.tool_show_qual,
+            this.tool_oper_signature});
 			this.toolStrip4.Location=new System.Drawing.Point (3,100);
 			this.toolStrip4.Name="toolStrip4";
-			this.toolStrip4.Size=new System.Drawing.Size (156,25);
+			this.toolStrip4.Size=new System.Drawing.Size (187,25);
 			this.toolStrip4.TabIndex=4;
 			// 
-			// toolStripButton13
+			// tool_straight_conn
 			// 
-			this.toolStripButton13.DisplayStyle=System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripButton13.Image=((System.Drawing.Image) (resources.GetObject ("toolStripButton13.Image")));
-			this.toolStripButton13.ImageTransparentColor=System.Drawing.Color.Magenta;
-			this.toolStripButton13.Name="toolStripButton13";
-			this.toolStripButton13.Size=new System.Drawing.Size (23,22);
-			this.toolStripButton13.Text="toolStripButton13";
+			this.tool_straight_conn.DisplayStyle=System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.tool_straight_conn.Image=((System.Drawing.Image) (resources.GetObject ("tool_straight_conn.Image")));
+			this.tool_straight_conn.ImageTransparentColor=System.Drawing.Color.Magenta;
+			this.tool_straight_conn.Name="tool_straight_conn";
+			this.tool_straight_conn.Size=new System.Drawing.Size (23,22);
+			this.tool_straight_conn.Text="Line";
+			this.tool_straight_conn.Click+=new System.EventHandler (this.toolStrip_Select);
 			// 
-			// toolStripButton14
+			// tool_segmented_conn
 			// 
-			this.toolStripButton14.DisplayStyle=System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripButton14.Image=((System.Drawing.Image) (resources.GetObject ("toolStripButton14.Image")));
-			this.toolStripButton14.ImageTransparentColor=System.Drawing.Color.Magenta;
-			this.toolStripButton14.Name="toolStripButton14";
-			this.toolStripButton14.Size=new System.Drawing.Size (23,22);
-			this.toolStripButton14.Text="toolStripButton14";
+			this.tool_segmented_conn.DisplayStyle=System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.tool_segmented_conn.Image=((System.Drawing.Image) (resources.GetObject ("tool_segmented_conn.Image")));
+			this.tool_segmented_conn.ImageTransparentColor=System.Drawing.Color.Magenta;
+			this.tool_segmented_conn.Name="tool_segmented_conn";
+			this.tool_segmented_conn.Size=new System.Drawing.Size (23,22);
+			this.tool_segmented_conn.Text="Segmented";
+			this.tool_segmented_conn.Click+=new System.EventHandler (this.toolStrip_Select);
 			// 
-			// toolStripButton15
+			// tool_quadric_conn
 			// 
-			this.toolStripButton15.DisplayStyle=System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripButton15.Image=((System.Drawing.Image) (resources.GetObject ("toolStripButton15.Image")));
-			this.toolStripButton15.ImageTransparentColor=System.Drawing.Color.Magenta;
-			this.toolStripButton15.Name="toolStripButton15";
-			this.toolStripButton15.Size=new System.Drawing.Size (23,22);
-			this.toolStripButton15.Text="toolStripButton15";
+			this.tool_quadric_conn.DisplayStyle=System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.tool_quadric_conn.Image=((System.Drawing.Image) (resources.GetObject ("tool_quadric_conn.Image")));
+			this.tool_quadric_conn.ImageTransparentColor=System.Drawing.Color.Magenta;
+			this.tool_quadric_conn.Name="tool_quadric_conn";
+			this.tool_quadric_conn.Size=new System.Drawing.Size (23,22);
+			this.tool_quadric_conn.Text="Quadric";
+			this.tool_quadric_conn.Click+=new System.EventHandler (this.toolStrip_Select);
 			// 
-			// toolStripButton16
+			// tool_curved_conn
 			// 
-			this.toolStripButton16.DisplayStyle=System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripButton16.Image=((System.Drawing.Image) (resources.GetObject ("toolStripButton16.Image")));
-			this.toolStripButton16.ImageTransparentColor=System.Drawing.Color.Magenta;
-			this.toolStripButton16.Name="toolStripButton16";
-			this.toolStripButton16.Size=new System.Drawing.Size (23,22);
-			this.toolStripButton16.Text="toolStripButton16";
+			this.tool_curved_conn.DisplayStyle=System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.tool_curved_conn.Image=((System.Drawing.Image) (resources.GetObject ("tool_curved_conn.Image")));
+			this.tool_curved_conn.ImageTransparentColor=System.Drawing.Color.Magenta;
+			this.tool_curved_conn.Name="tool_curved_conn";
+			this.tool_curved_conn.Size=new System.Drawing.Size (23,22);
+			this.tool_curved_conn.Text="Bezier";
+			this.tool_curved_conn.Click+=new System.EventHandler (this.toolStrip_Select);
 			// 
 			// toolStripSeparator7
 			// 
 			this.toolStripSeparator7.Name="toolStripSeparator7";
 			this.toolStripSeparator7.Size=new System.Drawing.Size (6,25);
 			// 
-			// toolStripButton17
+			// tool_show_qual
 			// 
-			this.toolStripButton17.DisplayStyle=System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripButton17.Image=((System.Drawing.Image) (resources.GetObject ("toolStripButton17.Image")));
-			this.toolStripButton17.ImageTransparentColor=System.Drawing.Color.Magenta;
-			this.toolStripButton17.Name="toolStripButton17";
-			this.toolStripButton17.Size=new System.Drawing.Size (23,22);
-			this.toolStripButton17.Text="toolStripButton17";
+			this.tool_show_qual.DisplayStyle=System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.tool_show_qual.Image=((System.Drawing.Image) (resources.GetObject ("tool_show_qual.Image")));
+			this.tool_show_qual.ImageTransparentColor=System.Drawing.Color.Magenta;
+			this.tool_show_qual.Name="tool_show_qual";
+			this.tool_show_qual.Size=new System.Drawing.Size (23,22);
+			this.tool_show_qual.Text="Show full qualified";
+			this.tool_show_qual.Click+=new System.EventHandler (this.toolStrip_Select);
 			// 
-			// toolStripButton18
+			// tool_oper_signature
 			// 
-			this.toolStripButton18.DisplayStyle=System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.toolStripButton18.Image=((System.Drawing.Image) (resources.GetObject ("toolStripButton18.Image")));
-			this.toolStripButton18.ImageTransparentColor=System.Drawing.Color.Magenta;
-			this.toolStripButton18.Name="toolStripButton18";
-			this.toolStripButton18.Size=new System.Drawing.Size (23,22);
-			this.toolStripButton18.Text="toolStripButton18";
+			this.tool_oper_signature.DisplayStyle=System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.tool_oper_signature.Image=((System.Drawing.Image) (resources.GetObject ("tool_oper_signature.Image")));
+			this.tool_oper_signature.ImageTransparentColor=System.Drawing.Color.Magenta;
+			this.tool_oper_signature.Name="tool_oper_signature";
+			this.tool_oper_signature.Size=new System.Drawing.Size (23,22);
+			this.tool_oper_signature.Text="Operations signature";
+			this.tool_oper_signature.Click+=new System.EventHandler (this.toolStrip_Select);
+			// 
+			// ProjectTree
+			// 
+			this.ProjectTree.Dock=System.Windows.Forms.DockStyle.Fill;
+			this.ProjectTree.Location=new System.Drawing.Point (0,0);
+			this.ProjectTree.Name="ProjectTree";
+			this.ProjectTree.Size=new System.Drawing.Size (259,122);
+			this.ProjectTree.TabIndex=2;
 			// 
 			// MainWnd
 			// 
@@ -1079,7 +1101,6 @@ namespace UMLDes {
 			this.ClientSize=new System.Drawing.Size (784,295);
 			this.Controls.Add (this.toolStripContainer1);
 			this.Icon=((System.Drawing.Icon) (resources.GetObject ("$this.Icon")));
-			this.Location=new System.Drawing.Point (0,0);
 			this.MainMenuStrip=this.menuStrip1;
 			this.Name="MainWnd";
 			this.Text=" ";
@@ -1144,7 +1165,7 @@ namespace UMLDes {
 		private System.Windows.Forms.ToolStripMenuItem menu_PrintPreview;
 		private System.Windows.Forms.ToolStripMenuItem menu_show_hints;
 		private System.Windows.Forms.StatusStrip statusStrip1;
-		internal System.Windows.Forms.ToolStripStatusLabel status_panel;
+		internal System.Windows.Forms.ToolStripStatusLabel status_Label;
 		private System.Windows.Forms.ToolStripMenuItem menu_SaveToImage;
 		private System.Windows.Forms.ToolStripMenuItem menu_ZoomIn;
 		private System.Windows.Forms.ToolStripMenuItem menu_ZoomOut;
@@ -1230,7 +1251,8 @@ namespace UMLDes {
 			toolStripComboBox1.SelectedIndex=5;//设置默认项
 			toolStripComboBox1.SelectedIndexChanged+=new System.EventHandler (ViewCtrl1.ScaleChanged);//处理消息
 			ViewCtrl1.scalecombo=toolStripComboBox1;
-
+			//this.tool_AddStaticView.ToolTipText=menu_AddStaticView.ShortcutKeys+"添加静态视图1";
+			//this.tool_AddStaticView.Text=menu_AddStaticView.ShortcutKeyDisplayString+"添加静态视图2";
 		}
 		#endregion
 
@@ -1276,13 +1298,13 @@ namespace UMLDes {
 		private System.Windows.Forms.ToolStripButton tool_constraint;
 		private System.Windows.Forms.ToolStripButton tool_actor;
 		private System.Windows.Forms.ToolStrip toolStrip4;
-		private System.Windows.Forms.ToolStripButton toolStripButton13;
-		private System.Windows.Forms.ToolStripButton toolStripButton14;
-		private System.Windows.Forms.ToolStripButton toolStripButton15;
-		private System.Windows.Forms.ToolStripButton toolStripButton16;
+		private System.Windows.Forms.ToolStripButton tool_straight_conn;
+		private System.Windows.Forms.ToolStripButton tool_segmented_conn;
+		private System.Windows.Forms.ToolStripButton tool_quadric_conn;
+		private System.Windows.Forms.ToolStripButton tool_curved_conn;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator7;
-		private System.Windows.Forms.ToolStripButton toolStripButton17;
-		private System.Windows.Forms.ToolStripButton toolStripButton18;
+		private System.Windows.Forms.ToolStripButton tool_show_qual;
+		private System.Windows.Forms.ToolStripButton tool_oper_signature;
 
 	}
 }

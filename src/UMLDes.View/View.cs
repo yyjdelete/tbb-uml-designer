@@ -51,7 +51,6 @@ namespace UMLDes.GUI {
 		conn_attachm,
 		None
 	}
-
 	public interface ISolution {
 		UmlModel model {
 			get;
@@ -59,14 +58,18 @@ namespace UMLDes.GUI {
 		ImageList icon_list {
 			get;
 		}
-		UMLDes.Controls.FlatToolBar tool_bar {
+/*		UMLDes.Controls.FlatToolBar tool_bar {
 			get;
 		}
+*/
 		ImageList project_icon_list {
 			get;
 		}
-
 		void UpdateToolBar ();
+	}
+
+	public interface IDrawSelect {
+		void ToolbarAction (string tsb_Name);
 	}
 
 	public abstract class View {
@@ -103,7 +106,7 @@ namespace UMLDes.GUI {
 			get;
 		}
 	}
-
+		
 	public interface IPostload {
 		void PostLoad ();
 	}

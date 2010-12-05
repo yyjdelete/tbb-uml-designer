@@ -368,7 +368,7 @@ namespace UMLDes.GUI {
 				StopScrolling ();
 			}
 
-			parent.SetDefaultDrawingMode ();
+			//parent.SetDefaultDrawingMode ();
 			original_selected = null;
 
 			switch (action) {

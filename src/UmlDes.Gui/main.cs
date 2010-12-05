@@ -10,7 +10,9 @@ using UMLDes.GUI;
 using UMLDes.Controls;
 
 namespace UMLDes {
-	public partial class MainWnd:UMLDes.Controls.FlatMenuForm {
+
+	public partial class MainWnd:Form {
+		public GUI.IDrawSelect sv;
 		public MainWnd () {
 			InitializeComponent ();
 			PostInitialize ();
@@ -21,16 +23,14 @@ namespace UMLDes {
 
 		#region 工具栏相关
 
-		void EnableButton (UMLDes.Controls.FlatToolBarButton b,bool en) {
-			if (!b.disabled != en) {
-				b.disabled = !b.disabled;
-				b.parent.InvalidateButton (b);
-			}
+		void EnableButton (ToolStripButton b,bool en) {
+			if (!b.Enabled != en)
+				b.Enabled=!b.Enabled;
 		}
 
 		public void UpdateToolBar () {
-//			EnableButton (tool_undo,ViewCtrl1.Curr.undo.can_undo);
-//			EnableButton (tool_redo,ViewCtrl1.Curr.undo.can_redo);
+			EnableButton (tool_Undo,ViewCtrl1.Curr.undo.can_undo);
+			EnableButton (tool_Redo,ViewCtrl1.Curr.undo.can_redo);
 		}
 
 		void ToolbarAction (int index) {
@@ -73,6 +73,29 @@ namespace UMLDes {
 				case ToolBarIcons.paste:
 					MessageBox.Show ("CopyPaste" + ((ToolBarIcons) index).ToString ());
 					break;
+			}
+		}
+
+
+
+		/// <summary>
+		/// 刷新按钮选中状态
+		/// </summary>
+		/// <param name="tsb">待选中的工具栏按钮对象(ToolStripButton)</param>
+		void UnCheckAllOther (ToolStripButton tsb) {
+			int maxnum=tsb.Owner.Items.Count;
+			int i;
+			for (i=0;i<maxnum;i++)
+				if (tsb.Owner.Items[i] is ToolStripButton)//跳过间隔条toolStripSeparator
+					(tsb.Owner.Items[i] as ToolStripButton).Checked=false;
+			tsb.Checked=true;//采用.CheckState=System.Windows.Forms.CheckState.xxx亦可
+		}
+
+		private void toolStrip_Select (object sender,EventArgs e) {//选择绘制对象
+			ToolStripButton stsb=sender as ToolStripButton;
+			if (stsb.Checked==false) {//若更改选择
+				UnCheckAllOther (stsb);
+				(ViewCtrl1.Curr as UMLDes.GUI.StaticView).ToolbarAction (stsb.Name);
 			}
 		}
 
@@ -163,10 +186,11 @@ namespace UMLDes {
 			if (update) {
 				if (view_toolbar_panels != null)
 					foreach (FlatToolBarPanel panel in view_toolbar_panels)
-						toolBar1.RemovePanel (panel);
+//					toolBar1.RemovePanel (panel);
 				view_toolbar_panels = v.LoadToolbars ();
 				RefreshTitle ();
 				ViewCtrl1.Invalidate ();
+				UnCheckAllOther (tool_arrow);
 			}
 		}
 
@@ -219,7 +243,7 @@ namespace UMLDes {
 		private void SaveToImage (object sender,System.EventArgs e) {
 			Bitmap bmp = ViewCtrl1.PrintToImage ();
 			if (bmp == null) {
-				MessageBox.Show ("Diagram is empty","Nothing to save",MessageBoxButtons.OK,MessageBoxIcon.Information);
+				MessageBox.Show ("图为空","没有待保存的对象",MessageBoxButtons.OK,MessageBoxIcon.Information);
 				return;
 			}
 
@@ -251,7 +275,7 @@ namespace UMLDes {
 		private void CopyAsImage (object sender,System.EventArgs e) {
 			Bitmap bmp = ViewCtrl1.PrintToImage ();
 			if (bmp == null) {
-				MessageBox.Show ("图为空","没有可以复制的对象",MessageBoxButtons.OK,MessageBoxIcon.Information);
+				MessageBox.Show ("图为空","没有待复制的对象",MessageBoxButtons.OK,MessageBoxIcon.Information);
 				return;
 			}
 
@@ -420,7 +444,7 @@ namespace UMLDes {
 		#region “帮助”菜单
 
 		private void Help_Popup (object sender,System.EventArgs e) {
-			menu_GC_Collect.Text = "GC.Collect (" + GC.GetTotalMemory (false) / 1024 + " Kb alloc)";
+			menu_GC_Collect.Text = "GC.Collect (" + GC.GetTotalMemory (false) / 1024 + " Kb alloc)";//内存回收
 		}
 
 		private void menu_GC_Collect_Click (object sender,System.EventArgs e) {
@@ -437,7 +461,7 @@ namespace UMLDes {
 		#region 状态栏相关
 
 		internal void SetStatus (string text) {
-			status_panel.Text = text;
+			status_Label.Text = text;
 		}
 
 		internal void SetAdvise (string text) {
@@ -446,5 +470,115 @@ namespace UMLDes {
 
 		#endregion
 
+
+
+		/*void ToolbarAction (int index) {
+			switch ((ToolBarIcons) index) {
+				// what to do
+				case ToolBarIcons.arrow:
+					MouseAgent.current_operation=MouseOperation.Select;
+					break;
+				case ToolBarIcons.conn_inher:
+					MouseAgent.current_operation=MouseOperation.DrawConnection;
+					MouseAgent.conn_type=UmlRelationType.Inheritance;
+					break;
+				case ToolBarIcons.conn_assoc:
+					MouseAgent.current_operation=MouseOperation.DrawConnection;
+					MouseAgent.conn_type=UmlRelationType.Association;
+					break;
+				case ToolBarIcons.conn_aggregation:
+					MouseAgent.current_operation=MouseOperation.DrawConnection;
+					MouseAgent.conn_type=UmlRelationType.Aggregation;
+					break;
+				case ToolBarIcons.conn_composition:
+					MouseAgent.current_operation=MouseOperation.DrawConnection;
+					MouseAgent.conn_type=UmlRelationType.Composition;
+					break;
+				case ToolBarIcons.conn_realiz:
+					MouseAgent.current_operation=MouseOperation.DrawConnection;
+					MouseAgent.conn_type=UmlRelationType.Realization;
+					break;
+				case ToolBarIcons.conn_attachm:
+					MouseAgent.current_operation=MouseOperation.DrawConnection;
+					MouseAgent.conn_type=UmlRelationType.Attachment;
+					break;
+				case ToolBarIcons.conn_dependence:
+					MouseAgent.current_operation=MouseOperation.DrawConnection;
+					MouseAgent.conn_type=UmlRelationType.Dependency;
+					break;
+				case ToolBarIcons.memo:
+					MouseAgent.current_operation=MouseOperation.DrawComment;
+					break;
+				case ToolBarIcons.package:
+					MouseAgent.current_operation=MouseOperation.DrawPackage;
+					break;
+				// line type
+				case ToolBarIcons.straight_conn:
+					MouseAgent.conn_style=GuiConnectionStyle.Line;
+					break;
+				case ToolBarIcons.segmented_conn:
+					MouseAgent.conn_style=GuiConnectionStyle.Segmented;
+					break;
+				case ToolBarIcons.quadric_conn:
+					MouseAgent.conn_style=GuiConnectionStyle.Quadric;
+					break;
+				case ToolBarIcons.curved_conn:
+					MouseAgent.conn_style=GuiConnectionStyle.Besier;
+					break;
+			}
+		}*/
+
+/*
+		private void tool_arrow_Click (object sender,EventArgs e) {
+			if ((sender as ToolStripButton).Checked==false) {
+				UnCheckAllOther (sender as ToolStripButton);
+
+			}
+		}
+
+		private void tool_conn_inher_Click (object sender,EventArgs e) {
+			UnCheckAllOther (sender as ToolStripButton);
+		}
+
+		private void tool_conn_assoc_Click (object sender,EventArgs e) {
+			UnCheckAllOther (sender as ToolStripButton);
+		}
+
+		private void tool_conn_aggregation_Click (object sender,EventArgs e) {
+			UnCheckAllOther (sender as ToolStripButton);
+		}
+
+		private void tool_conn_composition_Click (object sender,EventArgs e) {
+			UnCheckAllOther (sender as ToolStripButton);
+		}
+
+		private void tool_conn_attachm_Click (object sender,EventArgs e) {
+			UnCheckAllOther (sender as ToolStripButton);
+		}
+
+		private void tool_conn_dependence_Click (object sender,EventArgs e) {
+			UnCheckAllOther (sender as ToolStripButton);
+		}
+
+		private void tool_conn_realiz_Click (object sender,EventArgs e) {
+			UnCheckAllOther (sender as ToolStripButton);
+		}
+
+		private void tool_memo_Click (object sender,EventArgs e) {
+			UnCheckAllOther (sender as ToolStripButton);
+		}
+
+		private void tool_package_Click (object sender,EventArgs e) {
+			UnCheckAllOther (sender as ToolStripButton);
+		}
+
+		private void tool_constraint_Click (object sender,EventArgs e) {
+			UnCheckAllOther (sender as ToolStripButton);
+		}
+
+		private void tool_actor_Click (object sender,EventArgs e) {
+			UnCheckAllOther (sender as ToolStripButton);
+		}
+		*/
 	}
 }

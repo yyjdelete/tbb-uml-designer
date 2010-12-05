@@ -60,7 +60,7 @@ namespace UMLDes.Model {
 			try_load (base_dir + "UMLDes.xml",new string[] {
 													@"D:\projects\CDS\UMLDes.Model.CSharp\UMLDes.Model.CSharp.csproj",
 													@"D:\projects\CDS\UMLDes.Model\UMLDes.Model.csproj",
-													@"D:\projects\CDS\UmlDes.Gui\UmlDes.Gui.csproj",
+													@"D:\projects\CDS\UMLDes.Gui\UMLDes.Gui.csproj",
 													@"D:\projects\CDS\UMLDes.Model.Tests\UMLDes.Model.Tests.csproj",
 													@"D:\projects\CDS\UMLDes.Controls\UMLDes.Controls.csproj",
 													@"D:\projects\CDS\UMLDes.StaticView\UMLDes.StaticView.csproj",

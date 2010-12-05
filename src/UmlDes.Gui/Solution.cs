@@ -8,10 +8,10 @@ using UMLDes.Model.CSharp;
 
 namespace UMLDes {
 
-	public class UmlDesignerSolution : GUI.IPostload, GUI.ISolution {
+	public class UmlDesignerSolution:GUI.IPostload,GUI.ISolution {
 
         [XmlAttribute]	
-		public string projectfile, name = "(未保存)";
+		public string projectfile, name = "无标题";
 		public UmlModel model;
 		[XmlArrayItem(typeof(GUI.StaticView))]   
 		public ArrayList diagrams = new ArrayList();
@@ -169,7 +169,7 @@ namespace UMLDes {
 				if( before != null )
 					container.SelectView( before, true );
 			}
-			GC.Collect();
+			GC.Collect();//回收内存
 			container.SetStatus ("就绪");
 		}
 		
@@ -187,11 +187,11 @@ namespace UMLDes {
 			}
 		}
 
-		UMLDes.Controls.FlatToolBar GUI.ISolution.tool_bar {
+/*		UMLDes.Controls.FlatToolBar GUI.ISolution.tool_bar {
 			get {
 				return container.toolBar1;
 			}
-		}
+		}*/
 
 		void GUI.ISolution.UpdateToolBar() {
 			container.UpdateToolBar();
