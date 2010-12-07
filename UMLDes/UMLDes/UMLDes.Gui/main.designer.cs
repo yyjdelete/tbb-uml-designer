@@ -876,8 +876,6 @@ namespace UMLDes {
 			// 
 			// tool_arrow
 			// 
-			this.tool_arrow.Checked=true;
-			this.tool_arrow.CheckState=System.Windows.Forms.CheckState.Checked;
 			this.tool_arrow.DisplayStyle=System.Windows.Forms.ToolStripItemDisplayStyle.Image;
 			this.tool_arrow.Image=((System.Drawing.Image) (resources.GetObject ("tool_arrow.Image")));
 			this.tool_arrow.ImageTransparentColor=System.Drawing.Color.Magenta;
