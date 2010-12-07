@@ -76,8 +76,6 @@ namespace UMLDes {
 			}
 		}
 
-
-
 		/// <summary>
 		/// 刷新按钮选中状态
 		/// </summary>
@@ -91,7 +89,7 @@ namespace UMLDes {
 			tsb.Checked=true;//采用.CheckState=System.Windows.Forms.CheckState.xxx亦可
 		}
 
-		private void toolStrip_Select (object sender,EventArgs e) {//选择绘制对象
+		private void toolStrip_Select (object sender,EventArgs e) {//选择绘制对象、风格
 			ToolStripButton stsb=sender as ToolStripButton;
 			if (stsb.Checked==false) {//若更改选择
 				UnCheckAllOther (stsb);
@@ -190,7 +188,8 @@ namespace UMLDes {
 				view_toolbar_panels = v.LoadToolbars ();
 				RefreshTitle ();
 				ViewCtrl1.Invalidate ();
-				UnCheckAllOther (tool_arrow);
+				toolStrip_Select (tool_arrow,null);
+				toolStrip_Select (tool_straight_conn,null);
 			}
 		}
 
@@ -470,115 +469,5 @@ namespace UMLDes {
 
 		#endregion
 
-
-
-		/*void ToolbarAction (int index) {
-			switch ((ToolBarIcons) index) {
-				// what to do
-				case ToolBarIcons.arrow:
-					MouseAgent.current_operation=MouseOperation.Select;
-					break;
-				case ToolBarIcons.conn_inher:
-					MouseAgent.current_operation=MouseOperation.DrawConnection;
-					MouseAgent.conn_type=UmlRelationType.Inheritance;
-					break;
-				case ToolBarIcons.conn_assoc:
-					MouseAgent.current_operation=MouseOperation.DrawConnection;
-					MouseAgent.conn_type=UmlRelationType.Association;
-					break;
-				case ToolBarIcons.conn_aggregation:
-					MouseAgent.current_operation=MouseOperation.DrawConnection;
-					MouseAgent.conn_type=UmlRelationType.Aggregation;
-					break;
-				case ToolBarIcons.conn_composition:
-					MouseAgent.current_operation=MouseOperation.DrawConnection;
-					MouseAgent.conn_type=UmlRelationType.Composition;
-					break;
-				case ToolBarIcons.conn_realiz:
-					MouseAgent.current_operation=MouseOperation.DrawConnection;
-					MouseAgent.conn_type=UmlRelationType.Realization;
-					break;
-				case ToolBarIcons.conn_attachm:
-					MouseAgent.current_operation=MouseOperation.DrawConnection;
-					MouseAgent.conn_type=UmlRelationType.Attachment;
-					break;
-				case ToolBarIcons.conn_dependence:
-					MouseAgent.current_operation=MouseOperation.DrawConnection;
-					MouseAgent.conn_type=UmlRelationType.Dependency;
-					break;
-				case ToolBarIcons.memo:
-					MouseAgent.current_operation=MouseOperation.DrawComment;
-					break;
-				case ToolBarIcons.package:
-					MouseAgent.current_operation=MouseOperation.DrawPackage;
-					break;
-				// line type
-				case ToolBarIcons.straight_conn:
-					MouseAgent.conn_style=GuiConnectionStyle.Line;
-					break;
-				case ToolBarIcons.segmented_conn:
-					MouseAgent.conn_style=GuiConnectionStyle.Segmented;
-					break;
-				case ToolBarIcons.quadric_conn:
-					MouseAgent.conn_style=GuiConnectionStyle.Quadric;
-					break;
-				case ToolBarIcons.curved_conn:
-					MouseAgent.conn_style=GuiConnectionStyle.Besier;
-					break;
-			}
-		}*/
-
-/*
-		private void tool_arrow_Click (object sender,EventArgs e) {
-			if ((sender as ToolStripButton).Checked==false) {
-				UnCheckAllOther (sender as ToolStripButton);
-
-			}
-		}
-
-		private void tool_conn_inher_Click (object sender,EventArgs e) {
-			UnCheckAllOther (sender as ToolStripButton);
-		}
-
-		private void tool_conn_assoc_Click (object sender,EventArgs e) {
-			UnCheckAllOther (sender as ToolStripButton);
-		}
-
-		private void tool_conn_aggregation_Click (object sender,EventArgs e) {
-			UnCheckAllOther (sender as ToolStripButton);
-		}
-
-		private void tool_conn_composition_Click (object sender,EventArgs e) {
-			UnCheckAllOther (sender as ToolStripButton);
-		}
-
-		private void tool_conn_attachm_Click (object sender,EventArgs e) {
-			UnCheckAllOther (sender as ToolStripButton);
-		}
-
-		private void tool_conn_dependence_Click (object sender,EventArgs e) {
-			UnCheckAllOther (sender as ToolStripButton);
-		}
-
-		private void tool_conn_realiz_Click (object sender,EventArgs e) {
-			UnCheckAllOther (sender as ToolStripButton);
-		}
-
-		private void tool_memo_Click (object sender,EventArgs e) {
-			UnCheckAllOther (sender as ToolStripButton);
-		}
-
-		private void tool_package_Click (object sender,EventArgs e) {
-			UnCheckAllOther (sender as ToolStripButton);
-		}
-
-		private void tool_constraint_Click (object sender,EventArgs e) {
-			UnCheckAllOther (sender as ToolStripButton);
-		}
-
-		private void tool_actor_Click (object sender,EventArgs e) {
-			UnCheckAllOther (sender as ToolStripButton);
-		}
-		*/
 	}
 }
