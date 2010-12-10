@@ -302,8 +302,8 @@ namespace UMLDes.GUI {
 		}
 
 		public void translate_coords (ref int ux,ref float uy) {
-			//ux = ux;
-			//uy = uy;
+			ux = ux;
+			uy = uy;
 		}
 
 		public float get_empty_point_on_edge (int ux) {

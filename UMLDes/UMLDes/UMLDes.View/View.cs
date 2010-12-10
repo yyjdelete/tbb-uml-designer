@@ -66,7 +66,7 @@ namespace UMLDes.GUI {
 			get;
 		}
 		void UpdateToolBar ();
-		void SetToolDef ();
+		void SetDefDraw ();
 	}
 
 	public interface IDrawSelect {

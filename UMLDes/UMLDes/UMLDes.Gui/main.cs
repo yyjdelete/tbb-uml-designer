@@ -36,22 +36,17 @@ namespace UMLDes {
 		/// 刷新按钮选中状态。
 		/// </summary>
 		/// <param name="tsb">被点击的按钮。</param>
-		public void CheckButton (ToolStripButton tsb) {
-			if (tsb!=null) {
-				if (tsb.Name!="tool_lock") {
+		private void CheckButton (ToolStripButton tsb) {
 					int maxnum=tsb.Owner.Items.Count;
 					int i;
 					for (i=0;i<maxnum;i++)
-						if (tsb.Owner.Items[i] is ToolStripButton)//跳过间隔条toolStripSeparator
+						if (tsb.Owner.Items[i] is ToolStripButton&&(tsb.Owner.Items[i] as ToolStripButton).Name!="tool_lock")//跳过间隔条toolStripSeparator和锁定标志tool_lock
 							(tsb.Owner.Items[i] as ToolStripButton).Checked=false;
 					tsb.Checked=true;//采用.CheckState=System.Windows.Forms.CheckState.xxx亦可
-				}
-				else
-					tsb.Checked=!tsb.Checked;
-			}
-			else {
-				CheckButton (tool_arrow);
-			}
+		}
+
+		public void SetDefDraw () {//回归默认绘制对象
+			toolStrip_Select (tool_arrow,null);
 		}
 
 		private void toolStrip_Select (object sender,EventArgs e) {//选择绘制对象、风格
@@ -62,6 +57,11 @@ namespace UMLDes {
 			}
 		}
 
+		private void tool_lock_change (object sender,EventArgs e) {//切换锁定状态
+			ToolStripButton stsb=sender as ToolStripButton;
+			(ViewCtrl1.Curr as UMLDes.GUI.StaticView).ToolbarAction (stsb.Name);
+			stsb.Checked=!stsb.Checked;
+		}
 		#endregion
 
 		#region 主窗口、关闭及保存提示
@@ -430,7 +430,6 @@ namespace UMLDes {
 		}
 
 		#endregion
-
 
 	}
 }
