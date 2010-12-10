@@ -196,7 +196,9 @@ namespace UMLDes {
 		void GUI.ISolution.UpdateToolBar() {
 			container.UpdateToolBar();
 		}
-
+		void GUI.ISolution.SetToolDef () {
+			container.CheckButton(null);
+		}
 		ImageList GUI.ISolution.project_icon_list {
 			get {
 				return container.treeImages;

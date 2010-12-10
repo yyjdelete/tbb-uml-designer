@@ -32,22 +32,33 @@ namespace UMLDes {
 			EnableButton (tool_Redo,ViewCtrl1.Curr.undo.can_redo);
 		}
 
-
-		private void UnCheckAllOther (object sender,EventArgs e) {
-			ToolStripButton tsb=sender as ToolStripButton;
-			int maxnum=tsb.Owner.Items.Count;
-			int i;
-			for (i=0;i<maxnum;i++)
-				if (tsb.Owner.Items[i] is ToolStripButton)//跳过间隔条toolStripSeparator
-					(tsb.Owner.Items[i] as ToolStripButton).Checked=false;
-			tsb.Checked=true;//采用.CheckState=System.Windows.Forms.CheckState.xxx亦可
+		/// <summary>
+		/// 刷新按钮选中状态。
+		/// </summary>
+		/// <param name="tsb">被点击的按钮。</param>
+		public void CheckButton (ToolStripButton tsb) {
+			if (tsb!=null) {
+				if (tsb.Name!="tool_lock") {
+					int maxnum=tsb.Owner.Items.Count;
+					int i;
+					for (i=0;i<maxnum;i++)
+						if (tsb.Owner.Items[i] is ToolStripButton)//跳过间隔条toolStripSeparator
+							(tsb.Owner.Items[i] as ToolStripButton).Checked=false;
+					tsb.Checked=true;//采用.CheckState=System.Windows.Forms.CheckState.xxx亦可
+				}
+				else
+					tsb.Checked=!tsb.Checked;
+			}
+			else {
+				CheckButton (tool_arrow);
+			}
 		}
 
 		private void toolStrip_Select (object sender,EventArgs e) {//选择绘制对象、风格
 			ToolStripButton stsb=sender as ToolStripButton;
 			if (stsb.Checked==false) {//若更改选择
 				if((ViewCtrl1.Curr as UMLDes.GUI.StaticView).ToolbarAction (stsb.Name))
-					UnCheckAllOther (sender,e);
+					CheckButton (stsb);
 			}
 		}
 
