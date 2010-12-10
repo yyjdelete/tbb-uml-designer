@@ -92,8 +92,8 @@ namespace UMLDes.GUI {
 		}
 
 		public virtual void translate_coords( ref int ux, ref float uy ) {
-			//ux = ux;
-			//uy = uy;
+			ux = ux;
+			uy = uy;
 		}
 
 		public override void UpdateCoords( GuiObject orig ) {

@@ -62,6 +62,7 @@ namespace UMLDes {
 			this.menu_Parse=new System.Windows.Forms.ToolStripMenuItem ();
 			this.treeImages=new System.Windows.Forms.ImageList (this.components);
 			this.panel1=new System.Windows.Forms.Panel ();
+			this.ProjectTree=new UMLDes.Controls.UmlSolutionTree ();
 			this.splitter1=new System.Windows.Forms.Splitter ();
 			this.statusStrip1=new System.Windows.Forms.StatusStrip ();
 			this.status_Label=new System.Windows.Forms.ToolStripStatusLabel ();
@@ -89,6 +90,8 @@ namespace UMLDes {
 			this.toolStrip2=new System.Windows.Forms.ToolStrip ();
 			this.toolStripComboBox1=new System.Windows.Forms.ToolStripComboBox ();
 			this.toolStrip3=new System.Windows.Forms.ToolStrip ();
+			this.tool_lock=new System.Windows.Forms.ToolStripButton ();
+			this.toolStripSeparator9=new System.Windows.Forms.ToolStripSeparator ();
 			this.tool_arrow=new System.Windows.Forms.ToolStripButton ();
 			this.toolStripSeparator5=new System.Windows.Forms.ToolStripSeparator ();
 			this.tool_conn_inher=new System.Windows.Forms.ToolStripButton ();
@@ -111,9 +114,6 @@ namespace UMLDes {
 			this.toolStripSeparator7=new System.Windows.Forms.ToolStripSeparator ();
 			this.tool_show_qual=new System.Windows.Forms.ToolStripButton ();
 			this.tool_oper_signature=new System.Windows.Forms.ToolStripButton ();
-			this.ProjectTree=new UMLDes.Controls.UmlSolutionTree ();
-			this.tool_lock=new System.Windows.Forms.ToolStripButton ();
-			this.toolStripSeparator9=new System.Windows.Forms.ToolStripSeparator ();
 			this.menuStrip1.SuspendLayout ();
 			this.panel1.SuspendLayout ();
 			this.statusStrip1.SuspendLayout ();
@@ -565,6 +565,14 @@ namespace UMLDes {
 			this.panel1.Size=new System.Drawing.Size (259,148);
 			this.panel1.TabIndex=13;
 			// 
+			// ProjectTree
+			// 
+			this.ProjectTree.Dock=System.Windows.Forms.DockStyle.Fill;
+			this.ProjectTree.Location=new System.Drawing.Point (0,0);
+			this.ProjectTree.Name="ProjectTree";
+			this.ProjectTree.Size=new System.Drawing.Size (259,148);
+			this.ProjectTree.TabIndex=2;
+			// 
 			// splitter1
 			// 
 			this.splitter1.Location=new System.Drawing.Point (259,0);
@@ -861,8 +869,23 @@ namespace UMLDes {
             this.tool_actor});
 			this.toolStrip3.Location=new System.Drawing.Point (3,75);
 			this.toolStrip3.Name="toolStrip3";
-			this.toolStrip3.Size=new System.Drawing.Size (360,25);
+			this.toolStrip3.Size=new System.Drawing.Size (329,25);
 			this.toolStrip3.TabIndex=3;
+			// 
+			// tool_lock
+			// 
+			this.tool_lock.DisplayStyle=System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.tool_lock.Image=((System.Drawing.Image) (resources.GetObject ("tool_lock.Image")));
+			this.tool_lock.ImageTransparentColor=System.Drawing.Color.Magenta;
+			this.tool_lock.Name="tool_lock";
+			this.tool_lock.Size=new System.Drawing.Size (23,22);
+			this.tool_lock.Text="Ëø¶¨";
+			this.tool_lock.Click+=new System.EventHandler (this.tool_lock_change);
+			// 
+			// toolStripSeparator9
+			// 
+			this.toolStripSeparator9.Name="toolStripSeparator9";
+			this.toolStripSeparator9.Size=new System.Drawing.Size (6,25);
 			// 
 			// tool_arrow
 			// 
@@ -1074,29 +1097,6 @@ namespace UMLDes {
 			this.tool_oper_signature.Size=new System.Drawing.Size (23,22);
 			this.tool_oper_signature.Text="Operations signature";
 			this.tool_oper_signature.Click+=new System.EventHandler (this.toolStrip_Select);
-			// 
-			// ProjectTree
-			// 
-			this.ProjectTree.Dock=System.Windows.Forms.DockStyle.Fill;
-			this.ProjectTree.Location=new System.Drawing.Point (0,0);
-			this.ProjectTree.Name="ProjectTree";
-			this.ProjectTree.Size=new System.Drawing.Size (259,148);
-			this.ProjectTree.TabIndex=2;
-			// 
-			// tool_lock
-			// 
-			this.tool_lock.DisplayStyle=System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.tool_lock.Image=((System.Drawing.Image) (resources.GetObject ("tool_lock.Image")));
-			this.tool_lock.ImageTransparentColor=System.Drawing.Color.Magenta;
-			this.tool_lock.Name="tool_lock";
-			this.tool_lock.Size=new System.Drawing.Size (23,22);
-			this.tool_lock.Text="°ïÖú(&L)";
-			this.tool_lock.Click+=new System.EventHandler (this.toolStrip_Select);
-			// 
-			// toolStripSeparator9
-			// 
-			this.toolStripSeparator9.Name="toolStripSeparator9";
-			this.toolStripSeparator9.Size=new System.Drawing.Size (6,25);
 			// 
 			// MainWnd
 			// 
