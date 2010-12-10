@@ -62,12 +62,12 @@ namespace UMLDes {
 			this.menu_Parse=new System.Windows.Forms.ToolStripMenuItem ();
 			this.treeImages=new System.Windows.Forms.ImageList (this.components);
 			this.panel1=new System.Windows.Forms.Panel ();
+			this.ProjectTree=new UMLDes.Controls.UmlSolutionTree ();
 			this.splitter1=new System.Windows.Forms.Splitter ();
 			this.statusStrip1=new System.Windows.Forms.StatusStrip ();
 			this.status_Label=new System.Windows.Forms.ToolStripStatusLabel ();
 			this.toolStripContainer1=new System.Windows.Forms.ToolStripContainer ();
 			this.ViewCtrl1=new UMLDes.ViewCtrl ();
-			this.toolBar1=new UMLDes.Controls.FlatToolBar ();
 			this.toolStrip1=new System.Windows.Forms.ToolStrip ();
 			this.tool_NewProject=new System.Windows.Forms.ToolStripButton ();
 			this.tool_OpenProject=new System.Windows.Forms.ToolStripButton ();
@@ -112,7 +112,6 @@ namespace UMLDes {
 			this.toolStripSeparator7=new System.Windows.Forms.ToolStripSeparator ();
 			this.tool_show_qual=new System.Windows.Forms.ToolStripButton ();
 			this.tool_oper_signature=new System.Windows.Forms.ToolStripButton ();
-			this.ProjectTree=new UMLDes.Controls.UmlSolutionTree ();
 			this.menuStrip1.SuspendLayout ();
 			this.panel1.SuspendLayout ();
 			this.statusStrip1.SuspendLayout ();
@@ -559,16 +558,24 @@ namespace UMLDes {
 			// 
 			this.panel1.Controls.Add (this.ProjectTree);
 			this.panel1.Dock=System.Windows.Forms.DockStyle.Left;
-			this.panel1.Location=new System.Drawing.Point (0,26);
+			this.panel1.Location=new System.Drawing.Point (0,0);
 			this.panel1.Name="panel1";
-			this.panel1.Size=new System.Drawing.Size (259,122);
+			this.panel1.Size=new System.Drawing.Size (259,148);
 			this.panel1.TabIndex=13;
+			// 
+			// ProjectTree
+			// 
+			this.ProjectTree.Dock=System.Windows.Forms.DockStyle.Fill;
+			this.ProjectTree.Location=new System.Drawing.Point (0,0);
+			this.ProjectTree.Name="ProjectTree";
+			this.ProjectTree.Size=new System.Drawing.Size (259,148);
+			this.ProjectTree.TabIndex=2;
 			// 
 			// splitter1
 			// 
-			this.splitter1.Location=new System.Drawing.Point (259,26);
+			this.splitter1.Location=new System.Drawing.Point (259,0);
 			this.splitter1.Name="splitter1";
-			this.splitter1.Size=new System.Drawing.Size (4,122);
+			this.splitter1.Size=new System.Drawing.Size (4,148);
 			this.splitter1.TabIndex=14;
 			this.splitter1.TabStop=false;
 			// 
@@ -606,7 +613,6 @@ namespace UMLDes {
 			this.toolStripContainer1.ContentPanel.Controls.Add (this.ViewCtrl1);
 			this.toolStripContainer1.ContentPanel.Controls.Add (this.splitter1);
 			this.toolStripContainer1.ContentPanel.Controls.Add (this.panel1);
-			this.toolStripContainer1.ContentPanel.Controls.Add (this.toolBar1);
 			this.toolStripContainer1.ContentPanel.Size=new System.Drawing.Size (784,148);
 			this.toolStripContainer1.Dock=System.Windows.Forms.DockStyle.Fill;
 			this.toolStripContainer1.Location=new System.Drawing.Point (0,0);
@@ -629,22 +635,10 @@ namespace UMLDes {
 			this.ViewCtrl1.Curr=null;
 			this.ViewCtrl1.Dock=System.Windows.Forms.DockStyle.Fill;
 			this.ViewCtrl1.Font=new System.Drawing.Font ("Arial",9F,System.Drawing.FontStyle.Regular,System.Drawing.GraphicsUnit.Point,((byte) (204)));
-			this.ViewCtrl1.Location=new System.Drawing.Point (263,26);
+			this.ViewCtrl1.Location=new System.Drawing.Point (263,0);
 			this.ViewCtrl1.Name="ViewCtrl1";
-			this.ViewCtrl1.Size=new System.Drawing.Size (521,122);
+			this.ViewCtrl1.Size=new System.Drawing.Size (521,148);
 			this.ViewCtrl1.TabIndex=15;
-			// 
-			// toolBar1
-			// 
-			this.toolBar1.BackColor=System.Drawing.Color.FromArgb (((int) (((byte) (219)))),((int) (((byte) (216)))),((int) (((byte) (209)))));
-			this.toolBar1.Dock=System.Windows.Forms.DockStyle.Top;
-			this.toolBar1.ForeColor=System.Drawing.Color.FromArgb (((int) (((byte) (219)))),((int) (((byte) (216)))),((int) (((byte) (209)))));
-			this.toolBar1.images=this.toolbarImages;
-			this.toolBar1.Location=new System.Drawing.Point (0,0);
-			this.toolBar1.Name="toolBar1";
-			this.toolBar1.Size=new System.Drawing.Size (784,26);
-			this.toolBar1.TabIndex=10;
-			this.toolBar1.TabStop=false;
 			// 
 			// toolStrip1
 			// 
@@ -1017,7 +1011,7 @@ namespace UMLDes {
             this.tool_oper_signature});
 			this.toolStrip4.Location=new System.Drawing.Point (3,100);
 			this.toolStrip4.Name="toolStrip4";
-			this.toolStrip4.Size=new System.Drawing.Size (187,25);
+			this.toolStrip4.Size=new System.Drawing.Size (156,25);
 			this.toolStrip4.TabIndex=4;
 			// 
 			// tool_straight_conn
@@ -1085,14 +1079,6 @@ namespace UMLDes {
 			this.tool_oper_signature.Text="Operations signature";
 			this.tool_oper_signature.Click+=new System.EventHandler (this.toolStrip_Select);
 			// 
-			// ProjectTree
-			// 
-			this.ProjectTree.Dock=System.Windows.Forms.DockStyle.Fill;
-			this.ProjectTree.Location=new System.Drawing.Point (0,0);
-			this.ProjectTree.Name="ProjectTree";
-			this.ProjectTree.Size=new System.Drawing.Size (259,122);
-			this.ProjectTree.TabIndex=2;
-			// 
 			// MainWnd
 			// 
 			this.AutoScaleBaseSize=new System.Drawing.Size (6,14);
@@ -1129,7 +1115,6 @@ namespace UMLDes {
 
 		private System.Windows.Forms.MenuStrip menuStrip1;
 		public System.Windows.Forms.ImageList treeImages;
-		public UMLDes.Controls.FlatToolBar toolBar1;
 		private System.Windows.Forms.ImageList toolbarImages;
 
 		public UmlDesignerSolution p;
@@ -1188,53 +1173,9 @@ namespace UMLDes {
 			tv.GiveFeedback += new System.Windows.Forms.GiveFeedbackEventHandler (this.tree_GiveFeedback);
 		}
 
-//		UMLDes.Controls.FlatToolBarButton tool_undo,tool_redo,tool_cut,tool_copy,tool_paste;
 
 		void PostInitialize () {
 			initialize_tree_view (ProjectTree);
-
-			UMLDes.Controls.MouseClickEvent m = new UMLDes.Controls.MouseClickEvent (ToolbarAction);
-/*			UMLDes.Controls.FlatToolBarPanel p;
-
-			//  project toolbar
-			p = toolBar1.AddPanel (0,"Standard");
-			p.AddButton (UMLDes.Controls.FlatButtonType.Simple,(int) UMLDes.GUI.ToolBarIcons.New,"新建工程",m);
-			p.AddButton (UMLDes.Controls.FlatButtonType.Simple,(int) UMLDes.GUI.ToolBarIcons.Open,"打开工程",m);
-			p.AddButton (UMLDes.Controls.FlatButtonType.Simple,(int) UMLDes.GUI.ToolBarIcons.Save,"保存",m);
-			p.AddButton (UMLDes.Controls.FlatButtonType.Simple,(int) UMLDes.GUI.ToolBarIcons.Saveas,"另存为",m);
-			p.AddButton (UMLDes.Controls.FlatButtonType.Line,0,null,null);
-			p.AddButton (UMLDes.Controls.FlatButtonType.Simple,(int) UMLDes.GUI.ToolBarIcons.add_file,"Add files",m);
-			p.AddButton (UMLDes.Controls.FlatButtonType.Simple,(int) UMLDes.GUI.ToolBarIcons.new_diagram,"New Static View",m);
-			p.AddButton (UMLDes.Controls.FlatButtonType.Simple,(int) UMLDes.GUI.ToolBarIcons.refresh,"刷新模型",m);
-			p.AddButton (UMLDes.Controls.FlatButtonType.Line,0,null,null);
-			p.AddButton (UMLDes.Controls.FlatButtonType.Simple,(int) UMLDes.GUI.ToolBarIcons.print,"打印",m);
-			p.AddButton (UMLDes.Controls.FlatButtonType.Simple,(int) UMLDes.GUI.ToolBarIcons.print_preview,"打印预览",m);
-//			p.AddButton (UMLDes.Controls.FlatButtonType.Line,0,null,null);
-//			tool_cut = p.AddButton (UMLDes.Controls.FlatButtonType.Simple,(int) UMLDes.GUI.ToolBarIcons.cut,"剪切",m);
-//			tool_copy = p.AddButton (UMLDes.Controls.FlatButtonType.Simple,(int) UMLDes.GUI.ToolBarIcons.copy,"复制",m);
-//			tool_paste = p.AddButton (UMLDes.Controls.FlatButtonType.Simple,(int) UMLDes.GUI.ToolBarIcons.paste,"粘贴",m);
-//			p.AddButton (UMLDes.Controls.FlatButtonType.Line,0,null,null);
-//			tool_undo = p.AddButton (UMLDes.Controls.FlatButtonType.Simple,(int) UMLDes.GUI.ToolBarIcons.undo,"撤销",m);
-//			tool_redo = p.AddButton (UMLDes.Controls.FlatButtonType.Simple,(int) UMLDes.GUI.ToolBarIcons.redo,"重做",m);
-//			tool_cut.disabled = tool_copy.disabled = tool_paste.disabled = true;
-
-			// Scale menu
-/*			p = toolBar1.AddPanel (0,"Scale");
-			System.Windows.Forms.ComboBox cb = new System.Windows.Forms.ComboBox ();
-			cb.TabStop = false;
-			cb.Size = new System.Drawing.Size (90,20);
-			cb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			cb.MaxDropDownItems = 15;
-
-			for (int i = 0;i < ViewCtrl.scalevalue.Length;i += 2)
-				cb.Items.Add ((ViewCtrl.scalevalue[i] * 100 / ViewCtrl.scalevalue[i + 1]).ToString () + "%");
-			cb.SelectedIndex = 5;
-			cb.SelectedIndexChanged += new System.EventHandler (ViewCtrl1.ScaleChanged);
-			ViewCtrl1.scalecombo = cb;
-			
-
-			p.AddControl (cb);
-			*/
 
 			//修改新工具栏toolStrip1234位置
 			toolStrip1.Location=new System.Drawing.Point (3,menuStrip1.Size.Height);//工具栏前面4个点宽3个像素
@@ -1249,8 +1190,6 @@ namespace UMLDes {
 			toolStripComboBox1.SelectedIndex=5;//设置默认项
 			toolStripComboBox1.SelectedIndexChanged+=new System.EventHandler (ViewCtrl1.ScaleChanged);//处理消息
 			ViewCtrl1.scalecombo=toolStripComboBox1;
-			//this.tool_AddStaticView.ToolTipText=menu_AddStaticView.ShortcutKeys+"添加静态视图1";
-			//this.tool_AddStaticView.Text=menu_AddStaticView.ShortcutKeyDisplayString+"添加静态视图2";
 		}
 		#endregion
 

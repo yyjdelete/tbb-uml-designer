@@ -13,7 +13,7 @@ namespace UMLDes.GUI {
 	/// Summary description for StaticView.
 	/// </summary>
 	[XmlInclude (typeof (GuiClass))]
-	public class StaticView:View,IPostload,IUndoNotification,IDrawSelect {
+	public class StaticView:View,IPostload,IUndoNotification {
 
 		// list of GuiActive
 		[XmlElement ("class",typeof (GuiClass)),
@@ -60,19 +60,7 @@ namespace UMLDes.GUI {
 
 		#region Static View 工具栏
 
-//		UMLDes.Controls.FlatToolBarPanel drawingmode;
-//		UMLDes.Controls.FlatToolBarButton defbutton;
-
-		public void SetDefaultDrawingMode () {
-			MouseAgent.current_operation = MouseOperation.Select;
-//			drawingmode.MakeRadioDown (defbutton);
-		}
-
-/*		void IDrawSelect.ToolbarAction (string tsb_Name) {
-			ToolbarAction (tsb_Name);
-		}*/
-
-		public void ToolbarAction (string tsb_Name) {
+		public bool ToolbarAction (string tsb_Name) {
 			switch (tsb_Name) {
 				// what to do
 				case "tool_arrow":
@@ -127,107 +115,15 @@ namespace UMLDes.GUI {
 					break;
 				case "tool_constraint":
 				case "tool_actor":
+				case "tool_oper_signature":
+				case "tool_show_qual":
 				default:
 					MessageBox.Show ("功能"+tsb_Name+"暂未提供,请等待新版本");
-					break;
+					return false;
 			}
+			return true;
 		}
-		void ToolbarAction (int index) {
-			switch ((ToolBarIcons) index) {
-				// what to do
-				case ToolBarIcons.arrow:
-					MouseAgent.current_operation = MouseOperation.Select;
-					break;
-				case ToolBarIcons.conn_inher:
-					MouseAgent.current_operation = MouseOperation.DrawConnection;
-					MouseAgent.conn_type = UmlRelationType.Inheritance;
-					break;
-				case ToolBarIcons.conn_assoc:
-					MouseAgent.current_operation = MouseOperation.DrawConnection;
-					MouseAgent.conn_type = UmlRelationType.Association;
-					break;
-				case ToolBarIcons.conn_aggregation:
-					MouseAgent.current_operation = MouseOperation.DrawConnection;
-					MouseAgent.conn_type = UmlRelationType.Aggregation;
-					break;
-				case ToolBarIcons.conn_composition:
-					MouseAgent.current_operation = MouseOperation.DrawConnection;
-					MouseAgent.conn_type = UmlRelationType.Composition;
-					break;
-				case ToolBarIcons.conn_realiz:
-					MouseAgent.current_operation = MouseOperation.DrawConnection;
-					MouseAgent.conn_type = UmlRelationType.Realization;
-					break;
-				case ToolBarIcons.conn_attachm:
-					MouseAgent.current_operation = MouseOperation.DrawConnection;
-					MouseAgent.conn_type = UmlRelationType.Attachment;
-					break;
-				case ToolBarIcons.conn_dependence:
-					MouseAgent.current_operation = MouseOperation.DrawConnection;
-					MouseAgent.conn_type = UmlRelationType.Dependency;
-					break;
-				case ToolBarIcons.memo:
-					MouseAgent.current_operation = MouseOperation.DrawComment;
-					break;
-				case ToolBarIcons.package:
-					MouseAgent.current_operation = MouseOperation.DrawPackage;
-					break;
-				// line type
-				case ToolBarIcons.straight_conn:
-					MouseAgent.conn_style = GuiConnectionStyle.Line;
-					break;
-				case ToolBarIcons.segmented_conn:
-					MouseAgent.conn_style = GuiConnectionStyle.Segmented;
-					break;
-				case ToolBarIcons.quadric_conn:
-					MouseAgent.conn_style = GuiConnectionStyle.Quadric;
-					break;
-				case ToolBarIcons.curved_conn:
-					MouseAgent.conn_style = GuiConnectionStyle.Besier;
-					break;
-			}
-		}
-
-		public override ArrayList LoadToolbars () {
-			ArrayList l = new ArrayList ();
-//			FlatToolBar toolbar = proj.tool_bar;
-
-//			UMLDes.Controls.MouseClickEvent m = new UMLDes.Controls.MouseClickEvent (ToolbarAction);
-//			UMLDes.Controls.FlatToolBarPanel p;
-
-			// UML Elements drawing
-/*			p = toolbar.AddPanel (0,"UML");
-
-			l.Add (p);
-			defbutton = p.AddButton (FlatButtonType.RadioDown,(int) ToolBarIcons.arrow,"Select",m);
-			p.AddButton (FlatButtonType.Line,0,null,null);
-			p.AddButton (FlatButtonType.Radio,(int) ToolBarIcons.conn_inher,"Draw inhreitance",m);
-			p.AddButton (FlatButtonType.Radio,(int) ToolBarIcons.conn_assoc,"Draw association",m);
-			p.AddButton (FlatButtonType.Radio,(int) ToolBarIcons.conn_aggregation,"Draw aggregation",m);
-			p.AddButton (FlatButtonType.Radio,(int) ToolBarIcons.conn_composition,"Draw composition",m);
-			p.AddButton (FlatButtonType.Radio,(int) ToolBarIcons.conn_attachm,"Draw attachment",m);
-			p.AddButton (FlatButtonType.Radio,(int) ToolBarIcons.conn_dependence,"Draw dependency/usage",m);
-			p.AddButton (FlatButtonType.Radio,(int) ToolBarIcons.conn_realiz,"Draw realization",m);
-			p.AddButton (FlatButtonType.Line,0,null,null);
-			p.AddButton (FlatButtonType.Radio,(int) ToolBarIcons.memo,"Draw memo",m);
-			p.AddButton (FlatButtonType.Radio,(int) ToolBarIcons.package,"Draw package",m);
-			p.AddButton (FlatButtonType.Radio,(int) ToolBarIcons.constraint,"Draw constraint",m).disabled = true;
-			p.AddButton (FlatButtonType.Radio,(int) ToolBarIcons.actor,"Draw actor",m).disabled = true;
-			drawingmode = p;
-
-			p = toolbar.AddPanel (0,"Default line type");
-			l.Add (p);
-			p.AddButton (MouseAgent.conn_style == GuiConnectionStyle.Line ? FlatButtonType.RadioDown : FlatButtonType.Radio,(int) ToolBarIcons.straight_conn,"Line",m);
-			p.AddButton (MouseAgent.conn_style == GuiConnectionStyle.Segmented ? FlatButtonType.RadioDown : FlatButtonType.Radio,(int) ToolBarIcons.segmented_conn,"Segmented",m);
-			p.AddButton (MouseAgent.conn_style == GuiConnectionStyle.Quadric ? FlatButtonType.RadioDown : FlatButtonType.Radio,(int) ToolBarIcons.quadric_conn,"Quadric",m);
-			p.AddButton (MouseAgent.conn_style == GuiConnectionStyle.Besier ? FlatButtonType.RadioDown : FlatButtonType.Radio,(int) ToolBarIcons.curved_conn,"Bezier",m).disabled = true;
-			p.AddButton (FlatButtonType.Line,0,null,null);
-			p.AddButton (FlatButtonType.Simple,(int) ToolBarIcons.show_qual,"Show full qualified",m).disabled = true;
-			p.AddButton (FlatButtonType.Simple,(int) ToolBarIcons.oper_signature,"Operations signature",m).disabled = true;
-*/
-			return l;
-		}
-
+		
 		#endregion
 
 		#region 搜索项目

@@ -1,5 +1,6 @@
 using System.Reflection;
 using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 
 // 有关程序集的常规信息通过以下
 // 特性集控制。更改这些特性值可修改
@@ -16,10 +17,10 @@ using System.Runtime.CompilerServices;
 // 将 ComVisible 设置为 false 使此程序集中的类型
 // 对 COM 组件不可见。如果需要从 COM 访问此程序集中的类型，
 // 则将该类型上的 ComVisible 特性设置为 true。
-//[assembly: ComVisible(false)]
+[assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-//[assembly: Guid("d1b39947-bb44-41f3-ae13-bc0a5b060bb9")]
+[assembly: Guid("BCC2C4E2-B510-468B-AF0E-204776F53E7D")]
 
 // 程序集的版本信息由下面四个值组成:
 //

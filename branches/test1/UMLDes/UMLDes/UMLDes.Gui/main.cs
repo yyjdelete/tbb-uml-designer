@@ -12,7 +12,6 @@ using UMLDes.Controls;
 namespace UMLDes {
 
 	public partial class MainWnd:Form {
-		public GUI.IDrawSelect sv;
 		public MainWnd () {
 			InitializeComponent ();
 			PostInitialize ();
@@ -33,54 +32,9 @@ namespace UMLDes {
 			EnableButton (tool_Redo,ViewCtrl1.Curr.undo.can_redo);
 		}
 
-		void ToolbarAction (int index) {
-			switch ((ToolBarIcons) index) {
-				case ToolBarIcons.New:   // 新建
-					NewProject (null,null);
-					break;
-				case ToolBarIcons.Open:   // 打开
-					LoadProject (null,null);
-					break;
-				case ToolBarIcons.Save:   // 保存
-					SaveProject (null,null);
-					break;
-				case ToolBarIcons.Saveas:   // 另存为
-					SaveAsProject (null,null);
-					break;
-				case ToolBarIcons.add_file: // 添加文件
-					AddFiles (null,null);
-					break;
-				case ToolBarIcons.new_diagram: // New Static view
-					AddStaticView (null,null);
-					break;
-				case ToolBarIcons.refresh:  // 刷新模型
-					RefreshProject (null,null);
-					break;
-				case ToolBarIcons.print: // 打印
-					Print (null,null);
-					break;
-				case ToolBarIcons.print_preview: // 打印预览
-					PrintPreview (null,null);
-					break;
-				case ToolBarIcons.undo:   // 撤销
-					Undo (null,null);
-					break;
-				case ToolBarIcons.redo:   // 重做
-					Redo (null,null);
-					break;
-				case ToolBarIcons.cut:
-				case ToolBarIcons.copy:
-				case ToolBarIcons.paste:
-					MessageBox.Show ("CopyPaste" + ((ToolBarIcons) index).ToString ());
-					break;
-			}
-		}
 
-		/// <summary>
-		/// 刷新按钮选中状态
-		/// </summary>
-		/// <param name="tsb">待选中的工具栏按钮对象(ToolStripButton)</param>
-		void UnCheckAllOther (ToolStripButton tsb) {
+		private void UnCheckAllOther (object sender,EventArgs e) {
+			ToolStripButton tsb=sender as ToolStripButton;
 			int maxnum=tsb.Owner.Items.Count;
 			int i;
 			for (i=0;i<maxnum;i++)
@@ -92,8 +46,8 @@ namespace UMLDes {
 		private void toolStrip_Select (object sender,EventArgs e) {//选择绘制对象、风格
 			ToolStripButton stsb=sender as ToolStripButton;
 			if (stsb.Checked==false) {//若更改选择
-				UnCheckAllOther (stsb);
-				(ViewCtrl1.Curr as UMLDes.GUI.StaticView).ToolbarAction (stsb.Name);
+				if((ViewCtrl1.Curr as UMLDes.GUI.StaticView).ToolbarAction (stsb.Name))
+					UnCheckAllOther (sender,e);
 			}
 		}
 
@@ -154,6 +108,9 @@ namespace UMLDes {
 				TurnOnProject (q);
 		}
 
+		/// <summary>
+		/// 刷新标题栏
+		/// </summary>
 		public void RefreshTitle () {
 			this.Text = "TBB UML Designer: " + p.name + " [" + ViewCtrl1.Curr.name + "]";
 		}
@@ -173,8 +130,6 @@ namespace UMLDes {
 			UpdateToolBar ();
 		}
 
-		ArrayList view_toolbar_panels = null;
-
 		public GUI.View GetCurrentView () {
 			return ViewCtrl1.Curr;
 		}
@@ -182,13 +137,9 @@ namespace UMLDes {
 		public void SelectView (GUI.View v,bool update) {
 			ViewCtrl1.Curr = v;
 			if (update) {
-				if (view_toolbar_panels != null)
-					foreach (FlatToolBarPanel panel in view_toolbar_panels)
-//					toolBar1.RemovePanel (panel);
-				view_toolbar_panels = v.LoadToolbars ();
 				RefreshTitle ();
-				ViewCtrl1.Invalidate ();
-				toolStrip_Select (tool_arrow,null);
+				ViewCtrl1.Invalidate ();//重绘
+				toolStrip_Select (tool_arrow,null);//刷新选择状态
 				toolStrip_Select (tool_straight_conn,null);
 			}
 		}
@@ -468,6 +419,7 @@ namespace UMLDes {
 		}
 
 		#endregion
+
 
 	}
 }
