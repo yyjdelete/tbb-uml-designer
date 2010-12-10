@@ -60,8 +60,16 @@ namespace UMLDes.GUI {
 
 		#region Static View ¹¤¾ßÀ¸
 
+		public void SetDefaultDrawingMode () {
+			MouseAgent.current_operation=MouseOperation.Select;
+			proj.SetToolDef ();
+		}
+
 		public bool ToolbarAction (string tsb_Name) {
 			switch (tsb_Name) {
+				case "tool_lock":
+					MouseAgent.lock_sign=MouseAgent.lock_sign;
+					break;
 				// what to do
 				case "tool_arrow":
 					MouseAgent.current_operation=MouseOperation.Select;

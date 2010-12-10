@@ -30,6 +30,7 @@ namespace UMLDes.GUI {
 		internal MouseOperation current_operation;
 		internal GuiConnectionStyle conn_style = GuiConnectionStyle.Quadric;
 		internal UmlRelationType conn_type;
+		internal bool lock_sign=false;
 
 		StaticView parent;
 		MouseAction action;
@@ -368,7 +369,7 @@ namespace UMLDes.GUI {
 				StopScrolling ();
 			}
 
-			//parent.SetDefaultDrawingMode ();
+			if(!lock_sign)parent.SetDefaultDrawingMode ();
 			original_selected = null;
 
 			switch (action) {
