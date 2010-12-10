@@ -99,7 +99,6 @@ namespace UMLDes.GUI {
 		public abstract bool IfContainsSmth (Rectangle r);
 		public abstract Rectangle GetContentRectangle ();
 		public abstract void RefreshContent ();
-		public abstract ArrayList LoadToolbars ();
 
 		[XmlIgnore]
 		public abstract Undo undo {
