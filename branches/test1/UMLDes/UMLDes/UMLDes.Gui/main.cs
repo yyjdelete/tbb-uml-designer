@@ -204,7 +204,7 @@ namespace UMLDes {
 		private void SaveToImage (object sender,System.EventArgs e) {
 			Bitmap bmp = ViewCtrl1.PrintToImage ();
 			if (bmp == null) {
-				MessageBox.Show ("图为空","没有待保存的对象",MessageBoxButtons.OK,MessageBoxIcon.Information);
+				MessageBox.Show ("没有待保存的对象","图为空",MessageBoxButtons.OK,MessageBoxIcon.Information);
 				return;
 			}
 
@@ -236,7 +236,7 @@ namespace UMLDes {
 		private void CopyAsImage (object sender,System.EventArgs e) {
 			Bitmap bmp = ViewCtrl1.PrintToImage ();
 			if (bmp == null) {
-				MessageBox.Show ("图为空","没有待复制的对象",MessageBoxButtons.OK,MessageBoxIcon.Information);
+				MessageBox.Show ("没有待复制的对象","图为空",MessageBoxButtons.OK,MessageBoxIcon.Information);
 				return;
 			}
 
@@ -430,6 +430,11 @@ namespace UMLDes {
 		}
 
 		#endregion
+
+		private void Calculate (object sender,EventArgs e) {
+			double result=(ViewCtrl1.Curr as UMLDes.GUI.StaticView).CallCalculate ();
+			MessageBox.Show ("该图的耦合度为:"+result.ToString());
+		}
 
 	}
 }

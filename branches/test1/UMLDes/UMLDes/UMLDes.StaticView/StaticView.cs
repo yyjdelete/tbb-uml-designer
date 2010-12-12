@@ -59,6 +59,9 @@ namespace UMLDes.GUI {
 		}
 
 		#region Static View ¹¤¾ßÀ¸
+		public double CallCalculate () {
+			return Calculate.DoCalculate ();
+		}
 
 		public bool ToolbarAction (string tsb_Name) {
 			switch (tsb_Name) {
