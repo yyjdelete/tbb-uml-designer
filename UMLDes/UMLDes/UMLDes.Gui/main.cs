@@ -432,8 +432,11 @@ namespace UMLDes {
 		#endregion
 
 		private void Calculate (object sender,EventArgs e) {
-			double result=(ViewCtrl1.Curr as UMLDes.GUI.StaticView).CallCalculate ();
-			MessageBox.Show ("该图的耦合度为:"+result.ToString());
+			int LineNum,PackageNum;
+			SetStatus ("正在计算耦合度,请稍候...");
+			double result=(ViewCtrl1.Curr as UMLDes.GUI.StaticView).CallCalculate (out LineNum,out PackageNum);
+			MessageBox.Show ("当前图中共有Package"+PackageNum.ToString ()+"个,Line"+LineNum.ToString()+"条,耦合度为:"+result.ToString ());
+			SetStatus ("就绪");
 		}
 
 	}
