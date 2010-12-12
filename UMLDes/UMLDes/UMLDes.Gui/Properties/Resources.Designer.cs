@@ -81,6 +81,13 @@ namespace UMLDes.Gui.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap menu_Calculate_Image {
+            get {
+                object obj = ResourceManager.GetObject("menu_Calculate_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap menu_Copy_Image {
             get {
                 object obj = ResourceManager.GetObject("menu_Copy_Image", resourceCulture);
@@ -182,6 +189,139 @@ namespace UMLDes.Gui.Properties {
         internal static System.Drawing.Bitmap menu_ZoomOut_Image {
             get {
                 object obj = ResourceManager.GetObject("menu_ZoomOut_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap tool_actor_Image {
+            get {
+                object obj = ResourceManager.GetObject("tool_actor_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap tool_arrow_Image {
+            get {
+                object obj = ResourceManager.GetObject("tool_arrow_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap tool_conn_aggregation_Image {
+            get {
+                object obj = ResourceManager.GetObject("tool_conn_aggregation_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap tool_conn_assoc_Image {
+            get {
+                object obj = ResourceManager.GetObject("tool_conn_assoc_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap tool_conn_attachm_Image {
+            get {
+                object obj = ResourceManager.GetObject("tool_conn_attachm_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap tool_conn_composition_Image {
+            get {
+                object obj = ResourceManager.GetObject("tool_conn_composition_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap tool_conn_dependence_Image {
+            get {
+                object obj = ResourceManager.GetObject("tool_conn_dependence_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap tool_conn_inher_Image {
+            get {
+                object obj = ResourceManager.GetObject("tool_conn_inher_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap tool_conn_realiz_Image {
+            get {
+                object obj = ResourceManager.GetObject("tool_conn_realiz_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap tool_constraint_Image {
+            get {
+                object obj = ResourceManager.GetObject("tool_constraint_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap tool_curved_conn_Image {
+            get {
+                object obj = ResourceManager.GetObject("tool_curved_conn_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap tool_lock_Image {
+            get {
+                object obj = ResourceManager.GetObject("tool_lock_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap tool_memo_Image {
+            get {
+                object obj = ResourceManager.GetObject("tool_memo_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap tool_oper_signature_Image {
+            get {
+                object obj = ResourceManager.GetObject("tool_oper_signature_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap tool_package_Image {
+            get {
+                object obj = ResourceManager.GetObject("tool_package_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap tool_quadric_conn_Image {
+            get {
+                object obj = ResourceManager.GetObject("tool_quadric_conn_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap tool_segmented_conn_Image {
+            get {
+                object obj = ResourceManager.GetObject("tool_segmented_conn_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap tool_show_qual_Image {
+            get {
+                object obj = ResourceManager.GetObject("tool_show_qual_Image", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap tool_straight_conn_Image {
+            get {
+                object obj = ResourceManager.GetObject("tool_straight_conn_Image", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

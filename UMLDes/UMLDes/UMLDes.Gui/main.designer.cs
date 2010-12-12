@@ -60,6 +60,7 @@ namespace UMLDes {
 			this.menu_AddFiles=new System.Windows.Forms.ToolStripMenuItem ();
 			this.menu_AddStaticView=new System.Windows.Forms.ToolStripMenuItem ();
 			this.menu_Parse=new System.Windows.Forms.ToolStripMenuItem ();
+			this.menu_Calculate=new System.Windows.Forms.ToolStripMenuItem ();
 			this.treeImages=new System.Windows.Forms.ImageList (this.components);
 			this.panel1=new System.Windows.Forms.Panel ();
 			this.ProjectTree=new UMLDes.Controls.UmlSolutionTree ();
@@ -77,6 +78,7 @@ namespace UMLDes {
 			this.tool_AddFiles=new System.Windows.Forms.ToolStripButton ();
 			this.tool_AddStaticView=new System.Windows.Forms.ToolStripButton ();
 			this.tool_Parse=new System.Windows.Forms.ToolStripButton ();
+			this.tool_Calculate=new System.Windows.Forms.ToolStripButton ();
 			this.toolStripSeparator2=new System.Windows.Forms.ToolStripSeparator ();
 			this.tool_Print=new System.Windows.Forms.ToolStripButton ();
 			this.tool_PrintPreview=new System.Windows.Forms.ToolStripButton ();
@@ -477,7 +479,8 @@ namespace UMLDes {
 			this.menumain_Project.DropDownItems.AddRange (new System.Windows.Forms.ToolStripItem[] {
             this.menu_AddFiles,
             this.menu_AddStaticView,
-            this.menu_Parse});
+            this.menu_Parse,
+            this.menu_Calculate});
 			this.menumain_Project.MergeIndex=3;
 			this.menumain_Project.Name="menumain_Project";
 			this.menumain_Project.Size=new System.Drawing.Size (59,21);
@@ -513,6 +516,14 @@ namespace UMLDes {
 			this.menu_Parse.Size=new System.Drawing.Size (245,22);
 			this.menu_Parse.Text="Parse files, refresh tree";
 			this.menu_Parse.Click+=new System.EventHandler (this.RefreshProject);
+			// 
+			// menu_Calculate
+			// 
+			this.menu_Calculate.Image=global::UMLDes.Gui.Properties.Resources.menu_Calculate_Image;
+			this.menu_Calculate.Name="menu_Calculate";
+			this.menu_Calculate.Size=new System.Drawing.Size (245,22);
+			this.menu_Calculate.Text="计算耦合度(&C)";
+			this.menu_Calculate.Click+=new System.EventHandler (this.Calculate);
 			// 
 			// treeImages
 			// 
@@ -654,6 +665,7 @@ namespace UMLDes {
             this.tool_AddFiles,
             this.tool_AddStaticView,
             this.tool_Parse,
+            this.tool_Calculate,
             this.toolStripSeparator2,
             this.tool_Print,
             this.tool_PrintPreview,
@@ -666,7 +678,7 @@ namespace UMLDes {
             this.tool_Redo});
 			this.toolStrip1.Location=new System.Drawing.Point (3,25);
 			this.toolStrip1.Name="toolStrip1";
-			this.toolStrip1.Size=new System.Drawing.Size (358,25);
+			this.toolStrip1.Size=new System.Drawing.Size (381,25);
 			this.toolStrip1.TabIndex=1;
 			// 
 			// tool_NewProject
@@ -743,6 +755,16 @@ namespace UMLDes {
 			this.tool_Parse.Size=new System.Drawing.Size (23,22);
 			this.tool_Parse.Text="Parse files, refresh tree";
 			this.tool_Parse.Click+=new System.EventHandler (this.RefreshProject);
+			// 
+			// tool_Calculate
+			// 
+			this.tool_Calculate.DisplayStyle=System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.tool_Calculate.Image=((System.Drawing.Image) (resources.GetObject ("tool_Calculate.Image")));
+			this.tool_Calculate.ImageTransparentColor=System.Drawing.Color.Magenta;
+			this.tool_Calculate.Name="tool_Calculate";
+			this.tool_Calculate.Size=new System.Drawing.Size (23,22);
+			this.tool_Calculate.Text="计算耦合度";
+			this.tool_Calculate.Click+=new System.EventHandler (this.Calculate);
 			// 
 			// toolStripSeparator2
 			// 
@@ -1263,6 +1285,8 @@ namespace UMLDes {
 		private System.Windows.Forms.ToolStripButton tool_oper_signature;
 		private System.Windows.Forms.ToolStripButton tool_lock;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator9;
+		private System.Windows.Forms.ToolStripMenuItem menu_Calculate;
+		private System.Windows.Forms.ToolStripButton tool_Calculate;
 
 	}
 }
