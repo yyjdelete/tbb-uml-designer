@@ -59,8 +59,8 @@ namespace UMLDes.GUI {
 		}
 
 		#region Static View ¹¤¾ßÀ¸
-		public double CallCalculate () {
-			return Calculate.DoCalculate ();
+		public double CallCalculate (out int LineNum,out int PackageNum) {
+			return Calculate.DoCalculate (this,out LineNum,out PackageNum);
 		}
 
 		public bool ToolbarAction (string tsb_Name) {
@@ -117,8 +117,8 @@ namespace UMLDes.GUI {
 					MouseAgent.conn_style=GuiConnectionStyle.Quadric;
 					break;
 				case "tool_curved_conn":
-					MouseAgent.conn_style=GuiConnectionStyle.Besier;
-					break;
+					//MouseAgent.conn_style=GuiConnectionStyle.Besier;
+					//break;
 				case "tool_constraint":
 				case "tool_actor":
 				case "tool_oper_signature":

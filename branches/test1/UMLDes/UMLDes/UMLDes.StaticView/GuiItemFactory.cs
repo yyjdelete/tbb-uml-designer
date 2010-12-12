@@ -66,7 +66,7 @@ namespace UMLDes.GUI {
 			int i=1;
 			do {
 				tname=name+i.ToString ();
-					foreach (Object d in parent.active_objects)
+				foreach (GuiObject d in parent.active_objects)
 						if (d.GetType ().Name==type) {
 							select (d as GuiItem,ref ename,type,false);
 							if (ename.Equals (tname)) {

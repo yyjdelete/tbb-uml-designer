@@ -69,10 +69,10 @@ namespace UMLDes.GUI {
 		void SetDefDraw ();
 	}
 
-	public interface IDrawSelect {
+/*	public interface IDrawSelect {
 		void ToolbarAction (string tsb_Name);
 	}
-
+*/
 	public abstract class View {
 
 		public enum EditOperation {
