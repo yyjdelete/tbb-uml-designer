@@ -13,15 +13,15 @@ namespace UMLDes.GUI {
 			notify = n;
 		}
 
-		public override bool can_redo {
+		public override int redo_count {
 			get {
-				return (r.Count > 0);
+				return r.Count;
 			}
 		}
 
-		public override bool can_undo {
+		public override int undo_count {
 			get {
-				return (u.Count > 0);
+				return u.Count;
 			}
 		}
 

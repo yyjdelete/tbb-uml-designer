@@ -105,8 +105,39 @@ namespace UMLDes.GUI {
 		public abstract Undo undo {
 			get;
 		}
-	}
-		
+		#region 判断文件是否改动
+		[XmlIgnore]
+		private bool modifiedSign=false;
+		[XmlIgnore]
+		private int modifiedValue=0;
+		[XmlIgnore]
+		public bool ModifiedSign {
+			get {
+				return modifiedSign;
+			}
+		}
+		[XmlIgnore]
+		public int ModifiedValue {
+			get {
+				return modifiedValue;
+			}
+		}
+
+		public void SetCurModifiedSign () {
+			if (undo.undo_count==ModifiedValue)
+				modifiedSign=false;
+			else
+				modifiedSign=true;
+		}
+
+		public void RefreshModifiedValue () {
+			modifiedValue=undo.undo_count;
+			SetCurModifiedSign ();
+		}
+
+		#endregion
+
+	}	
 	public interface IPostload {
 		void PostLoad ();
 	}

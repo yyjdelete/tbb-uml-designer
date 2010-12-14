@@ -18,11 +18,45 @@ namespace UMLDes {
 
 		internal ArrayList projects = new ArrayList();
 		internal MainWnd container;
-		internal bool modified { get { return false; } }
+
+		//internal bool modified { get { return false; } }
+/*		internal bool modified {
+			get {
+				return modifiedsign;
+			}
+		}
+/*		int modifiedsign=0;
+		internal int modified {
+			get {
+				return modifiedsign;
+			}
+			set {
+				modifiedsign=value;
+			}
+		}*/
 
 		public UmlDesignerSolution() {
 			projectfile = String.Empty;
 			model = ModelBuilder.CreateEmptyModel();
+		}
+		#region 保存及判断文件有无改动
+
+		private bool irreversibleChange=false;//不可逆改动标志
+
+		internal bool ModifiedSign{
+			get {
+				if (irreversibleChange==true||container.GetCurrentView ().ModifiedSign==true)
+					return true;
+				else
+					foreach (GUI.View v in diagrams)
+						if (v.ModifiedSign)
+							return true;
+				return false;
+			}
+		}
+
+		internal void IrreversibleChange () {//判定发生不可逆改动后设置标志
+			irreversibleChange=true;
 		}
 
 		public void Save( bool saveas ) {
@@ -38,14 +72,17 @@ namespace UMLDes {
 					return;
 				projectfile = f.FileName;
 #endif
-				name = Path.GetFileNameWithoutExtension( projectfile );
-				container.RefreshTitle();
 			}
 			XmlSerializer s = new XmlSerializer( typeof(UmlDesignerSolution) );
 			Stream file = new FileStream( projectfile, FileMode.Create );
 			s.Serialize( file, this );
 			file.Close();
+			foreach (GUI.View v in diagrams)
+				v.RefreshModifiedValue ();
+			name=Path.GetFileNameWithoutExtension (projectfile);
+			container.RefreshTitle ();
 		}
+		#endregion
 
 		public static UmlDesignerSolution Load( MainWnd m ) {
 			string fname;
@@ -105,6 +142,8 @@ namespace UMLDes {
 			diagrams.Add( d );
 			d.proj = this;
 			container.SolutionTree.RefreshDiagrams();
+			IrreversibleChange ();
+			container.UpdateToolBar ();
 			return d;
 		}
 
@@ -132,7 +171,7 @@ namespace UMLDes {
 		public void AddFile() {
 			OpenFileDialog f = new OpenFileDialog();
 			f.Multiselect = true;
-			f.Filter = "Supported files (*.sln, *.csproj)|*.sln;*.csproj|Solutions Files (*.sln)|*.|C# project files (*.csproj)|*.csproj|All files (*.*)|*.*";
+			f.Filter = "所有受支持的文件 (*.sln, *.csproj)|*.sln;*.csproj|VS2010 解决方案文件 (*.sln)|*.|VC# 2010 项目文件 (*.csproj)|*.csproj|所有文件 (*.*)|*.*";
 			if( f.ShowDialog() != DialogResult.OK )
 				return;
 			foreach( string name in f.FileNames ) {
@@ -206,5 +245,6 @@ namespace UMLDes {
 		}
 
 		#endregion
+
 	}
 }
