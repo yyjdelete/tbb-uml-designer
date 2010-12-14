@@ -593,16 +593,21 @@ namespace UMLDes.GUI {
 
 		#region ²Ëµ¥¸¨Öú¹¦ÄÜ
 		public void AddItem (ToolStripMenuItem fmi,string text,ToolBarIcons icon,bool Checked,EventHandler click_handler) {
-			ToolStripMenuItem curr = new ToolStripMenuItem (text);
-			curr.Checked=Checked;
-			if (icon!=ToolBarIcons.None&&curr.Owner!=null) {
-				curr.Owner.ImageList=proj.icon_list;
-				curr.ImageIndex=(int) icon;
+			ToolStripItem curr;
+			if (text!="-") {
+				curr=new ToolStripMenuItem (text);
+				(curr as ToolStripMenuItem).Checked=Checked;
+				if (icon!=ToolBarIcons.None&&curr.Owner!=null) {
+					curr.Owner.ImageList=proj.icon_list;
+					curr.ImageIndex=(int) icon;
+				}
+				if (click_handler!=null)
+					curr.Click+=click_handler;
+				else
+					curr.Enabled=false;
 			}
-			if (click_handler != null)
-				curr.Click += click_handler;
 			else
-				curr.Enabled = false;
+				curr=new ToolStripSeparator ();
 			fmi.DropDownItems.Add (curr);
 		}
 
