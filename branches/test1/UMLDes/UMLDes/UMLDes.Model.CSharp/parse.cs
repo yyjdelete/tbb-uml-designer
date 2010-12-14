@@ -11,15 +11,15 @@ using UMLDes.CSharp.Nodes;
 namespace UMLDes.CSharp {
 
   public class parser {
-	
+
 	// 14.6.6 Cast expressions =======
 	// To resolve cast-expression ambiguities, the following rule exists: A sequence of one or
-	// more tokens (§9.4) enclosed in parentheses is considered the start of a cast-expression only
+	// more tokens (¡ì9.4) enclosed in parentheses is considered the start of a cast-expression only
 	// if at least one of the following are true:
-	//	• The sequence of tokens is correct grammar for a type, but not for an expression.
-	//  • The sequence of tokens is correct grammar for a type, and the token immediately following
-	//	  the closing parentheses is the token “~”, the token “!”, the token “(”, an identifier (§9.4.1),
-	//	  a literal (§9.4.4), or any keyword (§9.4.3) except as and is.
+	//	?The sequence of tokens is correct grammar for a type, but not for an expression.
+	//  ?The sequence of tokens is correct grammar for a type, and the token immediately following
+	//	  the closing parentheses is the token "~", the token "!" the token "(" an identifier (¡ì9.4.1),
+	//	  a literal (¡ì9.4.4), or any keyword (¡ì9.4.3) except as and is.
 	
 	private static bool CastExpr( ExprNode expr, lapg_symbol next ) {
 	

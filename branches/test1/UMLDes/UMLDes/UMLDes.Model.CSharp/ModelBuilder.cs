@@ -88,7 +88,7 @@ namespace UMLDes.Model.CSharp {
 
 			// parse all files, collect NS
 			foreach (UmlProject p in model.projects) {
-				Notify ("parsing " + p.uid);
+				Notify ("正在解析 "+p.uid);
 				ArrayList parsed_files = new ArrayList ();
 				foreach (string file in p.files) {
 					string text;
@@ -105,7 +105,7 @@ namespace UMLDes.Model.CSharp {
 						}
 					}
 					catch {
-						errors.Add ("cannot read file " + file + " from " + p.name);
+						errors.Add ("不能从  “"+ p.name+"”读取文件 ："+file);
 					}
 				}
 				project_files[p] = parsed_files;
@@ -117,10 +117,10 @@ namespace UMLDes.Model.CSharp {
 			// mark model as Deleted
 			model.Visit (new UmlObject.Visitor (SetDeletedFlag),null);
 
-			// Stage #1: build namespaces and types for each project
+			// 第二阶段: build namespaces and types for each project
 			foreach (UmlProject p in model.projects) {
 
-				Notify ("updating structure: " + p.uid);
+				Notify ("正在更新结构: "+p.uid);
 
 				if (p.root == null) {
 					p.root = new UmlNamespace ();
@@ -135,7 +135,7 @@ namespace UMLDes.Model.CSharp {
 
 			// end of Stage #1: each project contains tree of Types
 
-			// Stage #2: Building project references, Resolving inheritances
+			// 第三阶段: Building project references, Resolving inheritances
 
 			// fix references, initialize resolving system
 			Notify ("updating references");
@@ -179,7 +179,7 @@ namespace UMLDes.Model.CSharp {
 
 			Notify ("updating members");
 
-			// Stage #3: Building members
+			// 第四阶段: Building members
 			foreach (UmlType ent in classes.Keys)
 				switch (ent.Kind) {
 					case UmlKind.Interface:
@@ -309,7 +309,7 @@ namespace UMLDes.Model.CSharp {
 
 		#endregion
 
-		#region Stage #1: Filling namespaces and Types (FillNamespace)
+		#region 第二阶段: Filling namespaces and Types (FillNamespace)
 
 		private static string Combine (string s1,string s2) {
 			if (s1.Length == 0)
@@ -526,7 +526,7 @@ namespace UMLDes.Model.CSharp {
 
 		#endregion
 
-		#region Stage #2: Building project references, Resolving inheritances
+		#region 第三阶段: Building project references, Resolving inheritances
 
 		private void BuildReferences () {
 
@@ -664,7 +664,7 @@ namespace UMLDes.Model.CSharp {
 
 		#endregion
 
-		#region Stage #3: Filling members
+		#region 第四阶段: Filling members
 
 		private string[] base_type_to_type = new string[] {
 			"System.Object",
