@@ -21,15 +21,23 @@ namespace UMLDes {
 		}
 
 		#region 工具栏相关
-
-		void EnableButton (ToolStripButton b,bool en) {
-			if (!b.Enabled != en)
-				b.Enabled=!b.Enabled;
-		}
+		bool unIrreversibleChange=false;//非不可逆改动判断标志
 
 		public void UpdateToolBar () {
-			EnableButton (tool_Undo,ViewCtrl1.Curr.undo.can_undo);
-			EnableButton (tool_Redo,ViewCtrl1.Curr.undo.can_redo);
+			//撤销状态改变,引起工具栏刷新,并对文件是否改动进行判断
+			tool_Undo.Enabled=(ViewCtrl1.Curr.undo.undo_count>0);
+			tool_Redo.Enabled=(ViewCtrl1.Curr.undo.redo_count>0);
+			if (ViewCtrl1.Curr.ModifiedValue!=0&&ViewCtrl1.Curr.undo.undo_count<=ViewCtrl1.Curr.ModifiedValue&&ViewCtrl1.Curr.undo.redo_count==0&&unIrreversibleChange==false) {
+				p.IrreversibleChange ();//判定当前图产生了不可逆的改动
+			}
+			else {
+				if (unIrreversibleChange)
+					unIrreversibleChange=false;//重置标志
+				ViewCtrl1.Curr.SetCurModifiedSign ();//检查当前图是否改动
+			}
+			Text=Text.TrimEnd ('*');//切割掉标题末尾的'*'
+			if (p.ModifiedSign) 
+				Text=Text+"*";
 		}
 
 		/// <summary>
@@ -72,7 +80,7 @@ namespace UMLDes {
 		}
 
 		private bool SaveChanges () {
-			if (p.modified) {
+			if (p.ModifiedSign) {
 				DialogResult r = MessageBox.Show ("工程已被更改,是否保存?","警告!",MessageBoxButtons.YesNoCancel);
 				if (r == DialogResult.Cancel)
 					return false;
@@ -124,6 +132,7 @@ namespace UMLDes {
 		/// </summary>
 		public void RefreshTitle () {
 			this.Text = "TBB UML Designer: " + p.name + " [" + ViewCtrl1.Curr.name + "]";
+			UpdateToolBar ();
 		}
 
 		private void TurnOnProject (UmlDesignerSolution p) {
@@ -261,8 +270,8 @@ namespace UMLDes {
 		#region “编辑”菜单
 
 		private void EditMenuPopup (object sender,System.EventArgs e) {
-			menu_Undo.Enabled = ViewCtrl1.Curr.undo.can_undo;
-			menu_Redo.Enabled = ViewCtrl1.Curr.undo.can_redo;
+			menu_Undo.Enabled=ViewCtrl1.Curr.undo.undo_count>0;
+			menu_Redo.Enabled=ViewCtrl1.Curr.undo.redo_count>0;
 			menu_Delete.Enabled = ViewCtrl1.Curr.IfEnabled (UMLDes.GUI.View.EditOperation.Delete);
 			menu_Cut.Enabled = ViewCtrl1.Curr.IfEnabled (UMLDes.GUI.View.EditOperation.Cut);
 			menu_Copy.Enabled = ViewCtrl1.Curr.IfEnabled (UMLDes.GUI.View.EditOperation.Copy);
@@ -275,6 +284,7 @@ namespace UMLDes {
 		}
 
 		private void Redo (object sender,System.EventArgs e) {
+			unIrreversibleChange=true;//设置非不可逆改动判断标志
 			ViewCtrl1.Curr.undo.DoRedo ();
 		}
 
@@ -438,6 +448,5 @@ namespace UMLDes {
 			MessageBox.Show ("当前图中共有Package"+PackageNum.ToString ()+"个,Line"+LineNum.ToString()+"条,耦合度为:"+result.ToString ());
 			SetStatus ("就绪");
 		}
-
 	}
 }

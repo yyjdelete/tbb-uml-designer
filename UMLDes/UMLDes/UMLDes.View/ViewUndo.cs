@@ -60,10 +60,10 @@ namespace UMLDes.GUI {
 
 	public abstract class Undo {
 
-		public abstract bool can_undo {
+		public abstract int undo_count {
 			get;
 		}
-		public abstract bool can_redo {
+		public abstract int redo_count {
 			get;
 		}
 
