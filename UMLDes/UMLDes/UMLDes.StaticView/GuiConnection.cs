@@ -388,7 +388,7 @@ namespace UMLDes.GUI {
 
 		#endregion
 
-		#region "Fixup functions: CheckIntersection, PostLoad, ConnectionCreated, DoCreationFixup, 调整关系"
+		#region "Fixup functions: CheckIntersection, PostLoad, ConnectionCreated, DoCreationFixup, AdjustRelation"
 
 		public void AdjustRelation( UmlRelation rel ) {
 			Invalidate();
@@ -753,10 +753,12 @@ namespace UMLDes.GUI {
 			// Navigation
 			evh = new EventHandler( ChangeNavigationClick );
 			curr = new ToolStripMenuItem("Navigation");
-			parent.AddItem( curr, "None", ToolBarIcons.None, this.nav == GuiConnectionNavigation.None, evh );
-			parent.AddItem( curr, "Left", ToolBarIcons.None, this.nav == GuiConnectionNavigation.Left, evh );
-			parent.AddItem( curr, "Right", ToolBarIcons.None, this.nav == GuiConnectionNavigation.Right, evh );
-			curr.Enabled = ( this.type == UmlRelationType.Association || this.type == UmlRelationType.Aggregation || this.type == UmlRelationType.Composition );
+			curr.Enabled=(this.type==UmlRelationType.Association||this.type==UmlRelationType.Aggregation||this.type==UmlRelationType.Composition);
+			if (curr.Enabled) {
+				parent.AddItem (curr,"None",ToolBarIcons.None,this.nav==GuiConnectionNavigation.None,evh);
+				parent.AddItem (curr,"Left",ToolBarIcons.None,this.nav==GuiConnectionNavigation.Left,evh);
+				parent.AddItem (curr,"Right",ToolBarIcons.None,this.nav==GuiConnectionNavigation.Right,evh);
+			}
 			m.Items.Add (curr);
 
 			// Display Options
@@ -765,6 +767,7 @@ namespace UMLDes.GUI {
 			parent.AddItem( curr, "Show roles", ToolBarIcons.None, ShowRoles, evh );
 			parent.AddItem( curr, "Show connection name", ToolBarIcons.None, conn_name.Visible, evh );
 			parent.AddItem( curr, "Show stereotype", ToolBarIcons.None, conn_stereo.Visible, evh );
+			parent.AddItem (curr,"Show stereotype",ToolBarIcons.None,conn_stereo.Visible,evh);
 			parent.AddItem( curr, "-", ToolBarIcons.None, false, null );
 			parent.AddItem( curr, "Show all", ToolBarIcons.None, false, evh );
 			parent.AddItem( curr, "Hide all", ToolBarIcons.None, false, evh );
