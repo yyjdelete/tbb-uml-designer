@@ -631,17 +631,17 @@ namespace UMLDes.GUI {
 		public void ChangeStyleClick( object o, EventArgs ev ) {
 			ObjectState before = GetState();
 			Invalidate();
-			switch( (ToolBarIcons)(o as ToolStripMenuItem).ImageIndex ) {
-				case ToolBarIcons.straight_conn:	// Line
+			switch (((o as ToolStripMenuItem).OwnerItem as ToolStripMenuItem).DropDownItems.IndexOf (o as ToolStripMenuItem)) {
+				case 0:	// Line
 					style = GuiConnectionStyle.Line;
 					break;
-				case ToolBarIcons.segmented_conn: // Segmented
+				case 1: // Segmented
 					style = GuiConnectionStyle.Segmented;
 					break;
-				case ToolBarIcons.quadric_conn:	// Quadric
+				case 2:	// Quadric
 					style = GuiConnectionStyle.Quadric;
 					break;
-				case ToolBarIcons.curved_conn:	// Bezier (disabled)
+				case 3:	// Bezier (disabled)
 					break;
 			}
 			first.UpdatePosition(false);
@@ -654,26 +654,26 @@ namespace UMLDes.GUI {
 		public void ChangeTypeClick( object o, EventArgs ev ) {
 			ObjectState before = GetState();
 			this.Invalidate();
-			switch( (ToolBarIcons)(o as ToolStripMenuItem).ImageIndex ) {
-				case ToolBarIcons.conn_inher:	// Inheritance
+			switch (((o as ToolStripMenuItem).OwnerItem as ToolStripMenuItem).DropDownItems.IndexOf (o as ToolStripMenuItem)) {
+				case 0:	// Inheritance
 					type = UmlRelationType.Inheritance;
 					break;
-				case ToolBarIcons.conn_assoc:	// Association
+				case 1:	// Association
 					type = UmlRelationType.Association;
 					break;
-				case ToolBarIcons.conn_aggregation: // Aggregation
+				case 2: // Aggregation
 					type = UmlRelationType.Aggregation;
 					break;
-				case ToolBarIcons.conn_composition:	// Composition
+				case 3:	// Composition
 					type = UmlRelationType.Composition;
 					break;
-				case ToolBarIcons.conn_attachm:	// Attachment
+				case 4:	// Attachment
 					type = UmlRelationType.Attachment;
 					break;
-				case ToolBarIcons.conn_realiz:	// Realization
+				case 6:	// Realization
 					type = UmlRelationType.Realization;
 					break;
-				case ToolBarIcons.conn_dependence:	// Dependency
+				case 5:	// Dependency
 					type = UmlRelationType.Dependency;
 					break;
 			}
