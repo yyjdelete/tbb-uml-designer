@@ -63,7 +63,6 @@ namespace UMLDes {
 			this.menu_Calculate=new System.Windows.Forms.ToolStripMenuItem ();
 			this.treeImages=new System.Windows.Forms.ImageList (this.components);
 			this.panel1=new System.Windows.Forms.Panel ();
-			this.ProjectTree=new UMLDes.Controls.UmlSolutionTree ();
 			this.splitter1=new System.Windows.Forms.Splitter ();
 			this.statusStrip1=new System.Windows.Forms.StatusStrip ();
 			this.status_Label=new System.Windows.Forms.ToolStripStatusLabel ();
@@ -116,6 +115,7 @@ namespace UMLDes {
 			this.toolStripSeparator7=new System.Windows.Forms.ToolStripSeparator ();
 			this.tool_show_qual=new System.Windows.Forms.ToolStripButton ();
 			this.tool_oper_signature=new System.Windows.Forms.ToolStripButton ();
+			this.ProjectTree=new UMLDes.Controls.UmlSolutionTree ();
 			this.menuStrip1.SuspendLayout ();
 			this.panel1.SuspendLayout ();
 			this.statusStrip1.SuspendLayout ();
@@ -193,7 +193,7 @@ namespace UMLDes {
 			this.menu_About.MergeIndex=0;
 			this.menu_About.Name="menu_About";
 			this.menu_About.ShortcutKeys=System.Windows.Forms.Keys.F1;
-			this.menu_About.Size=new System.Drawing.Size (141,22);
+			this.menu_About.Size=new System.Drawing.Size (152,22);
 			this.menu_About.Text="关于(&A)";
 			this.menu_About.Click+=new System.EventHandler (this.menu_About_Click);
 			// 
@@ -201,14 +201,15 @@ namespace UMLDes {
 			// 
 			this.menu_show_hints.MergeIndex=1;
 			this.menu_show_hints.Name="menu_show_hints";
-			this.menu_show_hints.Size=new System.Drawing.Size (141,22);
+			this.menu_show_hints.Size=new System.Drawing.Size (152,22);
 			this.menu_show_hints.Text="显示提示(&H)";
+			this.menu_show_hints.Click+=new System.EventHandler (this.menu_show_hints_Click);
 			// 
 			// menu_GC_Collect
 			// 
 			this.menu_GC_Collect.MergeIndex=2;
 			this.menu_GC_Collect.Name="menu_GC_Collect";
-			this.menu_GC_Collect.Size=new System.Drawing.Size (141,22);
+			this.menu_GC_Collect.Size=new System.Drawing.Size (152,22);
 			this.menu_GC_Collect.Text="GC.Collect";
 			this.menu_GC_Collect.Click+=new System.EventHandler (this.menu_GC_Collect_Click);
 			// 
@@ -575,14 +576,6 @@ namespace UMLDes {
 			this.panel1.Name="panel1";
 			this.panel1.Size=new System.Drawing.Size (259,148);
 			this.panel1.TabIndex=13;
-			// 
-			// ProjectTree
-			// 
-			this.ProjectTree.Dock=System.Windows.Forms.DockStyle.Fill;
-			this.ProjectTree.Location=new System.Drawing.Point (0,0);
-			this.ProjectTree.Name="ProjectTree";
-			this.ProjectTree.Size=new System.Drawing.Size (259,148);
-			this.ProjectTree.TabIndex=2;
 			// 
 			// splitter1
 			// 
@@ -1119,6 +1112,14 @@ namespace UMLDes {
 			this.tool_oper_signature.Size=new System.Drawing.Size (23,22);
 			this.tool_oper_signature.Text="Operations signature";
 			this.tool_oper_signature.Click+=new System.EventHandler (this.toolStrip_Select);
+			// 
+			// ProjectTree
+			// 
+			this.ProjectTree.Dock=System.Windows.Forms.DockStyle.Fill;
+			this.ProjectTree.Location=new System.Drawing.Point (0,0);
+			this.ProjectTree.Name="ProjectTree";
+			this.ProjectTree.Size=new System.Drawing.Size (259,148);
+			this.ProjectTree.TabIndex=2;
 			// 
 			// MainWnd
 			// 

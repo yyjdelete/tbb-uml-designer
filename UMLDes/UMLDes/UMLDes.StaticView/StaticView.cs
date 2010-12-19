@@ -59,8 +59,8 @@ namespace UMLDes.GUI {
 		}
 
 		#region Static View ¹¤¾ßÀ¸
-		public double CallCalculate (out int LineNum,out int PackageNum) {
-			return Calculate.DoCalculate (this,out LineNum,out PackageNum);
+		public double CallCalculate (out int lineNum,out int packageNum,out int classNum) {
+			return Calculate.DoCalculate (this,out lineNum,out packageNum,out classNum);
 		}
 
 		public bool ToolbarAction (string tsb_Name) {
