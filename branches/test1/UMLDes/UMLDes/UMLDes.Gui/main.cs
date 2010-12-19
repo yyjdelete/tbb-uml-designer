@@ -427,12 +427,18 @@ namespace UMLDes {
 			About aboutfrm = new About ();
 			aboutfrm.ShowDialog ();
 		}
+		private void menu_show_hints_Click (object sender,EventArgs e) {
+			MessageBox.Show ("请参阅软件目录下的\"Readme.rtf\"。");
+		}
 		#endregion
 
 		#region 状态栏相关
 
 		internal void SetStatus (string text) {
 			status_Label.Text = text;
+			//解决状态栏在程序忙时的刷新问题
+			status_Label.Invalidate ();//强制使状态标签无效
+			statusStrip1.Update ();//强制刷新状态栏无效区域
 		}
 
 		internal void SetAdvise (string text) {
@@ -442,10 +448,10 @@ namespace UMLDes {
 		#endregion
 
 		private void Calculate (object sender,EventArgs e) {
-			int LineNum,PackageNum;
+			int lineNum,packageNum,classNum;
 			SetStatus ("正在计算耦合度,请稍候...");
-			double result=(ViewCtrl1.Curr as UMLDes.GUI.StaticView).CallCalculate (out LineNum,out PackageNum);
-			MessageBox.Show ("当前图中共有Package"+PackageNum.ToString ()+"个,Line"+LineNum.ToString()+"条,耦合度为:"+result.ToString ());
+			double result=(ViewCtrl1.Curr as UMLDes.GUI.StaticView).CallCalculate (out lineNum,out packageNum,out classNum);
+			MessageBox.Show ("当前图中共有Package"+packageNum.ToString ()+"个,Class"+classNum.ToString ()+",Line"+lineNum.ToString ()+"条,耦合度为:"+result.ToString ());
 			SetStatus ("就绪");
 		}
 	}
